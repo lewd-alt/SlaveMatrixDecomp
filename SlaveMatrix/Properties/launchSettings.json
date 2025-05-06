@@ -2,7 +2,7 @@
   "profiles": {
     "SlaveMatrix": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\dave\\Desktop\\decomp3\\game_folder"
+      "workingDirectory": "$(SolutionDir)\\game_folder"
     }
   }
 }
