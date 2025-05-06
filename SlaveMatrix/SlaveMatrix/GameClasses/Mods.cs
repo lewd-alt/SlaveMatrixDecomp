@@ -4170,7 +4170,7 @@ public static class Mods
 				a.GH.Clear(Col.Transparent);
 			}
 			a.Draw(OfficeBackground);
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			bs.Draw(a);
 			dbs.Draw(a);
@@ -4686,7 +4686,7 @@ public static class Mods
 				a.GH.Clear(Col.Transparent);
 			}
 			a.Draw(OfficeBackground);
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			bs.Draw(a);
 			dbs.Draw(a);
@@ -6600,7 +6600,7 @@ public static class Mods
 			System.Diagnostics.Debug.Print("Draw OP1\n");
 			a.Draw(OfficeBackground);
 			//Viola.SetInitialAngle();
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			dbs.Draw(a);
 			ip.Draw(a, FPS);
@@ -6763,7 +6763,7 @@ public static class Mods
 				a.GH.Clear(Col.Transparent);
 			}
 			a.Draw(BasementBackground);
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			dbs.Draw(a);
 			ip.Draw(a, FPS);
@@ -7076,7 +7076,7 @@ public static class Mods
 				a.GH.Clear(Col.Transparent);
 			}
 			a.Draw(OfficeBackground);
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			dbs.Draw(a);
 			ip.Draw(a, FPS);
@@ -7190,7 +7190,7 @@ public static class Mods
 				a.GH.Clear(Col.Transparent);
 			}
 			a.Draw(OfficeBackground);
-			//Viola.Draw(a, FPS);
+			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			dbs.Draw(a);
 			ip.Draw(a, FPS);
