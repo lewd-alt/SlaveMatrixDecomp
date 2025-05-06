@@ -1,0 +1,55 @@
+Changelog
+
+3.1.1
+- Added "AlwaysUseName" config option that forces the use of the slave's "Name" value
+- Added "MoveInsectMask" config option that can disable insect eye masks moving when trained
+- Fixed more button positions when using "BigWindow" config option
+- Updated ConfigReadme.txt with the new config options
+- Updated title text version number to "v3.1.1"
+
+3.1.0
+- Added "ShowFPS" config option that displays the current FPS in the title bar
+- Added "AntiAliasing" config option that turns on low quality anti-aliasing
+- Added "TranslateJson" config option that will translate JSON save files based on Translate.json
+- Added "MoveButton" config option that toggles the display of 4 buttons that move slave positions
+- Added "StaminaReset" config option that toggles the display of 2 buttons that reset training stamina
+- Added Translate.json with all JSON values translated into English in the text folder
+- Added this changelog with every version changes (including the ones I didn't make)
+- Changed "HighQuality" to use a value of 2203.0 instead of 2000.0
+- Updated ConfigReadme.txt with the new config options
+- Updated title text version number to "v3.1"
+- Fixed button positions when using "BigWindow" config option
+- Fixed "Scars" text not appearing on slaves when loading JSON files
+
+3.0.0
+- Added "PlayBGM" config option that toggles game music
+- Added "FastText" config option that speeds up the game text from their original value to 50
+- Added "BigWindow" config option to replace the "-bigWindow" launch option
+- Added "HighQuality" config option to replace the "-hd" launch option
+- Added "SensesButton" config option to toggle the display of the senses button
+- Added "FixInfo" config option to replace the "-fixInfo" launch option
+- Added "JsonButton" config option toggles the display of 2 new buttons to save to/load from JSON files
+- Added "RefreshStoreEveryTime" config option to allow infinite store refresh without needing to sleep
+- Added "EncryptSave" config option to toggle encryption and compression of save files during save
+- Added "DecryptLoad" config option to toggle uncompression and decryption of save files during load
+- Added ConfigReadme.txt to explain all of the new config options
+- Merged Newtonsoft.Json.dll into 2DGAMELIB.dll (required code for the JSON converter)
+- Replaced the useless japanese Readme.txt with some simple information
+- Removed "-fixInfo", "-hd" and "-bigWindow" launch options
+
+2.0.1
+- Changed launch options to not be case sensitive
+- Fixed camera watermark displaying in the middle of the screen when using "-bigWindow"
+
+2.0.0
+- Added "Senses" button that displays current slave's sizes, mood, touched place and sensitivities
+- Added "-fixInfo" launch option that widens the senses info box in case it renders incorrectly
+- Added "-hd" launch option that increases the game's render quality from 1101.5 to 2000.0
+- Added "-bigWindow" launch option that increases the game window's resolution from 1024x768 to 1280x960
+
+1.0.0
+- Translated all game text in text folder into English
+- Translated the manual into English
+
+2018-08-04
+Original game version
