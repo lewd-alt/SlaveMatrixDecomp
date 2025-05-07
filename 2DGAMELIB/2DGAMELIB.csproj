@@ -4,8 +4,9 @@
     <AssemblyName>2DGAMELIB</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <UseWindowsForms>True</UseWindowsForms>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <PlatformTarget>x86</PlatformTarget>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>10.0</LangVersion>
@@ -15,7 +16,9 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="glfw-net" Version="3.3.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework">

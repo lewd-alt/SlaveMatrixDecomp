@@ -6590,16 +6590,10 @@ public static class Mods
 
 			Viola.両目_見つめ();
 			Viola.Set基本姿勢();
-
-			//I added this 
-			Viola.Bod.拘束具_表示 = false;
-			Viola.Set拘束姿勢();
         };
 		DrawOP1 = delegate(Are a, FPS FPS)
 		{
-			System.Diagnostics.Debug.Print("Draw OP1\n");
 			a.Draw(OfficeBackground);
-			//Viola.SetInitialAngle();
 			Viola.Draw(a, FPS);
 			ヴィオラ吹出し.Draw(a, FPS);
 			dbs.Draw(a);

@@ -10,9 +10,6 @@ namespace _2DGAMELIB;
 
 public class UI : Form
 {
-
-	private Point Position = Point.Empty;
-
 	private Med Med;
 
 	private IContainer components;
@@ -56,21 +53,11 @@ public class UI : Form
 			base.ClientSize = new Size(1280, 960);
 		}
 		UI_Resize(null, null);
-		if (Position == Point.Empty)
-		{
-			Position = (Screen.PrimaryScreen.Bounds.Size.ToVector2D() * 0.5 - base.Size.ToVector2D() * 0.5).ToPoint();
-		}
-		base.Location = Position;
 	}
 
 	private void UI_FormClosing(object sender, FormClosingEventArgs e)
 	{
 		Med.Drive = false;
-	}
-
-	private void UI_Move(object sender, EventArgs e)
-	{
-		Position = base.Location;
 	}
 
 	private void UI_Resize(object sender, EventArgs e)
@@ -115,8 +102,11 @@ public class UI : Form
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 
 		base.FormClosing += new System.Windows.Forms.FormClosingEventHandler(UI_FormClosing);
+
+		//beauty
+		this.wpfImage1.gl_img.Closing = delegate () { UI_FormClosing(null, null); };
+
 		base.Load += new System.EventHandler(UI_Load);
-		base.Move += new System.EventHandler(UI_Move);
 		base.Resize += new System.EventHandler(UI_Resize);
 		base.ResumeLayout(false);
 	}
