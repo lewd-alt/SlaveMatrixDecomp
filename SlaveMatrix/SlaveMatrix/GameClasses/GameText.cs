@@ -1,84 +1,85 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using _2DGAMELIB;
 
 namespace SlaveMatrix
 {
     public static class GameText
     {
-    	private static string[] Race = (from e in (Sta.CurrentDirectory + "\\text\\System\\Race.txt").ReadLines()
+    	private static string[] Race = (from e in Path.Combine(Sta.CurrentDirectory, "text", "System", "Race.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Attr = (from e in (Sta.CurrentDirectory + "\\text\\System\\Attribute.txt").ReadLines()
+    	private static string[] Attr = (from e in Path.Combine(Sta.CurrentDirectory, "text", "System", "Attribute.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Comm = (from e in (Sta.CurrentDirectory + "\\text\\System\\Common.txt").ReadLines()
+    	private static string[] Comm = (from e in Path.Combine(Sta.CurrentDirectory, "text", "System", "Common.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Base = (from e in (Sta.CurrentDirectory + "\\text\\Basement\\Basement.txt").ReadLines()
+    	private static string[] Base = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Basement", "Basement.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Trai = (from e in (Sta.CurrentDirectory + "\\text\\Basement\\Training\\Training.txt").ReadLines()
+    	private static string[] Trai = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Basement", "Training", "Training.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Targ = (from e in (Sta.CurrentDirectory + "\\text\\Basement\\Target.txt").ReadLines()
+    	private static string[] Targ = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Basement", "Target.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Bles = (from e in (Sta.CurrentDirectory + "\\text\\Basement\\Blessing.txt").ReadLines()
+    	private static string[] Bles = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Basement", "Blessing.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Offi = (from e in (Sta.CurrentDirectory + "\\text\\Office\\Office.txt").ReadLines()
+    	private static string[] Offi = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Office", "Office.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Bebt = (from e in (Sta.CurrentDirectory + "\\text\\Office\\Bebt.txt").ReadLines()
+    	private static string[] Bebt = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Office", "Bebt.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Slav = (from e in (Sta.CurrentDirectory + "\\text\\Office\\Slave.txt").ReadLines()
+    	private static string[] Slav = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Office", "Slave.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Tool = (from e in (Sta.CurrentDirectory + "\\text\\Office\\Tool.txt").ReadLines()
+    	private static string[] Tool = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Office", "Tool.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] OP0 = (from e in (Sta.CurrentDirectory + "\\text\\Event\\OP0.txt").ReadLines()
+    	private static string[] OP0 = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "OP0.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] OP1 = (from e in (Sta.CurrentDirectory + "\\text\\Event\\OP1.txt").ReadLines()
+    	private static string[] OP1 = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "OP1.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Desc = (from e in (Sta.CurrentDirectory + "\\text\\Event\\Description.txt").ReadLines()
+    	private static string[] Desc = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "Description.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Firs = (from e in (Sta.CurrentDirectory + "\\text\\Event\\First office.txt").ReadLines()
+    	private static string[] Firs = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "First office.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Repa1 = (from e in (Sta.CurrentDirectory + "\\text\\Event\\Repayment1.txt").ReadLines()
+    	private static string[] Repa1 = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "Repayment1.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Repa2 = (from e in (Sta.CurrentDirectory + "\\text\\Event\\Repayment2.txt").ReadLines()
+    	private static string[] Repa2 = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "Repayment2.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] Repa3 = (from e in (Sta.CurrentDirectory + "\\text\\Event\\Repayment3.txt").ReadLines()
+    	private static string[] Repa3 = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "Repayment3.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
-    	private static string[] VBle = (from e in (Sta.CurrentDirectory + "\\text\\Event\\Blessing.txt").ReadLines()
+    	private static string[] VBle = (from e in Path.Combine(Sta.CurrentDirectory, "text", "Event", "Blessing.txt").ReadLines()
     		where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
     		select e).ToArray();
 
@@ -1165,7 +1166,7 @@ namespace SlaveMatrix
         {
             this.Med = Med;
             this.ip = ip;
-            string[] array = (Sta.CurrentDirectory + "\\text\\System\\SubInnfo.txt").FromText().Split(',');
+            string[] array = Path.Combine(Sta.CurrentDirectory, "text", "System", "SubInnfo.txt").FromText().Split(',');
             List<string> list = (from e in array[0].Replace("\r", "").Split('\n')
                                  where !string.IsNullOrWhiteSpace(e) && !e.StartsWith("//")
                                  select e).ToList();

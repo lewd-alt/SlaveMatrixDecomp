@@ -1,5 +1,5 @@
 using GLFW;
-using OpenGL;
+using Silk.NET.OpenGL;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -20,6 +20,8 @@ namespace _2DGAMELIB
     public class GlImage
     {
 
+        Silk.NET.OpenGL.GL gl;
+
     	//yeah this is a little bit sketchy
         public static unsafe GLFW.Window PtrToWindow(IntPtr source)
         {
@@ -28,6 +30,15 @@ namespace _2DGAMELIB
             var destRef = __makeref(dest);
             *(IntPtr*)&destRef = *(IntPtr*)&sourceRef;
             return __refvalue(destRef, GLFW.Window);
+        }
+
+        public static unsafe IntPtr WindowToPtr(Window source)
+        {
+            var sourceRef = __makeref(source);
+            var dest = default(IntPtr);
+            var destRef = __makeref(dest);
+            *(IntPtr*)&destRef = *(IntPtr*)&sourceRef;
+            return __refvalue(destRef, IntPtr);
         }
 
         public GLFW.Window window;
@@ -86,40 +97,55 @@ namespace _2DGAMELIB
     		if (Glfw.WindowShouldClose(window))
     			Closing();
     	} 
-        public void SetBitmap(Bitmap bmp)
+        public unsafe void SetBitmap(Bitmap bmp)
         {
-            Gl.UseProgram(shader_program);
-            Gl.Viewport(0, 0, bmp.Width, bmp.Height);
+            gl.UseProgram(shader_program);
+            gl.Viewport(new Size(bmp.Width, bmp.Height));
 
-            Gl.ActiveTexture(TextureUnit.Texture0);
-    		Gl.BindTexture(TextureTarget.Texture2d, texture);
+            gl.ActiveTexture(Silk.NET.OpenGL.GLEnum.Texture0);
+    		gl.BindTexture(Silk.NET.OpenGL.GLEnum.Texture2D, texture);
 
             BitmapData data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-    		Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba8, bmp.Width, bmp.Height, 0, OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
+            
+            gl.TexImage2D(
+                Silk.NET.OpenGL.GLEnum.Texture2D, 
+                0,
+                InternalFormat.Rgba8, 
+                (uint)bmp.Width, 
+                (uint)bmp.Height, 
+                0,
+                Silk.NET.OpenGL.GLEnum.Bgra,
+                Silk.NET.OpenGL.GLEnum.UnsignedByte, 
+                (void*)data.Scan0
+            );
+
             bmp.UnlockBits(data);
 
-            int res_pos = Gl.GetUniformLocation(shader_program, "res");
-    		Gl.Uniform2(res_pos, (float)bmp.Width, (float)bmp.Height);
 
-            Gl.BindBuffer(BufferTarget.ArrayBuffer, vertex_buf);
-            uint vert_pos = (uint)Gl.GetAttribLocation(shader_program, "vertPos");
-            Gl.EnableVertexAttribArray(vert_pos);
+            int res_pos = gl.GetUniformLocation(shader_program, "res");
+    		gl.Uniform2(res_pos, (float)bmp.Width, (float)bmp.Height);
 
-    		Gl.BindVertexArray(vao);
-            Gl.VertexAttribPointer(
+            gl.BindBuffer(GLEnum.ArrayBuffer, vertex_buf);
+            uint vert_pos = (uint)gl.GetAttribLocation(shader_program, "vertPos");
+            gl.EnableVertexAttribArray(vert_pos);
+
+
+            gl.BindVertexArray(vao);
+            gl.VertexAttribPointer(
                 vert_pos,
                 2,
-                VertexAttribType.Float,
+                GLEnum.Float,
                 false,
                 0,
                 IntPtr.Zero
             );
 
-            Gl.DrawArrays(PrimitiveType.TriangleStrip, 0, 4);
+
+            gl.DrawArrays(GLEnum.TriangleStrip, 0, 4);
             Glfw.SwapBuffers(window);
         }
 
-    	public void BitmapSetting(Bitmap bmp)
+    	public unsafe void BitmapSetting(Bitmap bmp)
     	{
     		Glfw.WindowHint(Hint.ClientApi, ClientApi.OpenGL);
     		Glfw.WindowHint(Hint.ContextVersionMajor, 3);
@@ -140,11 +166,11 @@ namespace _2DGAMELIB
     		GCHandle handle = GCHandle.Alloc(this);
     		Glfw.SetWindowUserPointer(window, GCHandle.ToIntPtr(handle));
 
-            Gl.Initialize();
-    		Glfw.MakeContextCurrent(window);
+            Glfw.MakeContextCurrent(window);
+            gl = Silk.NET.OpenGL.GL.GetApi(Glfw.GetProcAddress);
 
 
-    		string[] vertexShaderSource = {
+    		string vertexShaderSource =
     @"
 #version 100
 precision mediump float;
@@ -155,10 +181,9 @@ void main()
 {
     gl_Position = vec4(vertPos, 0.0, 1.0);
 }
-"
-            };
+";
 
-    		string[] fragmentShaderSource = {
+            string fragmentShaderSource =
     @"
 #version 100
 precision mediump float;
@@ -173,55 +198,46 @@ void main()
 
     gl_FragColor = texture2D(sTexture, tc);
 }
-"
-            };
+";
 
-            uint vertexShader = Gl.CreateShader(ShaderType.VertexShader);
-            Gl.ShaderSource(vertexShader, vertexShaderSource);
-            Gl.CompileShader(vertexShader);
+            uint vertexShader = gl.CreateShader(Silk.NET.OpenGL.GLEnum.VertexShader);
+            gl.ShaderSource(vertexShader, vertexShaderSource);
+            gl.CompileShader(vertexShader);
 
-            uint fragmentShader = Gl.CreateShader(ShaderType.FragmentShader);
-            Gl.ShaderSource(fragmentShader, fragmentShaderSource);
-            Gl.CompileShader(fragmentShader);
+            uint fragmentShader = gl.CreateShader(Silk.NET.OpenGL.GLEnum.FragmentShader);
+            gl.ShaderSource(fragmentShader, fragmentShaderSource);
+            gl.CompileShader(fragmentShader);
 
-            shader_program = Gl.CreateProgram();
-            Gl.AttachShader(shader_program, vertexShader);
-            Gl.AttachShader(shader_program, fragmentShader);
-            Gl.LinkProgram(shader_program);
+            shader_program = gl.CreateProgram();
+            gl.AttachShader(shader_program, vertexShader);
+            gl.AttachShader(shader_program, fragmentShader);
+            gl.LinkProgram(shader_program);
 
-            int length;
-            StringBuilder stringBuilder = new StringBuilder(10000);
-            Gl.GetShaderInfoLog(fragmentShader, 10000, out length, stringBuilder);
-    		System.Diagnostics.Debug.WriteLine(stringBuilder);
-    		stringBuilder.Clear();
-            Gl.GetShaderInfoLog(vertexShader, 10000, out length, stringBuilder);
-            System.Diagnostics.Debug.WriteLine(stringBuilder);
-            stringBuilder.Clear();
-            Gl.GetProgramInfoLog(shader_program, 10000, out length, stringBuilder);
-            System.Diagnostics.Debug.WriteLine(stringBuilder);
-    		stringBuilder.Clear();
+            
+            System.Diagnostics.Debug.WriteLine(gl.GetShaderInfoLog(fragmentShader));
+            System.Diagnostics.Debug.WriteLine(gl.GetShaderInfoLog(vertexShader));
+            System.Diagnostics.Debug.WriteLine(gl.GetProgramInfoLog(shader_program));
 
-            Gl.UseProgram(shader_program);
+            gl.UseProgram(shader_program);
+            gl.Uniform1(gl.GetUniformLocation(shader_program, "sTexture"), 0);
 
-            Gl.Uniform1(Gl.GetUniformLocation(shader_program, "sTexture"), 0);
+            texture = gl.GenTexture();
 
-
-            texture = Gl.GenTexture();
-
-            Gl.ActiveTexture(TextureUnit.Texture0);
-            Gl.BindTexture(TextureTarget.Texture2d, texture);
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS, TextureWrapMode.ClampToEdge);
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT, TextureWrapMode.ClampToEdge);
-    		Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter, TextureMagFilter.Nearest);
-    		Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter, TextureMagFilter.Nearest);
+            gl.ActiveTexture(Silk.NET.OpenGL.GLEnum.Texture0);
+            gl.BindTexture(Silk.NET.OpenGL.GLEnum.Texture2D, texture);
+            
+            gl.TexParameterI(Silk.NET.OpenGL.GLEnum.Texture2D, Silk.NET.OpenGL.GLEnum.TextureWrapS, new int[] {(int)TextureWrapMode.ClampToEdge});
+            gl.TexParameterI(Silk.NET.OpenGL.GLEnum.Texture2D, Silk.NET.OpenGL.GLEnum.TextureWrapT, new int[] {(int)TextureWrapMode.ClampToEdge});
+    		gl.TexParameterI(Silk.NET.OpenGL.GLEnum.Texture2D, Silk.NET.OpenGL.GLEnum.TextureMagFilter, new int[] {(int)TextureMagFilter.Nearest});
+    		gl.TexParameterI(Silk.NET.OpenGL.GLEnum.Texture2D, Silk.NET.OpenGL.GLEnum.TextureMinFilter, new int[] {(int)TextureMinFilter.Nearest});
 
 
             float[] buf = { 1.0f, 1.0f,  -1.0f, 1.0f,  1.0f, -1.0f,   -1.0f, -1.0f };
-            vertex_buf = Gl.GenBuffer();
-            Gl.BindBuffer(BufferTarget.ArrayBuffer, vertex_buf);
-            Gl.BufferData(BufferTarget.ArrayBuffer, (uint)(sizeof(float) * buf.Length), buf, BufferUsage.StaticDraw);
+            vertex_buf = gl.GenBuffer();
+            gl.BindBuffer(Silk.NET.OpenGL.GLEnum.ArrayBuffer, vertex_buf);
+            fixed (float* buf_ = buf) gl.BufferData(Silk.NET.OpenGL.GLEnum.ArrayBuffer, (uint)(sizeof(float) * buf.Length), buf_, Silk.NET.OpenGL.GLEnum.StaticDraw);
 
-    		vao = Gl.GenVertexArray();
+    		vao = gl.GenVertexArray();
         }
     }
 
@@ -320,7 +336,6 @@ void main()
 
     		gl_img.BitmapSetting(bmp);
         }
-
     }
     */
 }

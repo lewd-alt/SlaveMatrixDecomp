@@ -15,7 +15,7 @@ namespace _2DGAMELIB
 
     	//private System.Windows.Controls.Image hostedComponent1;
 
-    	private string ConfigPath = Directory.GetCurrentDirectory() + "\\Config.ini";
+    	private string ConfigPath = Path.Combine(Directory.GetCurrentDirectory(), "Config.ini");
 
     	private bool BigWindow;
 

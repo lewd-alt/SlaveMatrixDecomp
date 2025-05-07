@@ -934,17 +934,17 @@ namespace SlaveMatrix
     		IEnumerable<string> source = Directory.EnumerateFiles(SavePath);
     		return new string[10]
     		{
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\0： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\1： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\2： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\3： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\4： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\5： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\6： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\7： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\8： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(SavePath + "\\9： "))
-    		};
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "0： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "1： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "2： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "3： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "4： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "5： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "6： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "7： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "8： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(SavePath, "9： ")))
+            };
     	}
 
     	public static void GDSave(int i)
@@ -1066,31 +1066,31 @@ namespace SlaveMatrix
 
     	public static void Set喘ぎ()
     	{
-    		a = (from f in (PanPath + "\\a.txt").FromText().Split(',')
+    		a = (from f in Path.Combine(PanPath, "a.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		i = (from f in (PanPath + "\\i.txt").FromText().Split(',')
+    		i = (from f in Path.Combine(PanPath, "i.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		u = (from f in (PanPath + "\\u.txt").FromText().Split(',')
+    		u = (from f in Path.Combine(PanPath, "u.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		e = (from f in (PanPath + "\\e.txt").FromText().Split(',')
+    		e = (from f in Path.Combine(PanPath, "e.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		o = (from f in (PanPath + "\\o.txt").FromText().Split(',')
+    		o = (from f in Path.Combine(PanPath, "o.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		n = (from f in (PanPath + "\\n.txt").FromText().Split(',')
+    		n = (from f in Path.Combine(PanPath, "n.txt").FromText().Split(',')
     			select (from g in f.Split("\r\n")
     				where !string.IsNullOrWhiteSpace(g) && !g.StartsWith("//")
     				select g).ToArray()).ToArray();
-    		end = (from g in (PanPath + "\\end.txt").FromText().Split("\r\n")
+    		end = (from g in Path.Combine(PanPath, "end.txt").FromText().Split("\r\n")
     			where !g.StartsWith("//")
     			select g).ToArray();
     	}
@@ -1474,16 +1474,16 @@ namespace SlaveMatrix
     		ブーツ初期化 = default(ブーツ情報);
     		CurrentDirectory = Directory.GetCurrentDirectory();
     		GameData = new GameState();
-    		SavePath = CurrentDirectory + "\\save";
-    		ImiPath = CurrentDirectory + "\\text\\Basement\\Training\\Imitation.txt";
-    		PanPath = CurrentDirectory + "\\text\\Basement\\Training\\Pant";
+    		SavePath = Path.Combine(CurrentDirectory, "save");
+    		ImiPath = Path.Combine(CurrentDirectory, "text", "Basement", "Training", "Imitation.txt");
+    		PanPath = Path.Combine(CurrentDirectory, "text", "Basement", "Training", "Pant");
 
     		/*
     		po3 = new ParallelOptions
     		{
     			MaxDegreeOfParallelism = 3
     		};*/
-    		ConfigPath = CurrentDirectory + "\\Config.ini";
+    		ConfigPath = Path.Combine(CurrentDirectory, "Config.ini");
     		SimpleMating = false;
     		AutoSort = false;
     	}
@@ -1494,7 +1494,7 @@ namespace SlaveMatrix
     		{
     			GameData.Gen[j].Buf.Clear();
     		}
-    		string path = JsonSavePath + "\\" + i + "： " + GameData.GetSaveDateString().Replace("/", "_") + ".json";
+    		string path = Path.Combine(JsonSavePath, i + "： " + GameData.GetSaveDateString().Replace("/", "_") + ".json");
     		GameData.ToJson(path);
     		if (TranslateJson)
     		{
@@ -1504,26 +1504,26 @@ namespace SlaveMatrix
 
     	public static string[] JSDPaths()
     	{
-    		JsonSavePath = CurrentDirectory + "\\save\\json";
+    		JsonSavePath = Path.Combine(CurrentDirectory, "save", "json");
     		IEnumerable<string> source = Directory.EnumerateFiles(JsonSavePath);
     		return new string[10]
     		{
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\0： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\1： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\2： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\3： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\4： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\5： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\6： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\7： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\8： ")),
-    			source.FirstOrDefault((string e) => e.StartsWith(JsonSavePath + "\\9： "))
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "0： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "1： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "2： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "3： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "4： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "5： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "6： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "7： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "8： "))),
+    			source.FirstOrDefault((string e) => e.StartsWith(Path.Combine(JsonSavePath, "9： ")))
     		};
     	}
 
     	public static string Translate(string Path, int Mode)
     	{
-    		TranslateJsonFile = CurrentDirectory + "\\text\\Translate.json";
+    		TranslateJsonFile = System.IO.Path.Combine(CurrentDirectory, "text", "Translate.json");
     		TranslateDict = Ser.UnJson<Dictionary<string, string>>(TranslateJsonFile);
     		string input = File.ReadAllText(Path);
     		switch (Mode)
