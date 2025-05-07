@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 飛沫 : Ele
+namespace SlaveMatrix
 {
+    public class 飛沫 : Ele
+    {
+    }
 }

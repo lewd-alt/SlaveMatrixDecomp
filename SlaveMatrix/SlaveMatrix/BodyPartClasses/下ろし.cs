@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 下ろし : 後髪0
+namespace SlaveMatrix
 {
+    public class 下ろし : 後髪0
+    {
+    }
 }

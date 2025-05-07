@@ -1,38 +1,39 @@
 using System;
 using System.Diagnostics;
 
-namespace _2DGAMELIB;
-
-public class FPS
+namespace _2DGAMELIB
 {
-	public Stopwatch sw = new Stopwatch();
+    public class FPS
+    {
+    	public Stopwatch sw = new Stopwatch();
 
-	private long last_frame;
-	public double Value;
+    	private long last_frame;
+    	public double Value;
 
-	private int count;
+    	private int count;
 
-	private double ticks_per_frame;
-	public FPS(double FPS)
-	{
-		Value = FPS;
-		ticks_per_frame = (double)Stopwatch.Frequency / FPS;
-		sw.Start();
-		last_frame = sw.ElapsedTicks;
-	}
+    	private double ticks_per_frame;
+    	public FPS(double FPS)
+    	{
+    		Value = FPS;
+    		ticks_per_frame = (double)Stopwatch.Frequency / FPS;
+    		sw.Start();
+    		last_frame = sw.ElapsedTicks;
+    	}
 
-	public void FPSFixed(Action Action)
-	{
-		long current_time = sw.ElapsedTicks;
+    	public void FPSFixed(Action Action)
+    	{
+    		long current_time = sw.ElapsedTicks;
 
-		if (current_time - last_frame >= ticks_per_frame)
-		{
-			Action();
+    		if (current_time - last_frame >= ticks_per_frame)
+    		{
+    			Action();
 
-            Value = (9 * Value + ((double)Stopwatch.Frequency / (sw.ElapsedTicks - last_frame)))/10;
+                Value = (9 * Value + ((double)Stopwatch.Frequency / (sw.ElapsedTicks - last_frame)))/10;
 
-            last_frame = current_time;
-		}
+                last_frame = current_time;
+    		}
 
-	}
+    	}
+    }
 }

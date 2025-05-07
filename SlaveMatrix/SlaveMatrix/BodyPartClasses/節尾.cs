@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 節尾 : 節
+namespace SlaveMatrix
 {
+    public class 節尾 : 節
+    {
+    }
 }

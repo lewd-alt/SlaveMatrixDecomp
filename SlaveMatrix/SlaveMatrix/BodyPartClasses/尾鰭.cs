@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 尾鰭 : Ele
+namespace SlaveMatrix
 {
+    public class 尾鰭 : Ele
+    {
+    }
 }

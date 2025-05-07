@@ -1,80 +1,81 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace _2DGAMELIB;
-
-
-//Basically used to animate switching between two static images
-public class Sce
+namespace _2DGAMELIB
 {
-	private Bitmap Start;
 
-	private Graphics GS;
+    //Basically used to animate switching between two static images
+    public class Sce
+    {
+    	private Bitmap Start;
 
-	private Bitmap End;
+    	private Graphics GS;
 
-	private Graphics GE;
+    	private Bitmap End;
 
-	private int w;
+    	private Graphics GE;
 
-	private int h;
+    	private int w;
 
-	private int o;
+    	private int h;
 
-	private Rectangle r;
+    	private int o;
 
-	private ColorMatrix cm = new ColorMatrix();
+    	private Rectangle r;
 
-	private ImageAttributes ia = new ImageAttributes();
+    	private ColorMatrix cm = new ColorMatrix();
 
-	public Sce(int Width, int Height)
-	{
-		w = Width;
-		h = Height;
-		Start = new Bitmap(w, h);
-		GS = Graphics.FromImage(Start);
-		End = new Bitmap(w, h);
-		GE = Graphics.FromImage(End);
-		r = new Rectangle(0, 0, w, h);
-	}
+    	private ImageAttributes ia = new ImageAttributes();
 
-	public void TransformAlpha(Graphics Graphics, double Rate)
-	{
-		Graphics.DrawImage(Start, 0, 0);
-		cm.Matrix33 = (float)Rate;
-		ia.SetColorMatrix(cm);
-		Graphics.DrawImage(End, r, 0, 0, w, h, GraphicsUnit.Pixel, ia);
-	}
+    	public Sce(int Width, int Height)
+    	{
+    		w = Width;
+    		h = Height;
+    		Start = new Bitmap(w, h);
+    		GS = Graphics.FromImage(Start);
+    		End = new Bitmap(w, h);
+    		GE = Graphics.FromImage(End);
+    		r = new Rectangle(0, 0, w, h);
+    	}
 
-	public void TransD(Graphics Graphics, double Rate)
-	{
-		Graphics.DrawImage(End, 0, 0);
-		cm.Matrix33 = (float)Rate.Inverse();
-		ia.SetColorMatrix(cm);
-		Graphics.DrawImage(Start, r, 0, 0, w, h, GraphicsUnit.Pixel, ia);
-	}
+    	public void TransformAlpha(Graphics Graphics, double Rate)
+    	{
+    		Graphics.DrawImage(Start, 0, 0);
+    		cm.Matrix33 = (float)Rate;
+    		ia.SetColorMatrix(cm);
+    		Graphics.DrawImage(End, r, 0, 0, w, h, GraphicsUnit.Pixel, ia);
+    	}
 
-	public void DrawStart(Are Are)
-	{
-		Are.Draw(GS);
-	}
+    	public void TransD(Graphics Graphics, double Rate)
+    	{
+    		Graphics.DrawImage(End, 0, 0);
+    		cm.Matrix33 = (float)Rate.Inverse();
+    		ia.SetColorMatrix(cm);
+    		Graphics.DrawImage(Start, r, 0, 0, w, h, GraphicsUnit.Pixel, ia);
+    	}
 
-	public void DrawEnd(Are Are)
-	{
-		Are.Draw(GE);
-	}
+    	public void DrawStart(Are Are)
+    	{
+    		Are.Draw(GS);
+    	}
 
-	public void ClearStart(ref Color ClearColor)
-	{
-		GS.Clear(ClearColor);
-	}
+    	public void DrawEnd(Are Are)
+    	{
+    		Are.Draw(GE);
+    	}
 
-	public void Dispose()
-	{
-		Start.Dispose();
-		GS.Dispose();
-		End.Dispose();
-		GE.Dispose();
-		ia.Dispose();
-	}
+    	public void ClearStart(ref Color ClearColor)
+    	{
+    		GS.Clear(ClearColor);
+    	}
+
+    	public void Dispose()
+    	{
+    		Start.Dispose();
+    		GS.Dispose();
+    		End.Dispose();
+    		GE.Dispose();
+    		ia.Dispose();
+    	}
+    }
 }

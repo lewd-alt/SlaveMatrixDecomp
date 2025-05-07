@@ -1,8 +1,9 @@
-namespace SlaveMatrix;
-
-public enum UsageStatus
+namespace SlaveMatrix
 {
-	Standby,
-	InUse,
-	Attach
+    public enum UsageStatus
+    {
+    	Standby,
+    	InUse,
+    	Attach
+    }
 }

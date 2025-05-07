@@ -1,26 +1,27 @@
 using System;
 using System.Drawing;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public struct Color2
+namespace SlaveMatrix
 {
-	public Color Col1;
+    [Serializable]
+    public struct Color2
+    {
+    	public Color Col1;
 
-	public Color Col2;
+    	public Color Col2;
 
-	public static Color2 Empty = new Color2(ref Col.Empty, ref Col.Empty);
+    	public static Color2 Empty = new Color2(ref Col.Empty, ref Col.Empty);
 
-	public Color2(ref Color Col1, ref Color Col2)
-	{
-		this.Col1 = Col1;
-		this.Col2 = Col2;
-	}
+    	public Color2(ref Color Col1, ref Color Col2)
+    	{
+    		this.Col1 = Col1;
+    		this.Col2 = Col2;
+    	}
 
-	public void GetRep(out Color2 ret)
-	{
-		ret.Col1 = Col2;
-		ret.Col2 = Col1;
-	}
+    	public void GetRep(out Color2 ret)
+    	{
+    		ret.Col1 = Col2;
+    		ret.Col2 = Col1;
+    	}
+    }
 }

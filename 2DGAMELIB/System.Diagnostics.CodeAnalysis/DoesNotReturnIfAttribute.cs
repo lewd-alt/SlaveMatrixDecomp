@@ -1,12 +1,13 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Parameter)]
-internal class DoesNotReturnIfAttribute : Attribute
+namespace System.Diagnostics.CodeAnalysis
 {
-    public DoesNotReturnIfAttribute(bool parameterValue)
+    [AttributeUsage(AttributeTargets.Parameter)]
+    internal class DoesNotReturnIfAttribute : Attribute
     {
-        ParameterValue = parameterValue;
-    }
+        public DoesNotReturnIfAttribute(bool parameterValue)
+        {
+            ParameterValue = parameterValue;
+        }
 
-    public bool ParameterValue { get; }
+        public bool ParameterValue { get; }
+    }
 }

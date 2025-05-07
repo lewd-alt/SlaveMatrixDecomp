@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 手 : Ele
+namespace SlaveMatrix
 {
+    public class 手 : Ele
+    {
+    }
 }

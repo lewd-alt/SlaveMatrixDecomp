@@ -1,24 +1,25 @@
 using System;
 using _2DGAMELIB;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class 耳_長D : 耳D
+namespace SlaveMatrix
 {
-	public bool 耳_表示 = true;
+    [Serializable]
+    public class 耳_長D : 耳D
+    {
+    	public bool 耳_表示 = true;
 
-	public bool 耳線1_表示 = true;
+    	public bool 耳線1_表示 = true;
 
-	public bool 耳線2_表示 = true;
+    	public bool 耳線2_表示 = true;
 
-	public 耳_長D()
-	{
-		ThisType = GetType();
-	}
+    	public 耳_長D()
+    	{
+    		ThisType = GetType();
+    	}
 
-	public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
-	{
-		return new 耳_長(DisUnit, 配色指定, 体配色, Med, this);
-	}
+    	public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
+    	{
+    		return new 耳_長(DisUnit, 配色指定, 体配色, Med, this);
+    	}
+    }
 }

@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 染み : Ele
+namespace SlaveMatrix
 {
+    public class 染み : Ele
+    {
+    }
 }

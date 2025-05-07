@@ -1,12 +1,13 @@
-namespace System.Diagnostics.CodeAnalysis;
-
-[AttributeUsage(AttributeTargets.Parameter)]
-internal sealed class NotNullWhenAttribute : Attribute
+namespace System.Diagnostics.CodeAnalysis
 {
-    public NotNullWhenAttribute(bool returnValue)
+    [AttributeUsage(AttributeTargets.Parameter)]
+    internal sealed class NotNullWhenAttribute : Attribute
     {
-        ReturnValue = returnValue;
-    }
+        public NotNullWhenAttribute(bool returnValue)
+        {
+            ReturnValue = returnValue;
+        }
 
-    public bool ReturnValue { get; }
+        public bool ReturnValue { get; }
+    }
 }

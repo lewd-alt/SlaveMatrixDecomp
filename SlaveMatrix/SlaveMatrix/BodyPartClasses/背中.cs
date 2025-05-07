@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 背中 : Ele
+namespace SlaveMatrix
 {
+    public class 背中 : Ele
+    {
+    }
 }

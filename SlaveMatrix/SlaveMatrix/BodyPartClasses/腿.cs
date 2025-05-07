@@ -1,6 +1,7 @@
-namespace SlaveMatrix;
-
-public class 腿 : Ele
+namespace SlaveMatrix
 {
-	public Ele[] 脚_接続;
+    public class 腿 : Ele
+    {
+    	public Ele[] 脚_接続;
+    }
 }

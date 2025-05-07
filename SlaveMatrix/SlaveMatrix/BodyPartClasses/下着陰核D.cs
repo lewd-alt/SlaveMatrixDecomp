@@ -1,20 +1,21 @@
 using System;
 using _2DGAMELIB;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class 下着陰核D : EleD
+namespace SlaveMatrix
 {
-	public bool 陰核_表示 = true;
+    [Serializable]
+    public class 下着陰核D : EleD
+    {
+    	public bool 陰核_表示 = true;
 
-	public 下着陰核D()
-	{
-		ThisType = GetType();
-	}
+    	public 下着陰核D()
+    	{
+    		ThisType = GetType();
+    	}
 
-	public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
-	{
-		return new 下着陰核(DisUnit, 配色指定, 体配色, Med, this);
-	}
+    	public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
+    	{
+    		return new 下着陰核(DisUnit, 配色指定, 体配色, Med, this);
+    	}
+    }
 }

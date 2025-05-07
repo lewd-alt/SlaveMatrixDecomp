@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 触肢 : 節
+namespace SlaveMatrix
 {
+    public class 触肢 : 節
+    {
+    }
 }

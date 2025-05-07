@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 獣脚 : 脚
+namespace SlaveMatrix
 {
+    public class 獣脚 : 脚
+    {
+    }
 }

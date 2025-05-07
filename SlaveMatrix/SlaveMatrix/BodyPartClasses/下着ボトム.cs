@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 下着ボトム : Ele
+namespace SlaveMatrix
 {
+    public class 下着ボトム : Ele
+    {
+    }
 }

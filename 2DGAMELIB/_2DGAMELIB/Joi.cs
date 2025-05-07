@@ -1,31 +1,32 @@
 using System;
 using System.IO;
 
-namespace _2DGAMELIB;
-
-
-//its the position of a joint
-[Serializable]
-public class Joi
+namespace _2DGAMELIB
 {
-	public Vector2D Joint = Dat.Vec2DZero;
 
-	public Joi()
-	{
-	}
+    //its the position of a joint
+    [Serializable]
+    public class Joi
+    {
+    	public Vector2D Joint = Dat.Vec2DZero;
 
-	public Joi(Joi Joi)
-	{
-		Joint = Joi.Joint;
-	}
+    	public Joi()
+    	{
+    	}
 
-	public Joi(Vector2D Joint)
-	{
-		this.Joint = Joint;
-	}
+    	public Joi(Joi Joi)
+    	{
+    		Joint = Joi.Joint;
+    	}
 
-	public Joi(ref Vector2D Joint)
-	{
-		this.Joint = Joint;
-	}
+    	public Joi(Vector2D Joint)
+    	{
+    		this.Joint = Joint;
+    	}
+
+    	public Joi(ref Vector2D Joint)
+    	{
+    		this.Joint = Joint;
+    	}
+    }
 }

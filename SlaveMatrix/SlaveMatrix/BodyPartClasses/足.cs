@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 足 : Ele
+namespace SlaveMatrix
 {
+    public class 足 : Ele
+    {
+    }
 }

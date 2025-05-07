@@ -1,9 +1,10 @@
 using System;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class 双瞼D : EleD
+namespace SlaveMatrix
 {
-	public double 傾き;
+    [Serializable]
+    public class 双瞼D : EleD
+    {
+    	public double 傾き;
+    }
 }

@@ -1,52 +1,53 @@
 using System;
 using _2DGAMELIB;
 
-namespace SlaveMatrix;
-
-internal static class Program
+namespace SlaveMatrix
 {
-	public static bool biggerWindow;
+    internal static class Program
+    {
+    	public static bool biggerWindow;
 
-	[STAThread]
-	private static void Main(string[] A_0)
-	{
-		//Application.EnableVisualStyles();
-		//Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+    	[STAThread]
+    	private static void Main(string[] A_0)
+    	{
+    		//Application.EnableVisualStyles();
+    		//Application.SetCompatibleTextRenderingDefault(defaultValue: false);
 
-        Sta.LoadConfig();
+            Sta.LoadConfig();
 
-        double percent = 35.0;
-        if (Sta.BigWindow)
-        {
-            percent = 47.0;
-            biggerWindow = true;
-        }
+            double percent = 35.0;
+            if (Sta.BigWindow)
+            {
+                percent = 47.0;
+                biggerWindow = true;
+            }
 
-        Med med = new Med
-		{
-			UITitle = GameText.スレイブマトリクス,
-			Unit = Sta.HighQuality ? 2203.0 : 1101.5,
-			ShowFPS = Sta.ShowFPS,
-			Base = new Rect(4.0, 3.0, percent / 100.0),
-            DisQuality = 1.0,
-			HitAccuracy = 0.3
-        };
+            Med med = new Med
+    		{
+    			UITitle = GameText.スレイブマトリクス,
+    			Unit = Sta.HighQuality ? 2203.0 : 1101.5,
+    			ShowFPS = Sta.ShowFPS,
+    			Base = new Rect(4.0, 3.0, percent / 100.0),
+                DisQuality = 1.0,
+    			HitAccuracy = 0.3
+            };
 
-		med.InitializeModes("Start", Mods.GetMods);
+    		med.InitializeModes("Start", Mods.GetMods);
 
-		UI uI = new UI(med);
-		//uI.Text = GameText.スレイブマトリクス;
-		//uI.Show();
+    		UI uI = new UI(med);
+    		//uI.Text = GameText.スレイブマトリクス;
+    		//uI.Show();
 
-		//main loop
-		med.Drawing();
+    		//main loop
+    		med.Drawing();
 
 
-		if (Mods.t1 != null)
-		{
-			Mods.t1.Wait();
-		}
-		med.Dispose();
-		Sta.Disposes();
-	}
+    		if (Mods.t1 != null)
+    		{
+    			Mods.t1.Wait();
+    		}
+    		med.Dispose();
+    		Sta.Disposes();
+    	}
+    }
 }

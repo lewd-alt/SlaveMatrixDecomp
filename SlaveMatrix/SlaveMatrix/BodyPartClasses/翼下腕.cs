@@ -1,6 +1,7 @@
-namespace SlaveMatrix;
-
-public class 翼下腕 : 下腕
+namespace SlaveMatrix
 {
-	public virtual double 展開 { get; set; }
+    public class 翼下腕 : 下腕
+    {
+    	public virtual double 展開 { get; set; }
+    }
 }

@@ -1,17 +1,18 @@
 using _2DGAMELIB;
 
-namespace SlaveMatrix;
-
-public struct ContactD
+namespace SlaveMatrix
 {
-	public ContactType c;
+    public struct ContactD
+    {
+    	public ContactType c;
 
-	public Ele e;
+    	public Ele e;
 
-	public Par p;
+    	public Par p;
 
-	public override string ToString()
-	{
-		return ("接触:" + c).ToString() + "\r\n" + ("Ele:" + ((e == null) ? "null" : e.ToString())).ToString() + "\r\n" + ("Par:" + ((p == null) ? "null" : p.ToString())).ToString();
-	}
+    	public override string ToString()
+    	{
+    		return ("接触:" + c).ToString() + "\r\n" + ("Ele:" + ((e == null) ? "null" : e.ToString())).ToString() + "\r\n" + ("Par:" + ((p == null) ? "null" : p.ToString())).ToString();
+    	}
+    }
 }

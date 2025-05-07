@@ -1,6 +1,7 @@
-namespace SlaveMatrix;
-
-public class 上腕 : Ele
+namespace SlaveMatrix
 {
-	public Ele[] 下腕_接続;
+    public class 上腕 : Ele
+    {
+    	public Ele[] 下腕_接続;
+    }
 }

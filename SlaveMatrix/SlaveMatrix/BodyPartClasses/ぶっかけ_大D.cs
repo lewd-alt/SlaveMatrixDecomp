@@ -1,20 +1,21 @@
 using System;
 using _2DGAMELIB;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class ぶっかけ_大D : EleD
+namespace SlaveMatrix
 {
-	public bool 精液_表示 = true;
+    [Serializable]
+    public class ぶっかけ_大D : EleD
+    {
+    	public bool 精液_表示 = true;
 
-	public ぶっかけ_大D()
-	{
-		ThisType = GetType();
-	}
+    	public ぶっかけ_大D()
+    	{
+    		ThisType = GetType();
+    	}
 
-	public override Ele GetEle(double DisUnit, Med Med, 主人公配色 体配色)
-	{
-		return new ぶっかけ_大(DisUnit, 配色指定, 体配色, Med, this);
-	}
+    	public override Ele GetEle(double DisUnit, Med Med, 主人公配色 体配色)
+    	{
+    		return new ぶっかけ_大(DisUnit, 配色指定, 体配色, Med, this);
+    	}
+    }
 }

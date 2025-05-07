@@ -1,8 +1,9 @@
 using System;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class 上着ミドルD : EleD
+namespace SlaveMatrix
 {
+    [Serializable]
+    public class 上着ミドルD : EleD
+    {
+    }
 }

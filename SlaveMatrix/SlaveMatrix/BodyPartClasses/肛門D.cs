@@ -1,8 +1,9 @@
 using System;
 
-namespace SlaveMatrix;
-
-[Serializable]
-public class 肛門D : EleD
+namespace SlaveMatrix
 {
+    [Serializable]
+    public class 肛門D : EleD
+    {
+    }
 }

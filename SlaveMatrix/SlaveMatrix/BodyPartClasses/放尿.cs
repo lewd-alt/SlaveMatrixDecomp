@@ -1,5 +1,6 @@
-namespace SlaveMatrix;
-
-public class 放尿 : Ele
+namespace SlaveMatrix
 {
+    public class 放尿 : Ele
+    {
+    }
 }
