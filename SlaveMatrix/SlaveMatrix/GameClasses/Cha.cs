@@ -960,7 +960,7 @@ public class Cha
 				{
 					染み.Start();
 				}
-				Sounds.放尿.Play();
+				//Sounds.放尿.Play();
 			},
 			Runing = delegate(Mot m)
 			{
@@ -1976,11 +1976,11 @@ public class Cha
 			{
 				if (RNG.XS.NextBool())
 				{
-					Sounds.挿抜口1.Play();
+					//Sounds.挿抜口1.Play();
 				}
 				else
 				{
-					Sounds.挿抜口2.Play();
+					//Sounds.挿抜口2.Play();
 				}
 				ChaD.Stamina = (ChaD.Stamina + 0.3 * 中出度_).Clamp(0.0, 1.0);
 			}

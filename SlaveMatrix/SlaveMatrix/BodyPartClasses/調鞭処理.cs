@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -52,7 +51,7 @@ public class 調鞭処理 : 処理B
 		if (調教UI.Focus == 対象)
 		{
 			調教UI.放し();
-			v = _2DGAMELIB._Con.ToVector2D(Cursor.Position);
+			v = cp;
 			x = (o.X - v.X).Sign();
 			o = v;
 			対象.Ele.角度C = 0.0;
@@ -208,7 +207,8 @@ public class 調鞭処理 : 処理B
 				調鞭処理2.衝撃.表示 = true;
 				調鞭処理2.衝撃.角度C = 360.0 * RNG.XS.NextDouble();
 				調鞭処理2.衝撃.尺度C = 0.0;
-				Sounds.鞭撃.Play();
+				//TODO fix?
+				//Sounds.鞭撃.Play();
 			},
 			Runing = delegate(Mot m)
 			{

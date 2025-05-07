@@ -470,7 +470,7 @@ public static class Sta
 
 	public static string[] end;
 
-	public static ParallelOptions po3;
+	//public static ParallelOptions po3;
 
 	public static string ConfigPath;
 
@@ -1148,8 +1148,8 @@ public static class Sta
 		}
 		if (!PlayBGM)
 		{
-			Sounds.OPBGM = new SoundPlayer(CurrentDirectory + "\\bgm\\doesntexist", Loop: true);
-			Sounds.日常BGM = new SoundPlayer(CurrentDirectory + "\\bgm\\doesntexist2", Loop: true);
+			//Sounds.OPBGM = new SoundPlayer(CurrentDirectory + "\\bgm\\doesntexist", Loop: true);
+			//Sounds.日常BGM = new SoundPlayer(CurrentDirectory + "\\bgm\\doesntexist2", Loop: true);
 		}
 	}
 
@@ -1477,10 +1477,12 @@ public static class Sta
 		SavePath = CurrentDirectory + "\\save";
 		ImiPath = CurrentDirectory + "\\text\\Basement\\Training\\Imitation.txt";
 		PanPath = CurrentDirectory + "\\text\\Basement\\Training\\Pant";
+
+		/*
 		po3 = new ParallelOptions
 		{
 			MaxDegreeOfParallelism = 3
-		};
+		};*/
 		ConfigPath = CurrentDirectory + "\\Config.ini";
 		SimpleMating = false;
 		AutoSort = false;

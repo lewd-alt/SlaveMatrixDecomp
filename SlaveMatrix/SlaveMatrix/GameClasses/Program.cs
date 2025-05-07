@@ -1,5 +1,4 @@
 using System;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -11,8 +10,8 @@ internal static class Program
 	[STAThread]
 	private static void Main(string[] A_0)
 	{
-		Application.EnableVisualStyles();
-		Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+		//Application.EnableVisualStyles();
+		//Application.SetCompatibleTextRenderingDefault(defaultValue: false);
 
         Sta.LoadConfig();
 

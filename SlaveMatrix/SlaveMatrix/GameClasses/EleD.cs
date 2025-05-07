@@ -73,7 +73,9 @@ public class EleD
 
 	public double 濃度 = 1.0;
 
-	public Type ThisType;
+	//TODO figure out what this broke...
+    [NonSerialized]
+    public Type ThisType;
 
 	public virtual Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
 	{

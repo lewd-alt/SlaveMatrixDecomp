@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using _2DGAMELIB;
 using SlaveMatrix.Properties;
 
@@ -201,7 +200,8 @@ public static class Mods
 			}
 			else
 			{
-				Sounds.精算.Play();
+                //TODO fix?
+                //Sounds.精算.Play();
 				Sta.GameData.所持金 -= 10000000uL;
 				ip.UpdateSub2();
 
@@ -233,14 +233,16 @@ public static class Mods
 		parT2.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("タイトル", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+            //TODO fix?
+            //Sounds.操作.Play();
 			string tb = ((ip.TextIm == "") ? " " : ip.TextIm);
 			bool sb = ip.MaiShow;
 			ip.MaiShow = true;
 			ip.TextIm = GameText.タイトル画面に戻りますか;
 			ip.選択yAct = delegate
 			{
-				Sounds.操作.Play();
+                //TODO fix?
+                //Sounds.操作.Play();
 				Med.Mode = "Title";
 				Color HitColor4 = Col.Empty;
 				dbs.Move(ref HitColor4);
@@ -248,7 +250,8 @@ public static class Mods
 			};
 			ip.選択nAct = delegate
 			{
-				Sounds.操作.Play();
+                //TODO fix?
+                //Sounds.操作.Play();
 				ip.TextIm = tb;
 				ip.MaiShow = sb;
 				Color HitColor3 = Col.Empty;
@@ -278,7 +281,8 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("セーブ", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+            //TODO fix?
+            //Sounds.操作.Play();
 			SaveData.bs["0"].Dra = false;
 			save = true;
 			SetSLlv(Med);
@@ -309,7 +313,7 @@ public static class Mods
 		parT4.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("ロード", new But1(parT4, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SaveData.bs["0"].Dra = true;
 			save = false;
 			title = false;
@@ -562,7 +566,7 @@ public static class Mods
 			{
 				if (!processing)
 				{
-					Sounds.操作.Play();
+					//////Sounds.操作.Play();
 					if (save)
 					{
 						processing = true;
@@ -604,7 +608,7 @@ public static class Mods
 		SDShow = false;
 		ip.SubInfoIm = i + ": " + Sta.GameData.GetSaveDateString() + "\r\n" + GameText.セーブしました;
 		processing = false;
-		Med.InvokeL(Sounds.完了.Play);
+		//Med.InvokeL(Sounds.完了.Play);
 	}
 
 	private static void Load(string Path, int i, Med Med)
@@ -647,7 +651,7 @@ public static class Mods
 				Array.Copy(Sta.GameData.Slaves, array, Sta.GameData.Slaves.Length);
 				Sta.GameData.Slaves = array;
 			}
-			Med.InvokeL(Sounds.完了.Play);
+			//Med.InvokeL(Sounds.完了.Play);
 		});
 	}
 
@@ -810,7 +814,9 @@ public static class Mods
 	public static void 時進行()
 	{
 		Player.RecoverPlayerStamina();
-		Parallel.ForEach(Sta.GameData.Slaves, Sta.po3, delegate(Unit u)
+		//Parallel.ForEach(Sta.GameData.Slaves, Sta.po3, delegate(Unit u)
+
+		foreach(Unit u in Sta.GameData.Slaves)
 		{
 			if (u != null)
 			{
@@ -837,7 +843,7 @@ public static class Mods
 					u.RecoverStamina();
 				}
 			}
-		});
+		}
 	}
 
 	private static void 並列処理()
@@ -1151,7 +1157,7 @@ public static class Mods
 		ListView listView = new ListView(DrawBuffer, label.ParT.PositionBase.MulXY(1.015, 1.2), 0.25, new Font("MS Gothic", 1f), 0.09, Col.White, Col.Empty, Col.Empty, Col.Empty,
 			new TA("Start", delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				Sta.GameData.SetDefault();
 
 				Viola?.Dispose();
@@ -1165,7 +1171,7 @@ public static class Mods
 			}),
 			new TA("Load", delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				SaveData.bs["0"].Dra = true;
 				save = false;
 				title = true;
@@ -1193,8 +1199,8 @@ public static class Mods
                 v = 0.0;
                 b1 = true;
                 mv.ResetValue();
-                Sounds.日常BGM.Stop();
-                Sounds.OPBGM.Play();
+                //Sounds.日常BGM.Stop();
+                //Sounds.OPBGM.Play();
             },
             Down = delegate (MouseButtons mb, Vector2D cp, Color hc)
 			{
@@ -1320,7 +1326,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン1", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			Med.SwitchMode("Office", DrawBuffer, DrawOffice);
 		}));
 		ParT parT2 = new ParT();
@@ -1340,7 +1346,7 @@ public static class Mods
 		parT2.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン2", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			Med.SwitchMode("調教中継行", DrawBuffer, 中継描画);
 		}));
 		ParT parT3 = new ParT();
@@ -1360,7 +1366,7 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン3", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			Med.Mode = "対象";
 		}));
 		ParT parT4 = new ParT();
@@ -1380,7 +1386,7 @@ public static class Mods
 		parT4.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン4", new But1(parT4, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			si.Set(bre: true);
 			時間進行(Med);
 			ip.UpdateSub2();
@@ -1402,7 +1408,7 @@ public static class Mods
 		parT5.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン5", new But1(parT5, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			日付進行(Med);
 		}));
 		ParT parT6 = new ParT();
@@ -1422,7 +1428,7 @@ public static class Mods
 		parT6.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン6", new But1(parT6, delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			Med.Mode = "Blessing";
 		}));
 		ParT parT7 = new ParT();
@@ -1454,7 +1460,7 @@ public static class Mods
 			{
 				if (unit.Trained)
 				{
-					Sounds.変更3.Play();
+					//Sounds.変更3.Play();
 				}
 				else
 				{
@@ -1465,7 +1471,7 @@ public static class Mods
 			}
 			else
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				ip.SubInfoIm = GameText.他の奴隷がいません;
 			}
 		}));
@@ -1479,7 +1485,7 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right)
 					{
-						Sounds.操作.Play();
+						////Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -1603,8 +1609,8 @@ public static class Mods
 				si.Set(bre: false);
 				Color HitColor = Col.Empty;
 				ip.Up(ref HitColor);
-				Sounds.OPBGM.Stop();
-				Sounds.日常BGM.Play();
+				//Sounds.OPBGM.Stop();
+				//Sounds.日常BGM.Play();
 				npl.ParT.PositionBase = new Vector2D(Player.UI.ステート.Position.X, 0.026);
 			}
 		};
@@ -1652,7 +1658,7 @@ public static class Mods
 		Player.UI = new TrainingUI(Med, DrawBuffer, ip);
 		Player.UI.調教終了.Action = delegate
 		{
-			Sounds.操作.Play();
+			////Sounds.操作.Play();
 			Med.SwitchMode("調教中継帰", DrawBuffer, 中継描画);
 		};
 		bool 調教完了 = false;
@@ -1927,7 +1933,7 @@ public static class Mods
 					Sta.GameData.祝福 = Sta.GameData.TrainingTarget;
 					InfoPanel 情報パネル2 = ip;
 					情報パネル2.TextIm = 情報パネル2.TextIm + GameText.収容番号 + Sta.GameData.TrainingTarget.Number + "/" + Sta.GameData.TrainingTarget.Name + GameText.から祝福を受けました;
-					Sounds.祝福.Play();
+					//Sounds.祝福.Play();
 				}
 				Result3 = true;
 			}
@@ -2181,7 +2187,7 @@ public static class Mods
 			parT.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("ボタン0", new But1(parT, delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null && bs["子"].Pars.Values.First().ToParT().PenColor != Color.Red)
 				{
 					Set調教対象(Med, Sta.GameData.TrainingTarget);
@@ -2217,7 +2223,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					////Sounds.操作.Play();
 				}
 				bs縁色初期化();
 				b.Pars.Values.First().ToParT().PenColor = Color.Red;
@@ -2251,7 +2257,7 @@ public static class Mods
 			parT3.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("親形質1", new But1(parT3, delegate(But b)
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				bs縁色初期化();
 				b.Pars.Values.First().ToParT().PenColor = Color.Red;
 				if (Sta.GameData.TrainingTarget != null)
@@ -2309,7 +2315,7 @@ public static class Mods
 			parT4.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("親形質2", new But1(parT4, delegate(But b)
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				bs縁色初期化();
 				b.Pars.Values.First().ToParT().PenColor = Color.Red;
 				if (Sta.GameData.TrainingTarget != null)
@@ -2367,7 +2373,7 @@ public static class Mods
 			parT5.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("保守", new But1(parT5, delegate(But b)
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					保守sw.OnOff(b);
@@ -2393,7 +2399,7 @@ public static class Mods
 			parT6.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("一般労働", new But1(parT6, delegate(But b)
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					一般sw.OnOff(b);
@@ -2423,7 +2429,7 @@ public static class Mods
 			parT7.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("娼婦労働", new But1(parT7, delegate(But b)
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					娼婦sw.OnOff(b);
@@ -2453,7 +2459,7 @@ public static class Mods
 			parT8.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("全一般", new But1(parT8, delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					一般sw.SetFlag(bs["一般労働"], On: true);
@@ -2487,7 +2493,7 @@ public static class Mods
 			parT9.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("全娼婦", new But1(parT9, delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					一般sw.SetFlag(bs["一般労働"], On: false);
@@ -2521,7 +2527,7 @@ public static class Mods
 			parT10.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("全解除", new But1(parT10, delegate
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				if (Sta.GameData.TrainingTarget != null)
 				{
 					一般sw.SetFlag(bs["一般労働"], On: false);
@@ -2557,7 +2563,8 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+                    //TODO fix?
+                    ////Sounds.操作.Play();
 				}
 				ip.Mai2Im = Sta.GameData.TrainingTarget.GetPriceInfo();
 				ip.Mai2Show = true;
@@ -2571,7 +2578,7 @@ public static class Mods
 					bs.Move(ref HitColor4);
 					ulong price = Sta.GameData.TrainingTarget.GetPrice();
 					Sta.GameData.所持金 = Sta.GameData.所持金.加算(price);
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 					for (int m = 0; m < Sta.GameData.Slaves.Length; m++)
 					{
@@ -2603,7 +2610,7 @@ public static class Mods
 				};
 				ip.選択nAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Color HitColor3 = Col.Empty;
 					bs.Move(ref HitColor3);
 					ip.Mai2Show = false;
@@ -2637,7 +2644,7 @@ public static class Mods
 			parT12.StringFormat.LineAlignment = StringAlignment.Center;
 			bs.Add("全売却", new But1(parT12, delegate
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				string tb = ip.TextIm;
 				ip.Mai2Im = Sta.GameData.GetPriceInfo(out var p);
 				ip.Mai2Show = true;
@@ -2648,7 +2655,8 @@ public static class Mods
 					bs.Move(ref HitColor2);
 					ip.Mai2Show = false;
 					Sta.GameData.所持金 = Sta.GameData.所持金.加算(p);
-					Sounds.精算.Play();
+                    //TODO fix?
+                    ////Sounds.精算.Play();
 					ip.UpdateSub2();
 					for (int l = 0; l < Sta.GameData.Slaves.Length; l++)
 					{
@@ -2685,7 +2693,7 @@ public static class Mods
 				};
 				ip.選択nAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Color HitColor = Col.Empty;
 					bs.Move(ref HitColor);
 					ip.Mai2Show = false;
@@ -2737,7 +2745,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 0);
 				部屋選択();
@@ -2761,7 +2769,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 15);
 				部屋選択();
@@ -2785,7 +2793,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 30);
 				部屋選択();
@@ -2809,7 +2817,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 45);
 				部屋選択();
@@ -2833,7 +2841,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 60);
 				部屋選択();
@@ -2857,7 +2865,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 75);
 				部屋選択();
@@ -2881,7 +2889,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 90);
 				部屋選択();
@@ -2905,7 +2913,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 105);
 				部屋選択();
@@ -2929,7 +2937,7 @@ public static class Mods
 			{
 				if (d)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 				階層選択(b, f = 120);
 				部屋選択();
@@ -2953,13 +2961,14 @@ public static class Mods
 			{
 				if (Sta.GameData.所持金 < 胸施術価格)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					ip.SubInfoIm = GameText.所持金が足りません;
 				}
 				else
 				{
 					Sta.GameData.所持金 -= 胸施術価格;
-					Sounds.精算.Play();
+                    //TODO fix?
+                    ////Sounds.精算.Play();
 					ip.UpdateSub2();
 					Sta.GameData.TrainingTarget.ChaD.胸施術 = true;
 					TrainingTarget.Bod.胸施術();
@@ -3005,13 +3014,13 @@ public static class Mods
 			{
 				if (Sta.GameData.所持金 < 股施術価格)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					ip.SubInfoIm = GameText.所持金が足りません;
 				}
 				else
 				{
 					Sta.GameData.所持金 -= 股施術価格;
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 					Sta.GameData.TrainingTarget.ChaD.股施術 = true;
 					TrainingTarget.Bod.股施術();
@@ -3057,13 +3066,13 @@ public static class Mods
 			{
 				if (Sta.GameData.所持金 < 淫紋価格)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					ip.SubInfoIm = GameText.所持金が足りません;
 				}
 				else
 				{
 					Sta.GameData.所持金 -= 淫紋価格;
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 					Sta.GameData.TrainingTarget.ChaD.タトゥ = true;
 					TrainingTarget.Bod.タトゥ();
@@ -3110,13 +3119,15 @@ public static class Mods
 			{
 				if (Sta.GameData.所持金 < 衣装変更価格)
 				{
-					Sounds.操作.Play();
+                    //TODO fix?
+                    ////Sounds.操作.Play();
 					ip.SubInfoIm = GameText.所持金が足りません;
 				}
 				else
 				{
 					Sta.GameData.所持金 -= 衣装変更価格;
-					Sounds.精算.Play();
+                    //TODO fix?
+                    ////Sounds.精算.Play();
 					ip.UpdateSub2();
 					Sta.GameData.TrainingTarget.Change衣装();
 					TrainingTarget.Set衣装(Sta.GameData.TrainingTarget.着衣);
@@ -3151,7 +3162,8 @@ public static class Mods
 						SaveData.Down(ref hc);
 						if (mb == MouseButtons.Right && !processing)
 						{
-							Sounds.操作.Play();
+                            //TODO fix?
+                            //Sounds.操作.Play();
 							SDShow = false;
 							ip.Up(ref hc);
 							dbs.Move(ref hc);
@@ -3537,7 +3549,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン0", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "メインフォーム";
 		}));
 		Action<Buts> rs1 = delegate(Buts bs_)
@@ -3568,7 +3580,7 @@ public static class Mods
 		{
 			if (d)
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 			}
 			rs1(bs);
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
@@ -3623,7 +3635,7 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("親形質1", new But1(parT3, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			rs1(bs);
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			if (Sta.GameData.祝福 != null)
@@ -3677,7 +3689,7 @@ public static class Mods
 		parT4.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("親形質2", new But1(parT4, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			rs1(bs);
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			if (Sta.GameData.祝福 != null)
@@ -3731,7 +3743,8 @@ public static class Mods
 		parT5.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("祝福解除", new But1(parT5, delegate
 		{
-			Sounds.解除.Play();
+            //TODO fix?
+            //Sounds.解除.Play();
 			Sta.GameData.祝福 = null;
 			祝福なし();
 			ip.SubInfoIm = GameText.祝福を解除しました;
@@ -3757,7 +3770,7 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right && !processing)
 					{
-						Sounds.操作.Play();
+						//Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -3933,7 +3946,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン0", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			if (!時間進行(Med))
 			{
 				Med.SwitchMode("メインフォーム", DrawBuffer, メインフォーム描画);
@@ -3956,7 +3969,7 @@ public static class Mods
 		parT2.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン1", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "Debt";
 		}));
 		ParT parT3 = new ParT();
@@ -3976,7 +3989,7 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン2", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "SlaveShop";
 		}));
 		ParT parT4 = new ParT();
@@ -3996,7 +4009,7 @@ public static class Mods
 		parT4.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン3", new But1(parT4, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.SwitchMode("ViolaBlessing", DrawBuffer, 返済イベント描画);
 		}));
 		bs.SetHitColor(Med);
@@ -4009,7 +4022,7 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right && !processing)
 					{
-						Sounds.操作.Play();
+						//Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -4214,7 +4227,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン0", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "Office";
 		}));
 		ParT parT2 = new ParT();
@@ -4233,7 +4246,7 @@ public static class Mods
 		parT2.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("nc", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			ip.TextIm = "0";
 		}));
 		ParT parT3 = new ParT();
@@ -4252,7 +4265,7 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("nm", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			ip.TextIm = 9999999999999uL.ToString("#,0");
 		}));
 		Action<string> SetNum = delegate(string num)
@@ -4279,7 +4292,7 @@ public static class Mods
 		parT4.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n7", new But1(parT4, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("7");
 		}));
 		ParT parT5 = new ParT();
@@ -4298,7 +4311,7 @@ public static class Mods
 		parT5.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n8", new But1(parT5, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("8");
 		}));
 		ParT parT6 = new ParT();
@@ -4317,7 +4330,7 @@ public static class Mods
 		parT6.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n9", new But1(parT6, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("9");
 		}));
 		ParT parT7 = new ParT();
@@ -4336,7 +4349,7 @@ public static class Mods
 		parT7.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n4", new But1(parT7, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("4");
 		}));
 		ParT parT8 = new ParT();
@@ -4355,7 +4368,7 @@ public static class Mods
 		parT8.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n5", new But1(parT8, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("5");
 		}));
 		ParT parT9 = new ParT();
@@ -4374,7 +4387,7 @@ public static class Mods
 		parT9.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n6", new But1(parT9, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("6");
 		}));
 		ParT parT10 = new ParT();
@@ -4393,7 +4406,7 @@ public static class Mods
 		parT10.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n1", new But1(parT10, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("1");
 		}));
 		ParT parT11 = new ParT();
@@ -4412,7 +4425,7 @@ public static class Mods
 		parT11.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n2", new But1(parT11, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("2");
 		}));
 		ParT parT12 = new ParT();
@@ -4431,7 +4444,7 @@ public static class Mods
 		parT12.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n3", new But1(parT12, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("3");
 		}));
 		ParT parT13 = new ParT();
@@ -4450,7 +4463,7 @@ public static class Mods
 		parT13.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("n0", new But1(parT13, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SetNum("0");
 		}));
 		ParT parT14 = new ParT();
@@ -4484,18 +4497,18 @@ public static class Mods
 					Sta.GameData.借金 = Sta.GameData.借金.加算(num3);
 					bs["nr"].Dra = Sta.GameData.借金 != 0;
 					ip.TextIm = "0";
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 					ヴィオラ台詞.Set();
 				}
 				else
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 			}
 			else
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				ip.SubInfo = GameText.今日はこれ以上借りることが出来ません;
 			}
 		}));
@@ -4538,17 +4551,17 @@ public static class Mods
 					}
 					bs["nr"].Dra = Sta.GameData.借金 != 0;
 					ip.TextIm = "0";
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 				}
 				else
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 				}
 			}
 			else
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				ip.SubInfo = GameText.所持金がありません;
 			}
 		}));
@@ -4562,7 +4575,7 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right && !processing)
 					{
-						Sounds.操作.Play();
+						//Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -4734,7 +4747,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン0", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			if (Sta.GameData.初事務所フラグ)
 			{
 				Med.SwitchMode("初事務所", DrawBuffer, 初事務所描画);
@@ -4762,7 +4775,7 @@ public static class Mods
 		parT2.PenColor = Color.Red;
 		bs.Add("ボタン1", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "SlaveShop";
 		}));
 		ParT parT3 = new ParT();
@@ -4782,7 +4795,7 @@ public static class Mods
 		parT3.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン2", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "ToolShop";
 		}));
 		Color bs初期縁色 = Col.Black;
@@ -4814,7 +4827,7 @@ public static class Mods
 		{
 			if (d)
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 			}
 			d = true;
 			bs縁色初期化();
@@ -4837,7 +4850,7 @@ public static class Mods
 		parT5.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象1", new But1(parT5, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4858,7 +4871,7 @@ public static class Mods
 		parT6.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象2", new But1(parT6, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4879,7 +4892,7 @@ public static class Mods
 		parT7.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象3", new But1(parT7, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4900,7 +4913,7 @@ public static class Mods
 		parT8.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象4", new But1(parT8, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4921,7 +4934,7 @@ public static class Mods
 		parT9.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象5", new But1(parT9, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4942,7 +4955,7 @@ public static class Mods
 		parT10.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象6", new But1(parT10, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4963,7 +4976,7 @@ public static class Mods
 		parT11.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象7", new But1(parT11, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -4984,7 +4997,7 @@ public static class Mods
 		parT12.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象8", new But1(parT12, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -5005,7 +5018,7 @@ public static class Mods
 		parT13.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("対象9", new But1(parT13, delegate(But bu)
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			bs縁色初期化();
 			bu.Pars.Values.First().ToParT().PenColor = Color.Red;
 			Reload();
@@ -5167,7 +5180,7 @@ public static class Mods
 			}
 			else
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 			}
 			Reload();
 		}));
@@ -5190,24 +5203,28 @@ public static class Mods
 		{
 			if (Sta.GameData.Is地下室一杯())
 			{
-				Sounds.操作.Play();
+                //TODO fix?
+                //Sounds.操作.Play();
 				ip.SubInfoIm = GameText.これ以上奴隷を収容できません;
 			}
 			else if (u == null)
 			{
-				Sounds.操作.Play();
+                //TODO fix?
+                //Sounds.操作.Play();
 				ip.Mai.TextIm = GameText.売り切れです;
 			}
 			else if (Sta.GameData.所持金 < (買値 = (ulong)((double)u.GetPrice() * ((Sta.GameData.祝福 == Sta.GameData.ヴィオラ) ? 0.6 : 1.0))))
 			{
-				Sounds.操作.Play();
+                //TODO fix?
+                //Sounds.操作.Play();
 				ip.SubInfoIm = GameText.所持金が足りません;
 			}
 			else
 			{
 				u.Price = 買値;
 				Sta.GameData.所持金 -= 買値;
-				Sounds.精算.Play();
+                //TODO fix?
+                ////Sounds.精算.Play();
 				ip.UpdateSub2();
 				Sta.GameData.Add地下室(g.GetCharacter());
 				Reload();
@@ -5223,7 +5240,8 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right && !processing)
 					{
-						Sounds.操作.Play();
+                        //TODO fix?
+                        //Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -5427,7 +5445,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン0", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			if (Sta.GameData.初事務所フラグ)
 			{
 				Med.SwitchMode("初事務所", DrawBuffer, 初事務所描画);
@@ -5454,7 +5472,7 @@ public static class Mods
 		parT2.StringFormat.LineAlignment = StringAlignment.Center;
 		bs.Add("ボタン1", new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "SlaveShop";
 		}));
 		ParT parT3 = new ParT();
@@ -5475,7 +5493,7 @@ public static class Mods
 		parT3.PenColor = Color.Red;
 		bs.Add("ボタン2", new But1(parT3, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Med.Mode = "ToolShop";
 		}));
 		bs.SetHitColor(Med);
@@ -5487,7 +5505,7 @@ public static class Mods
 				but.Dra = false;
 				Sta.GameData.PurchasedTools[ind] = true;
 				Sta.GameData.所持金 -= pri;
-				Sounds.精算.Play();
+				//Sounds.精算.Play();
 				ip.UpdateSub2();
 				ip.TextIm = " ";
 				if (!lv.bs.EnumBut.Any((But e) => e.Dra))
@@ -5498,7 +5516,7 @@ public static class Mods
 			}
 			else
 			{
-				Sounds.操作.Play();
+				////Sounds.操作.Play();
 				ip.SubInfoIm = GameText.所持金が足りません;
 			}
 		};
@@ -5555,7 +5573,7 @@ public static class Mods
 					b.Dra = false;
 				}
 				Sta.GameData.所持金 -= num;
-				Sounds.精算.Play();
+				//Sounds.精算.Play();
 				ip.UpdateSub2();
 				ip.TextIm = " ";
 				if (!lv.bs.EnumBut.Any((But e) => e.Dra))
@@ -5566,7 +5584,7 @@ public static class Mods
 			}
 			else
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				ip.SubInfoIm = GameText.所持金が足りません;
 			}
 		}));
@@ -5591,7 +5609,7 @@ public static class Mods
 					SaveData.Down(ref hc);
 					if (mb == MouseButtons.Right && !processing)
 					{
-						Sounds.操作.Play();
+						//Sounds.操作.Play();
 						SDShow = false;
 						ip.Up(ref hc);
 						dbs.Move(ref hc);
@@ -5826,7 +5844,7 @@ public static class Mods
 					{
 						Sta.GameData.借金 = Sta.GameData.借金.加算(日利子額);
 					}
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					ip.UpdateSub2();
 				}
 				if (Sta.GameData.日数 >= 10)
@@ -5858,7 +5876,7 @@ public static class Mods
 				ip.Sub2Show = true;
 				while (dayp)
 				{
-					Application.DoEvents();
+					//Application.DoEvents();
 				}
 				ip.Mai2Im = (from e in 日終了ログa
 					where !string.IsNullOrWhiteSpace(e)
@@ -5926,7 +5944,7 @@ public static class Mods
 			Player.UI.ペニス.再配色(Sta.GameData.配色);
 			Player.UI.マウス.再配色(Sta.GameData.配色);
 			Sta.GameData.プレーヤー = Generator.プレーヤー();
-			Sounds.完了.Play();
+			//Sounds.完了.Play();
 			if (start)
 			{
 				start = false;
@@ -5977,57 +5995,57 @@ public static class Mods
 		ls.Add("ラベル13", DrawBuffer.GetPosition(new Vector2D(num2 + 0.19, num3 + num * 3.0 + 0.005)), 0.1, 1.0, new Font("MS Gothic", 1f), 0.085, GameText.体格, Col.White, Col.Black, ip.MaiB.BrushColor, Col.Black, Input: false);
 		ls.Add("ラベル14", DrawBuffer.GetPosition(new Vector2D(num2 + 0.19, num3 + num * 3.0 + 0.045)), 0.1, 1.0, new Font("MS Gothic", 1f), 0.085, "H:", Col.White, Col.Black, ip.MaiB.BrushColor, Col.Black, Input: false);
 		ls.Add("ラベル15", DrawBuffer.GetPosition(new Vector2D(num2 + 0.19, num3 + num * 3.0 + 0.086)), 0.1, 1.0, new Font("MS Gothic", 1f), 0.085, "W:", Col.White, Col.Black, ip.MaiB.BrushColor, Col.Black, Input: false);
-		Gau H肌 = new Gau("H肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau H肌 = new Gau("H肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		H肌.Gauge.PenColor = Col.White;
 		H肌.Frame1.PenColor = Col.White;
 		H肌.Knob.PenColor = Col.White;
 		H肌.Knob.HitColor = Med.GetUniqueColor();
-		Gau S肌 = new Gau("S肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau S肌 = new Gau("S肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		S肌.Gauge.PenColor = Col.White;
 		S肌.Frame1.PenColor = Col.White;
 		S肌.Knob.PenColor = Col.White;
 		S肌.Knob.HitColor = Med.GetUniqueColor();
-		Gau V肌 = new Gau("V肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau V肌 = new Gau("V肌", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 0.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		V肌.Gauge.PenColor = Col.White;
 		V肌.Frame1.PenColor = Col.White;
 		V肌.Knob.PenColor = Col.White;
 		V肌.Knob.HitColor = Med.GetUniqueColor();
-		Gau H髪 = new Gau("H髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau H髪 = new Gau("H髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		H髪.Gauge.PenColor = Col.White;
 		H髪.Frame1.PenColor = Col.White;
 		H髪.Knob.PenColor = Col.White;
 		H髪.Knob.HitColor = Med.GetUniqueColor();
-		Gau S髪 = new Gau("S髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau S髪 = new Gau("S髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		S髪.Gauge.PenColor = Col.White;
 		S髪.Frame1.PenColor = Col.White;
 		S髪.Knob.PenColor = Col.White;
 		S髪.Knob.HitColor = Med.GetUniqueColor();
-		Gau V髪 = new Gau("V髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau V髪 = new Gau("V髪", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 1.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		V髪.Gauge.PenColor = Col.White;
 		V髪.Frame1.PenColor = Col.White;
 		V髪.Knob.PenColor = Col.White;
 		V髪.Knob.HitColor = Med.GetUniqueColor();
-		Gau H瞳 = new Gau("H瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau H瞳 = new Gau("H瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		H瞳.Gauge.PenColor = Col.White;
 		H瞳.Frame1.PenColor = Col.White;
 		H瞳.Knob.PenColor = Col.White;
 		H瞳.Knob.HitColor = Med.GetUniqueColor();
-		Gau S瞳 = new Gau("S瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau S瞳 = new Gau("S瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		S瞳.Gauge.PenColor = Col.White;
 		S瞳.Frame1.PenColor = Col.White;
 		S瞳.Knob.PenColor = Col.White;
 		S瞳.Knob.HitColor = Med.GetUniqueColor();
-		Gau V瞳 = new Gau("V瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau V瞳 = new Gau("V瞳", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 2.0 + 0.14)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		V瞳.Gauge.PenColor = Col.White;
 		V瞳.Frame1.PenColor = Col.White;
 		V瞳.Knob.PenColor = Col.White;
 		V瞳.Knob.HitColor = Med.GetUniqueColor();
-		Gau 身長 = new Gau("身長", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 3.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau 身長 = new Gau("身長", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 3.0 + 0.06)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		身長.Gauge.PenColor = Col.White;
 		身長.Frame1.PenColor = Col.White;
 		身長.Knob.PenColor = Col.White;
 		身長.Knob.HitColor = Med.GetUniqueColor();
-		Gau 体重 = new Gau("体重", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 3.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
+		Gau 体重 = new Gau("体重", DrawBuffer.GetPosition(new Vector2D(num2 + 0.532, num3 + num * 3.0 + 0.1)), DrawBuffer.Size, 0.6, 0.03, 0.02, Open.Rig, _2DGAMELIB.Range.ZeroOne, DrawBuffer.DisUnit, Color.Transparent, Color.Transparent, Color.Transparent, Color.Transparent, Col.Black, Knob: true);
 		体重.Gauge.PenColor = Col.White;
 		体重.Frame1.PenColor = Col.White;
 		体重.Knob.PenColor = Col.White;
@@ -6314,7 +6332,7 @@ public static class Mods
 			ip.Mai2Show = false;
 			ip.SubShow = true;
 			ip.Sub2Show = true;
-			Sounds.OPBGM.Stop();
+			//Sounds.OPBGM.Stop();
 			i = 0;
 			wi = 0;
 			ip.Text = tsp[i];
@@ -6467,10 +6485,10 @@ public static class Mods
 			ip.SubInfo = GameText.安い額ではない;
 			ip.選択yAct = delegate
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				ヴィオラ吹出し.Tex.Done = delegate
 				{
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					Sta.GameData.借金 = 5000000000uL;
 					ip.UpdateSub2();
 				};
@@ -6491,10 +6509,10 @@ public static class Mods
 			};
 			ip.選択nAct = delegate
 			{
-				Sounds.操作.Play();
+				//Sounds.操作.Play();
 				ヴィオラ吹出し.Tex.Done = delegate
 				{
-					Sounds.精算.Play();
+					//Sounds.精算.Play();
 					Sta.GameData.借金 = 5000000000uL;
 					ip.UpdateSub2();
 				};
@@ -6575,7 +6593,7 @@ public static class Mods
 		mod.Setting = delegate
 		{
 			ip.Mai.Feed.Dra = false;
-			Sounds.日常BGM.Play();
+			//Sounds.日常BGM.Play();
 			Sta.GameData.ヴィオラ = new Unit();
 			Sta.GameData.ヴィオラ.SetViola(Med, DrawBuffer);
 			Viola = new Cha(Med, DrawBuffer, Sta.GameData.ヴィオラ.ChaD);
@@ -6871,7 +6889,7 @@ public static class Mods
 			{
 				ip.選択yAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Viola.表情_不敵0眉上();
 					ヴィオラ吹出し.Text = GameText.うふふそうよね;
 					ip.Text = GameText.点6;
@@ -6889,7 +6907,7 @@ public static class Mods
 				};
 				ip.選択nAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Viola.表情_困り顔1();
 					ヴィオラ吹出し.Text = GameText.嘘おっしゃい無いのは分かっているわ;
 					ip.Text = GameText.点6;
@@ -6915,7 +6933,7 @@ public static class Mods
 			{
 				ip.選択yAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					ip.Sub.Done = delegate
 					{
 						Viola.Bod.拘束具_表示 = false;
@@ -6925,7 +6943,7 @@ public static class Mods
 						Viola.SetSymmetry();
 						Viola.Bod.Update();
 						Viola.表情_不敵1();
-						Sounds.弾け.Play();
+						//Sounds.弾け.Play();
 						ip.Text = GameText.エクス2;
 						ip.SubInfo = GameText.あなたの鎖は弾け飛ぶ;
 						ヴィオラ吹出し.Text = GameText.あらあら今ので利子が上がってしまったわうふふ;
@@ -6940,7 +6958,7 @@ public static class Mods
 					Viola.SetSymmetry();
 					Viola.Bod.Update();
 					Viola.表情_素0眉上();
-					Sounds.変更1.Play();
+					//Sounds.変更1.Play();
 					ヴィオラ吹出し.Text = GameText.っ点3;
 					ip.Text = GameText.エクス1;
 					ip.SubInfo = GameText.鋼の鎖がヴィオラを縛る + "        ";
@@ -6957,7 +6975,7 @@ public static class Mods
 				};
 				ip.選択nAct = delegate
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Viola.表情_不敵0();
 					ヴィオラ吹出し.Text = GameText.点3うふふ + "\r\n" + GameText.慎重なのは良いことよ;
 					ip.Text = GameText.点6;
@@ -7436,7 +7454,7 @@ public static class Mods
 				ip.選択yAct = delegate
 				{
 					yes = true;
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Viola.表情_基本1眉上();
 					ヴィオラ吹出し.Text = GameText.え;
 					ip.Text = GameText.点6;
@@ -7455,7 +7473,7 @@ public static class Mods
 				ip.選択nAct = delegate
 				{
 					yes = false;
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					Viola.表情_不敵0();
 					ヴィオラ吹出し.Text = GameText.うふふそうよね;
 					ip.Text = GameText.点6;
@@ -7613,7 +7631,7 @@ public static class Mods
 			},
 			delegate
 			{
-				Sounds.祝福.Play();
+				//Sounds.祝福.Play();
 				Viola.表情_不敵0眉上();
 			}
 		};
@@ -7751,7 +7769,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("Senses", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			Sta.ShowSenses = !Sta.ShowSenses;
 		}));
 	}
@@ -7789,7 +7807,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("SaveJSON", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SaveData.bs["0"].Dra = false;
 			save = true;
 			SetJSLlv(med);
@@ -7833,7 +7851,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		dbs.Add("LoadJSON", new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			SaveData.bs["0"].Dra = true;
 			save = false;
 			title = false;
@@ -7876,7 +7894,7 @@ public static class Mods
 			{
 				if (!processing)
 				{
-					Sounds.操作.Play();
+					//Sounds.操作.Play();
 					if (save)
 					{
 						processing = true;
@@ -7906,7 +7924,7 @@ public static class Mods
 		SDShow = false;
 		ip.SubInfoIm = i + ": " + Sta.GameData.GetSaveDateString() + "\r\n" + GameText.セーブしました;
 		processing = false;
-		Sounds.完了.Play();
+		//Sounds.完了.Play();
 	}
 
 	private static void JsonLoad(string Path, int i, Med med)
@@ -7964,7 +7982,7 @@ public static class Mods
 			}
 			Sta.GameData.Gen = new Generator[9];
 			Sta.GameData.GenInstance();
-			Sounds.完了.Play();
+			//Sounds.完了.Play();
 		});
 	}
 
@@ -8115,7 +8133,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		return new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			MoveRoomDown();
 			mod.Setting();
 			if (Sta.AlwaysUseName)
@@ -8154,7 +8172,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		return new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			MoveRoomUp();
 			mod.Setting();
 			if (Sta.AlwaysUseName)
@@ -8193,7 +8211,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		return new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			MoveFloorDown();
 			mod.Setting();
 			if (Sta.AlwaysUseName)
@@ -8232,7 +8250,7 @@ public static class Mods
 		parT.StringFormat.LineAlignment = StringAlignment.Center;
 		return new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			MoveFloorUp();
 			mod.Setting();
 			if (Sta.AlwaysUseName)

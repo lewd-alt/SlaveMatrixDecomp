@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -401,10 +400,10 @@ public class 挿入処理 : 処理B
 			switch (RNG.XS.Next(2))
 			{
 			case 0:
-				Sounds.挿抜口1.Play();
+				//Sounds.挿抜口1.Play();
 				break;
 			case 1:
-				Sounds.挿抜口2.Play();
+				//Sounds.挿抜口2.Play();
 				break;
 			}
 		}
@@ -417,10 +416,10 @@ public class 挿入処理 : 処理B
 			switch (RNG.XS.Next(2))
 			{
 			case 0:
-				Sounds.挿抜前1.Play();
+				//Sounds.挿抜前1.Play();
 				break;
 			case 1:
-				Sounds.挿抜前2.Play();
+				//Sounds.挿抜前2.Play();
 				break;
 			}
 		}
@@ -433,16 +432,16 @@ public class 挿入処理 : 処理B
 			switch (Oth.GetRandomIndex(4.0, 4.0, 1.0, 1.0))
 			{
 			case 0:
-				Sounds.挿抜前3.Play();
+				//Sounds.挿抜前3.Play();
 				break;
 			case 1:
-				Sounds.挿抜前4.Play();
+				//Sounds.挿抜前4.Play();
 				break;
 			case 2:
-				Sounds.挿抜後1.Play();
+				//Sounds.挿抜後1.Play();
 				break;
 			case 3:
-				Sounds.挿抜後2.Play();
+				//Sounds.挿抜後2.Play();
 				break;
 			}
 		}
@@ -455,10 +454,10 @@ public class 挿入処理 : 処理B
 			switch (RNG.XS.Next(2))
 			{
 			case 0:
-				Sounds.挿抜糸1.Play();
+				//Sounds.挿抜糸1.Play();
 				break;
 			case 1:
-				Sounds.挿抜糸2.Play();
+				//Sounds.挿抜糸2.Play();
 				break;
 			}
 		}
@@ -616,7 +615,7 @@ public class 挿入処理 : 処理B
 	{
 		if (調教UI.SubFocus.Contains(this))
 		{
-			vr = _2DGAMELIB._Con.ToVector2D(Cursor.Position);
+			vr = cp;
 			xr = (or.X - vr.X) * -0.008;
 			yr = (or.Y - vr.Y) * -0.008;
 			if (挿入箇所 == ContactType.Vagina)
@@ -947,7 +946,10 @@ public class 挿入処理 : 処理B
 		{
 			return;
 		}
-		v = (挿抜モーション.Run ? cp : _2DGAMELIB._Con.ToVector2D(Cursor.Position));
+
+		//TODO fix?
+		//v = (挿抜モーション.Run ? cp : _2DGAMELIB._Con.ToVector2D(Cursor.Position));
+		v = cp;
 		if (調教UI.Focus == 対象 || 挿抜モーション.Run)
 		{
 			if (Isモード)

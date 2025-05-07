@@ -360,10 +360,14 @@ public class Generator
 		i = 0;
 		Buf.Clear();
 		Unit[] a = new Unit[Capacity];
+
+		for (int i = 0; i < Capacity; i++)
+			a[i] = g();
+		/*
 		Parallel.For(0, Capacity, Sta.po3, delegate(int i)
 		{
 			a[i] = g();
-		});
+		});*/
 		Buf.AddRange(a);
 	}
 
@@ -374,10 +378,13 @@ public class Generator
 		Buf.Clear();
 		Buf.Capacity = Capacity;
 		Unit[] a = new Unit[Capacity];
+		for (int i = 0; i < Capacity; i++)
+			a[i] = g();
+		/*
 		Parallel.For(0, Capacity, Sta.po3, delegate(int i)
 		{
 			a[i] = g();
-		});
+		});*/
 		Buf.AddRange(a);
 	}
 

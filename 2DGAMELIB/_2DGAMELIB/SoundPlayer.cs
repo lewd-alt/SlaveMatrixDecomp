@@ -1,11 +1,11 @@
 using System;
-using System.Windows.Media;
 
 namespace _2DGAMELIB;
 
 public class SoundPlayer
 {
-	public MediaPlayer mp = new MediaPlayer();
+	//Todo Fix
+	//public MediaPlayer mp = new MediaPlayer();
 
 	private bool l;
 
@@ -23,53 +23,36 @@ public class SoundPlayer
 			{
 				if (l != value)
 				{
-					mp.MediaEnded += loop;
+					//mp.MediaEnded += loop;
 				}
 			}
 			else if (l != value)
 			{
-				mp.MediaEnded -= loop;
+				//mp.MediaEnded -= loop;
 			}
 			l = value;
 		}
 	}
 
-	public SoundPlayer(string Path)
-	{
-		mp.Open(new Uri(Path));
-		mp.Volume = 1.0;
-	}
-
 	public SoundPlayer(string Path, bool Loop)
 	{
-		mp.Open(new Uri(Path));
+		//mp.Open(new Uri(Path));
 		this.Loop = Loop;
-		mp.Volume = 1.0;
-	}
-
-	private void loop(object s, EventArgs e)
-	{
-		mp.Position = ts;
-		mp.Play();
+		//mp.Volume = 1.0;
 	}
 
 	public void Play()
 	{
-		mp.Play();
+		//mp.Play();
 	}
 
 	public void Stop()
 	{
-		mp.Stop();
-	}
-
-	public void Pause()
-	{
-		mp.Pause();
+		//mp.Stop();
 	}
 
 	public void Close()
 	{
-		mp.Close();
+		//mp.Close();
 	}
 }

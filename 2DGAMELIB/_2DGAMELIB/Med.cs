@@ -3,10 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace _2DGAMELIB;
 
@@ -186,10 +183,10 @@ public class Med
                     arg2 = MouseButtons.Right;
                     break;
                 case GLFW.MouseButton.Button4:
-                    arg2 = MouseButtons.XButton1;
+                    arg2 = MouseButtons.Button4;
                     break;
                 case GLFW.MouseButton.Button5:
-                    arg2 = MouseButtons.XButton2;
+                    arg2 = MouseButtons.Button5;
                     break;
 			}
 
@@ -200,7 +197,7 @@ public class Med
 		BaseControl.Move = delegate (IntPtr window, double x, double y)
 		{
 			Point Position3 = new Point((int)x, (int)y);
-			Modes[mode].Move(Control.MouseButtons, ToBasePosition(Position3), GetHitColor(ref Position3));
+			Modes[mode].Move(BaseControl.GetMouseButtons(), ToBasePosition(Position3), GetHitColor(ref Position3));
 		};
 
 		BaseControl.Leave = delegate (IntPtr window, bool entered)
@@ -210,7 +207,7 @@ public class Med
 				double x, y;
 				Glfw.GetCursorPosition(GlImage.PtrToWindow(window), out x, out y);
 				Point Position2 = new Point((int)x, (int)y);
-				Modes[mode].Leave(Control.MouseButtons, ToBasePosition(Position2), GetHitColor(ref Position2));
+				Modes[mode].Leave(BaseControl.GetMouseButtons(), ToBasePosition(Position2), GetHitColor(ref Position2));
 			}
 		};
 
@@ -220,7 +217,7 @@ public class Med
             Glfw.GetCursorPosition(GlImage.PtrToWindow(window), out x, out y);
 			Point Position = new Point((int)x, (int)y);
 			//Note: yo may be inverted
-            Modes[mode].Wheel(Control.MouseButtons, ToBasePosition(Position), (int)yo, GetHitColor(ref Position));
+            Modes[mode].Wheel(BaseControl.GetMouseButtons(), ToBasePosition(Position), (int)yo, GetHitColor(ref Position));
         };
 
 		BaseControl.Resize = delegate (IntPtr window, int width, int height)
@@ -339,24 +336,13 @@ public class Med
 
 		while (Drive)
 		{
-			long frame_start = FPSF.sw.ElapsedMilliseconds;
-
 			FPSF.FPSFixed(action);
-
-            long frame_end = FPSF.sw.ElapsedMilliseconds;
 
             if (ShowFPS)
 			{
-				//TODO fix
-                //baseControl.Parent.Text = UITitle + " - FPS: " + System.Math.Round(FPSF.Value, 2);
+				baseControl.SetTitle(UITitle + " - FPS: " + System.Math.Round(FPSF.Value, 2));
 			}
-			Application.DoEvents();
 			baseControl.PollEvents();
-
-            long frame_update_end = FPSF.sw.ElapsedMilliseconds;
-
-			//System.Diagnostics.Debug.WriteLine("frame time: {0:D}", frame_end - frame_start);
-			//System.Diagnostics.Debug.WriteLine("event time: {0:D}", frame_update_end - frame_end);
 		}
 	}
 
@@ -375,7 +361,8 @@ public class Med
 	{
 		if (cur)
 		{
-			System.Windows.Forms.Cursor.Hide();
+			//TODO fix?
+			//System.Windows.Forms.Cursor.Hide();
 			cur = false;
 		}
 	}
@@ -383,9 +370,10 @@ public class Med
 	public void CursorShow()
 	{
 		if (!cur)
-		{
-			System.Windows.Forms.Cursor.Show();
-			cur = true;
+        {
+            //TODO fix?
+            //System.Windows.Forms.Cursor.Show();
+            cur = true;
 		}
 	}
 

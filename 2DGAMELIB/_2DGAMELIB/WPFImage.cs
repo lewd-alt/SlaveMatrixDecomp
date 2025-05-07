@@ -3,17 +3,19 @@ using OpenGL;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Forms.Integration;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace _2DGAMELIB;
+
+public enum MouseButtons { 
+	None = 0,
+	Left = 1,
+	Right = 2,
+	Middle = 4,
+	Button4 = 8,
+	Button5 = 16
+}
 
 public class GlImage
 {
@@ -45,6 +47,27 @@ public class GlImage
 		return new System.Drawing.Point((int)x, (int)y);
 	}
 
+	public MouseButtons GetMouseButtons() {
+		MouseButtons btns = 0;
+
+		if (Glfw.GetMouseButton(window, MouseButton.Left) == InputState.Press)
+			btns |= MouseButtons.Left;
+
+        if (Glfw.GetMouseButton(window, MouseButton.Right) == InputState.Press)
+            btns |= MouseButtons.Right;
+
+        if (Glfw.GetMouseButton(window, MouseButton.Middle) == InputState.Press)
+            btns |= MouseButtons.Middle;
+
+        if (Glfw.GetMouseButton(window, MouseButton.Button4) == InputState.Press)
+            btns |= MouseButtons.Button4;
+
+        if (Glfw.GetMouseButton(window, MouseButton.Button5) == InputState.Press)
+            btns |= MouseButtons.Button5;
+
+		return btns;
+    }
+
 	public delegate void ShouldCloseCallback();
 
 	public ShouldCloseCallback Closing = delegate () { };
@@ -53,6 +76,10 @@ public class GlImage
 	public SizeCallback Resize = delegate (IntPtr window, int width, int height) { };
 	public MouseCallback Scroll = delegate (IntPtr window, double x, double y) { };
 	public MouseEnterCallback Leave = delegate (IntPtr window, bool entered) { };
+
+	public void SetTitle(string title) {
+		Glfw.SetWindowTitle(window, title);
+	}
 
     public void PollEvents() {
 		Glfw.PollEvents();

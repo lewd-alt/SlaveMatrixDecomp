@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -224,7 +223,7 @@ public class ペニス処理 : 処理B
 		{
 			return;
 		}
-		v = _2DGAMELIB._Con.ToVector2D(Cursor.Position);
+		v = cp;
 		x = (o.X - v.X) * 0.008;
 		y = (o.Y - v.Y) * 0.008;
 		if (Isモード)
@@ -655,7 +654,7 @@ public class ペニス処理 : 処理B
 			BaseSpeed = 3.0,
 			Staing = delegate
 			{
-				Sounds.射精.Play();
+				//Sounds.射精.Play();
 				ペニス処理2.射精_();
 				if (外出し = !調教UI.ペニス挿入.Is挿入)
 				{

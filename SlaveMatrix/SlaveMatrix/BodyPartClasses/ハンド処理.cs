@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -404,7 +403,8 @@ public class ハンド処理 : 処理B
 		{
 			return;
 		}
-		v = _2DGAMELIB._Con.ToVector2D(Cursor.Position);
+
+		v = cp;
 		x = (o.X - v.X) * 0.008;
 		if (Isモード)
 		{

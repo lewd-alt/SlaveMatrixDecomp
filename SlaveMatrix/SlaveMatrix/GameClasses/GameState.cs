@@ -177,10 +177,14 @@ public class GameState
 	public void GenRefresh()
 	{
 		Refresh = true;
+		/*
 		Parallel.ForEach(Gen, Sta.po3, delegate(Generator g)
 		{
 			g.Refresh(3);
-		});
+		});*/
+
+		foreach (Generator g in Gen)
+			g.Refresh(3);
 		Refresh = false;
 	}
 

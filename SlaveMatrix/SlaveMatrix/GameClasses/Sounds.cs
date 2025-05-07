@@ -1,5 +1,4 @@
 using System.IO;
-using System.Media;
 using _2DGAMELIB;
 using SlaveMatrix.Properties;
 
@@ -7,55 +6,56 @@ namespace SlaveMatrix;
 
 public static class Sounds
 {
-	public static _2DGAMELIB.SoundPlayer 日常BGM = new _2DGAMELIB.SoundPlayer(Sta.CurrentDirectory + "\\bgm\\game_maoudamashii_5_town10.wav", Loop: true);
+	//TODO fix sound
+	//public static _2DGAMELIB.SoundPlayer 日常BGM = new _2DGAMELIB.SoundPlayer(Sta.CurrentDirectory + "\\bgm\\game_maoudamashii_5_town10.wav", Loop: true);
 
-	public static _2DGAMELIB.SoundPlayer OPBGM = new _2DGAMELIB.SoundPlayer(Sta.CurrentDirectory + "\\bgm\\bgm_maoudamashii_neorock60.wav", Loop: true);
+	//public static _2DGAMELIB.SoundPlayer OPBGM = new _2DGAMELIB.SoundPlayer(Sta.CurrentDirectory + "\\bgm\\bgm_maoudamashii_neorock60.wav", Loop: true);
 
-	public static System.Media.SoundPlayer 操作 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_system40));
+	//public static System.Media.SoundPlayer 操作 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_system40));
 
-	public static System.Media.SoundPlayer 精算 = new System.Media.SoundPlayer(new MemoryStream(Resources.tm2r_coin06));
+	//public static System.Media.SoundPlayer 精算 = new System.Media.SoundPlayer(new MemoryStream(Resources.tm2r_coin06));
 
-	public static System.Media.SoundPlayer 完了 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint12));
+	//public static System.Media.SoundPlayer 完了 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint12));
 
-	public static System.Media.SoundPlayer 鞭撃 = new System.Media.SoundPlayer(new MemoryStream(Resources.teasi_naguru_keru06));
+	//public static System.Media.SoundPlayer 鞭撃 = new System.Media.SoundPlayer(new MemoryStream(Resources.teasi_naguru_keru06));
 
-	public static System.Media.SoundPlayer 弾け = new System.Media.SoundPlayer(new MemoryStream(Resources.tm2r_crash25r));
+	//public static System.Media.SoundPlayer 弾け = new System.Media.SoundPlayer(new MemoryStream(Resources.tm2r_crash25r));
 
-	public static System.Media.SoundPlayer 撮影 = new System.Media.SoundPlayer(new MemoryStream(Resources.camera_shutter03));
+	//public static System.Media.SoundPlayer 撮影 = new System.Media.SoundPlayer(new MemoryStream(Resources.camera_shutter03));
 
-	public static System.Media.SoundPlayer 祝福 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint09));
+	//public static System.Media.SoundPlayer 祝福 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint09));
 
-	public static System.Media.SoundPlayer 解除 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint07));
+	//public static System.Media.SoundPlayer 解除 = new System.Media.SoundPlayer(new MemoryStream(Resources.se_maoudamashii_onepoint07));
 
-	public static System.Media.SoundPlayer 変更1 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder));
+	//public static System.Media.SoundPlayer 変更1 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder));
 
-	public static System.Media.SoundPlayer 変更2 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder_catchsuru));
+	//public static System.Media.SoundPlayer 変更2 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder_catchsuru));
 
-	public static System.Media.SoundPlayer 変更3 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder_nigiru));
+	//public static System.Media.SoundPlayer 変更3 = new System.Media.SoundPlayer(new MemoryStream(Resources.keyholder_nigiru));
 
-	public static System.Media.SoundPlayer 射精 = new System.Media.SoundPlayer(new MemoryStream(Resources.sei_ge_nukarumu01));
+	//public static System.Media.SoundPlayer 射精 = new System.Media.SoundPlayer(new MemoryStream(Resources.sei_ge_nukarumu01));
 
-	public static System.Media.SoundPlayer 放尿 = new System.Media.SoundPlayer(new MemoryStream(Resources.near_a_brook_ex));
+	//public static System.Media.SoundPlayer 放尿 = new System.Media.SoundPlayer(new MemoryStream(Resources.near_a_brook_ex));
 
-	public static System.Media.SoundPlayer 挿抜口1 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_goku01));
+	//public static System.Media.SoundPlayer 挿抜口1 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_goku01));
 
-	public static System.Media.SoundPlayer 挿抜口2 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_goku02));
+	//public static System.Media.SoundPlayer 挿抜口2 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_goku02));
 
-	public static System.Media.SoundPlayer 挿抜前1 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi1));
+	//public static System.Media.SoundPlayer 挿抜前1 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi1));
 
-	public static System.Media.SoundPlayer 挿抜前2 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi2));
+	//public static System.Media.SoundPlayer 挿抜前2 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi2));
 
-	public static System.Media.SoundPlayer 挿抜前3 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi3));
+	//public static System.Media.SoundPlayer 挿抜前3 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi3));
 
-	public static System.Media.SoundPlayer 挿抜前4 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi6));
+	//public static System.Media.SoundPlayer 挿抜前4 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi6));
 
-	public static System.Media.SoundPlayer 挿抜後1 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_onara01));
+	//public static System.Media.SoundPlayer 挿抜後1 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_onara01));
 
-	public static System.Media.SoundPlayer 挿抜後2 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_haramusi07));
+	//public static System.Media.SoundPlayer 挿抜後2 = new System.Media.SoundPlayer(new MemoryStream(Resources.hito_ge_haramusi07));
 
-	public static System.Media.SoundPlayer 挿抜糸1 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi4));
+	//public static System.Media.SoundPlayer 挿抜糸1 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi4));
 
-	public static System.Media.SoundPlayer 挿抜糸2 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi5));
+	//public static System.Media.SoundPlayer 挿抜糸2 = new System.Media.SoundPlayer(new MemoryStream(Resources.nukarumi5));
 
 	private static int o = -1;
 
@@ -71,19 +71,20 @@ public static class Sounds
 		switch (num)
 		{
 		case 0:
-			変更1.Play();
+			//変更1.Play();
 			break;
 		case 1:
-			変更2.Play();
+			//変更2.Play();
 			break;
 		case 2:
-			変更3.Play();
+			//変更3.Play();
 			break;
 		}
 	}
 
 	public static void Close()
 	{
+		/*
 		日常BGM.Stop();
 		日常BGM.Close();
 		OPBGM.Stop();
@@ -134,5 +135,6 @@ public static class Sounds
 		挿抜糸1.Dispose();
 		挿抜糸2.Stop();
 		挿抜糸2.Dispose();
+		*/
 	}
 }

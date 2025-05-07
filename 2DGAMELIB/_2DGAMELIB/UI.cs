@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace _2DGAMELIB;
 
@@ -14,7 +13,7 @@ public class UI //: Form
 
 	private GlImage wpfImage1;
 
-	private System.Windows.Controls.Image hostedComponent1;
+	//private System.Windows.Controls.Image hostedComponent1;
 
 	private string ConfigPath = Directory.GetCurrentDirectory() + "\\Config.ini";
 
@@ -54,7 +53,7 @@ public class UI //: Form
 		UI_Resize(null, null);
 	}
 
-	private void UI_FormClosing(object sender, FormClosingEventArgs e)
+	private void UI_FormClosing()
 	{
 		Med.Drive = false;
 	}
@@ -80,7 +79,7 @@ public class UI //: Form
 	{
 		System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_2DGAMELIB.UI));
 		this.wpfImage1 = new GlImage();
-		this.hostedComponent1 = new System.Windows.Controls.Image();
+		//this.hostedComponent1 = new System.Windows.Controls.Image();
 
 		//base.SuspendLayout();
 
@@ -109,7 +108,7 @@ public class UI //: Form
 		//base.FormClosing += new System.Windows.Forms.FormClosingEventHandler(UI_FormClosing);
 
 		//beauty
-		this.wpfImage1.Closing = delegate () { UI_FormClosing(null, null); };
+		this.wpfImage1.Closing = delegate () { UI_FormClosing(); };
 
 		//TODO fix?
 		//base.Load += new System.EventHandler(UI_Load);

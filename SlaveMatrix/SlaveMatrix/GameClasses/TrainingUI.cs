@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using _2DGAMELIB;
 
 namespace SlaveMatrix;
@@ -2277,11 +2276,11 @@ public class TrainingUI : Ele
 			{
 				if (調教UI2.拘束具sw.Flag)
 				{
-					Sounds.変更2.Play();
+					//Sounds.変更2.Play();
 				}
 				else
 				{
-					Sounds.変更1.Play();
+					//Sounds.変更1.Play();
 				}
 				調教UI2.拘束具sw.OnOff(a);
 				Sta.GameData.拘束具 = 調教UI2.拘束具sw.Flag;
@@ -2466,7 +2465,8 @@ public class TrainingUI : Ele
 				else
 				{
 					Sta.GameData.所持金 -= 調教UI2.媚薬投与価格;
-					Sounds.精算.Play();
+                    //TODO fix?
+                    //Sounds.精算.Play();
 					ip.UpdateSub2();
 					Sta.GameData.TrainingTarget.発情フラグ = true;
 					ip.SubInfoIm = GameText.媚薬を打ち込んだ;
@@ -2496,7 +2496,7 @@ public class TrainingUI : Ele
 			Film.Setting();
 			撮影 = new But1(parT7, delegate
 			{
-				Sounds.撮影.Play();
+				//Sounds.撮影.Play();
 				Med.フラッシュ();
 				if (!Directory.Exists(Path))
 				{
@@ -2529,7 +2529,7 @@ public class TrainingUI : Ele
 					{
 						ip.選択yAct = delegate
 						{
-							Sounds.操作.Play();
+							//Sounds.操作.Play();
 							Sta.GameData.TrainingTarget.ChaD.撮影ピース経験 = true;
 							調教UI2.Cha.Setダブルピース();
 							調教UI2.Cha.Bod.Update();
@@ -2538,7 +2538,7 @@ public class TrainingUI : Ele
 						};
 						ip.選択nAct = delegate
 						{
-							Sounds.操作.Play();
+							//Sounds.操作.Play();
 							ip.選択肢表示 = false;
 							ip.MaiShow = false;
 						};
@@ -2548,20 +2548,20 @@ public class TrainingUI : Ele
 				}
 			});
 			int alpha = 200;
-			体力sゲージ = new Gau("体力", Are.GetPosition(new Vector2D(0.025, 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(alpha, Color.Red), Color.Yellow, Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
+			体力sゲージ = new Gau("体力", Are.GetPosition(new Vector2D(0.025, 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(alpha, Color.Red), Color.Yellow, Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
 			体力sゲージ.Frame1.Pen = null;
-			絶頂sゲージ = new Gau("絶頂", Are.GetPosition(new Vector2D(0.060000000000000005, 0.5)), Are.Size, 0.01, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(alpha, Color.DeepPink), Col.White, Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.Transparent, Knob: false);
+			絶頂sゲージ = new Gau("絶頂", Are.GetPosition(new Vector2D(0.060000000000000005, 0.5)), Are.Size, 0.01, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(alpha, Color.DeepPink), Col.White, Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.Transparent, Knob: false);
 			絶頂sゲージ.Frame1.Pen = null;
 			絶頂sゲージ.Gauge.Pen = null;
-			興奮sゲージ = new Gau("興奮", Are.GetPosition(new Vector2D(0.060000000000000005, 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(180, Col.White), Color.FromArgb(180, Color.Red), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
+			興奮sゲージ = new Gau("興奮", Are.GetPosition(new Vector2D(0.060000000000000005, 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(180, Col.White), Color.FromArgb(180, Color.Red), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
 			興奮sゲージ.Frame1.Pen = null;
 			興奮sゲージ.Gauge.Pen = null;
-			精力mゲージ = new Gau("精力", Are.GetPosition(new Vector2D(0.025.Inverse(), 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(alpha, Col.Yellow.Add(180, 0, 0)), Col.Red.Add(180, 0, 0), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
+			精力mゲージ = new Gau("精力", Are.GetPosition(new Vector2D(0.025.Inverse(), 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(alpha, Col.Yellow.Add(180, 0, 0)), Col.Red.Add(180, 0, 0), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
 			精力mゲージ.Frame1.Pen = null;
-			射精mゲージ = new Gau("射精", Are.GetPosition(new Vector2D(0.060000000000000005.Inverse(), 0.5)), Are.Size, 0.01, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(alpha, Col.DeepPink.Add(180, 0, 0)), Col.White.Add(180, 0, 0), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.Transparent, Knob: false);
+			射精mゲージ = new Gau("射精", Are.GetPosition(new Vector2D(0.060000000000000005.Inverse(), 0.5)), Are.Size, 0.01, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(alpha, Col.DeepPink.Add(180, 0, 0)), Col.White.Add(180, 0, 0), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.Transparent, Knob: false);
 			射精mゲージ.Frame1.Pen = null;
 			射精mゲージ.Gauge.Pen = null;
-			興奮mゲージ = new Gau("興奮", Are.GetPosition(new Vector2D(0.060000000000000005.Inverse(), 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, Range.ZeroOne, disUnit, Color.FromArgb(180, Col.White), Color.FromArgb(180, Color.Red), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
+			興奮mゲージ = new Gau("興奮", Are.GetPosition(new Vector2D(0.060000000000000005.Inverse(), 0.5)), Are.Size, 0.025, Are.YRatio * 0.98, 0.02, Open.Top, _2DGAMELIB.Range.ZeroOne, disUnit, Color.FromArgb(180, Col.White), Color.FromArgb(180, Color.Red), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Color.Gray), Color.FromArgb(alpha, Col.Black), Knob: false);
 			興奮mゲージ.Frame1.Pen = null;
 			興奮mゲージ.Gauge.Pen = null;
 			Color c = Med.GetUniqueColor();
@@ -3166,7 +3166,7 @@ public class TrainingUI : Ele
 		parT.PositionBase = Are.GetPosition(x, y);
 		SlaveStamina = new But1(parT, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			ip.UpdateSub2();
 			Sta.GameData.TrainingTarget.ChaD.Stamina = 1.0;
 		});
@@ -3188,7 +3188,7 @@ public class TrainingUI : Ele
 		parT2.PositionBase = parT.PositionBase.AddY(0.015);
 		PlayerStamina = new But1(parT2, delegate
 		{
-			Sounds.操作.Play();
+			//Sounds.操作.Play();
 			ip.UpdateSub2();
 			Sta.GameData.精力 = 1.0;
 		});
