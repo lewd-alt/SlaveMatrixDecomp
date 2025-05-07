@@ -118,7 +118,8 @@ public class ハンド処理 : 処理B
 		調教UI.ハンド左.角度C = 0.0;
 		if (Med.Mode == "Training")
 		{
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+			//TODO fix?
+			//Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 		}
 		バスト初期化.Start();
 		if (調教UI.ハンド右.Xi == 5)
@@ -165,7 +166,8 @@ public class ハンド処理 : 処理B
 		調教UI.ハンド左.角度C = 0.0;
 		if (Med.Mode == "Training")
 		{
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+			//TODO fix?
+			//Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 		}
 		バスト初期化.Start();
 		if (調教UI.ハンド右.Xi == 2)
@@ -201,7 +203,8 @@ public class ハンド処理 : 処理B
 		調教UI.ハンド右.位置B = 位置B;
 		Addvl(ref 陰核位置);
 		核捏ね初 = true;
-		Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+        //TODO fix?
+        //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 		核捏ねsi2();
 	}
 
@@ -214,7 +217,8 @@ public class ハンド処理 : 処理B
 		Bod.ピアス.位置C = Dat.Vec2DZero;
 		if (Med.Mode == "Training")
 		{
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+            //TODO fix?
+            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 		}
 	}
 
@@ -256,7 +260,8 @@ public class ハンド処理 : 処理B
 		Isくぱぁ = false;
 		if (Med.Mode == "Training")
 		{
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+            //TODO fix?
+            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 		}
 		if (cd.c == ContactType.Crotch)
 		{

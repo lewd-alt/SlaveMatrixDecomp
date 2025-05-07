@@ -28,16 +28,22 @@ public class GlImage
         return __refvalue(destRef, GLFW.Window);
     }
 
-    private GLFW.Window window;
-	uint shader_program;
-	uint texture;
-	uint vertex_buf;
-	uint vao;
+    public GLFW.Window window;
+	private uint shader_program;
+	private uint texture;
+	private uint vertex_buf;
+	private uint vao;
 
 
     public GlImage() { }
 
     public void ImageSetting() { }
+
+	public System.Drawing.Point GetCursorPoint() {
+		double x, y;
+		Glfw.GetCursorPosition(window, out x, out y);
+		return new System.Drawing.Point((int)x, (int)y);
+	}
 
 	public delegate void ShouldCloseCallback();
 
@@ -192,6 +198,7 @@ void main()
     }
 }
 
+/*
 public class WPFImage : ElementHost
 {
 	public GlImage gl_img;
@@ -287,3 +294,4 @@ public class WPFImage : ElementHost
     }
 
 }
+*/

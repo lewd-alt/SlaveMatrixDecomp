@@ -89,7 +89,8 @@ public class マウス処理 : 処理B
 		{
 			if (Is吸付)
 			{
-				Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置));
+                //TODO fix?
+                //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置));
 			}
 			else if (Is舐め)
 			{

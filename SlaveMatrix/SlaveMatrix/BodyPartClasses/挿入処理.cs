@@ -972,7 +972,8 @@ public class 挿入処理 : 処理B
 							Player.主精力消費小();
 							口終了();
 							解除();
-							Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+                            //TODO fix?
+                            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 							待機時1();
 							if (調教UI.ペニス処理.フェラ.Run)
 							{
@@ -1013,7 +1014,8 @@ public class 挿入処理 : 処理B
 							Player.主精力消費小();
 							肛終了();
 							解除();
-							Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+                            //TODO fix?
+                            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 							待機時1();
 							if (調教UI.ペニス処理.中出し)
 							{
@@ -1044,7 +1046,8 @@ public class 挿入処理 : 処理B
 							Player.主精力消費小();
 							膣終了();
 							解除();
-							Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+                            //TODO fix?
+                            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 							待機時1();
 							if (調教UI.ペニス処理.中出し)
 							{
@@ -1075,7 +1078,8 @@ public class 挿入処理 : 処理B
 							Player.主精力消費小();
 							糸終了();
 							解除();
-							Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+                            //TODO fix?
+                            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 							待機時1();
 							if (調教UI.ペニス処理.中出し)
 							{
@@ -1362,7 +1366,8 @@ public class 挿入処理 : 処理B
 			else if (調教UI.Focus != 調教UI.ハンド右CM && !Isモード)
 			{
 				解除();
-				Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+                //TODO fix?
+                //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 				調教UI.通常放し();
 			}
 		}

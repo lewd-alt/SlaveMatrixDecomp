@@ -14,7 +14,7 @@ public class Med
 {
 	public static object obj;
 
-	private WPFImage baseControl;
+	private GlImage baseControl;
 
 	public double Unit = 1762.4;
 
@@ -84,9 +84,9 @@ public class Med
 
 	public bool ShowFPS;
 
-	public Control BaseControlC => baseControl;
+	//public Control BaseControlC => baseControl;
 
-	public WPFImage BaseControl => baseControl;
+	public GlImage BaseControl => baseControl;
 
 	public double ResMag => resMag;
 
@@ -109,7 +109,7 @@ public class Med
 		}
 	}
 
-	public Vector2D CursorPosition => ToBasePosition(baseControl.PointToClient(System.Windows.Forms.Cursor.Position));
+	public Vector2D CursorPosition => ToBasePosition(baseControl.GetCursorPoint()); //ToBasePosition(baseControl.PointToClient(System.Windows.Forms.Cursor.Position));
 
 	public Med()
 	{
@@ -151,7 +151,7 @@ public class Med
 		this.GetModes = GetModes;
 	}
 
-	public Size Setting(WPFImage BaseControl)
+	public Size Setting(GlImage BaseControl)
 	{
 		baseControl = BaseControl;
 		BaseSize = new Size((int)(Base.LocalWidth * Unit), (int)(Base.LocalHeight * Unit));
@@ -168,58 +168,7 @@ public class Med
 		Modes = GetModes(this);
 
 
-		BaseControl.Image.MouseDown += delegate(object s, System.Windows.Input.MouseButtonEventArgs e)
-		{
-			Point Position5 = baseControl.PointToClient(System.Windows.Forms.Cursor.Position);
-			MouseButtons arg2 = MouseButtons.None;
-			switch (e.ChangedButton)
-			{
-			case System.Windows.Input.MouseButton.Left:
-				arg2 = MouseButtons.Left;
-				break;
-			case System.Windows.Input.MouseButton.Middle:
-				arg2 = MouseButtons.Middle;
-				break;
-			case System.Windows.Input.MouseButton.Right:
-				arg2 = MouseButtons.Right;
-				break;
-			case System.Windows.Input.MouseButton.XButton1:
-				arg2 = MouseButtons.XButton1;
-				break;
-			case System.Windows.Input.MouseButton.XButton2:
-				arg2 = MouseButtons.XButton2;
-				break;
-			}
-			Modes[mode].Down(arg2, ToBasePosition(Position5), GetHitColor(ref Position5));
-		};
-
-        BaseControl.Image.MouseUp += delegate(object s, System.Windows.Input.MouseButtonEventArgs e)
-		{
-			Point Position4 = baseControl.PointToClient(System.Windows.Forms.Cursor.Position);
-			MouseButtons arg = MouseButtons.None;
-			switch (e.ChangedButton)
-			{
-			case System.Windows.Input.MouseButton.Left:
-				arg = MouseButtons.Left;
-				break;
-			case System.Windows.Input.MouseButton.Middle:
-				arg = MouseButtons.Middle;
-				break;
-			case System.Windows.Input.MouseButton.Right:
-				arg = MouseButtons.Right;
-				break;
-			case System.Windows.Input.MouseButton.XButton1:
-				arg = MouseButtons.XButton1;
-				break;
-			case System.Windows.Input.MouseButton.XButton2:
-				arg = MouseButtons.XButton2;
-				break;
-			}
-			Modes[mode].Up(arg, ToBasePosition(Position4), GetHitColor(ref Position4));
-		};
-
-
-        BaseControl.gl_img.Click = delegate (IntPtr window, GLFW.MouseButton button, InputState state, GLFW.ModifierKeys modifiers)
+        BaseControl.Click = delegate (IntPtr window, GLFW.MouseButton button, InputState state, GLFW.ModifierKeys modifiers)
         {
 			double x, y;
 			Glfw.GetCursorPosition(GlImage.PtrToWindow(window), out x, out y);
@@ -248,27 +197,13 @@ public class Med
 			(state == InputState.Press ? Modes[mode].Down : Modes[mode].Up)(arg2, ToBasePosition(Position5), GetHitColor(ref Position5));
 		};
 
-
-        BaseControl.Image.MouseMove += delegate
-		{
-			Point Position3 = baseControl.PointToClient(System.Windows.Forms.Cursor.Position);
-			Modes[mode].Move(Control.MouseButtons, ToBasePosition(Position3), GetHitColor(ref Position3));
-		};
-
-		BaseControl.gl_img.Move = delegate (IntPtr window, double x, double y)
+		BaseControl.Move = delegate (IntPtr window, double x, double y)
 		{
 			Point Position3 = new Point((int)x, (int)y);
 			Modes[mode].Move(Control.MouseButtons, ToBasePosition(Position3), GetHitColor(ref Position3));
 		};
 
-
-		BaseControl.Image.MouseLeave += delegate
-		{
-			Point Position2 = baseControl.PointToClient(System.Windows.Forms.Cursor.Position);
-			Modes[mode].Leave(Control.MouseButtons, ToBasePosition(Position2), GetHitColor(ref Position2));
-		};
-
-		BaseControl.gl_img.Leave = delegate (IntPtr window, bool entered)
+		BaseControl.Leave = delegate (IntPtr window, bool entered)
 		{
 			if (!entered)
 			{
@@ -279,13 +214,7 @@ public class Med
 			}
 		};
 
-		BaseControl.Image.MouseWheel += delegate(object s, MouseWheelEventArgs e)
-		{
-			Point Position = baseControl.PointToClient(System.Windows.Forms.Cursor.Position);
-			Modes[mode].Wheel(Control.MouseButtons, ToBasePosition(Position), e.Delta, GetHitColor(ref Position));
-		};
-
-		BaseControl.gl_img.Scroll = delegate (IntPtr window, double xo, double yo)
+		BaseControl.Scroll = delegate (IntPtr window, double xo, double yo)
 		{
             double x, y;
             Glfw.GetCursorPosition(GlImage.PtrToWindow(window), out x, out y);
@@ -294,44 +223,7 @@ public class Med
             Modes[mode].Wheel(Control.MouseButtons, ToBasePosition(Position), (int)yo, GetHitColor(ref Position));
         };
 
-
-		((Control)BaseControl).Resize += delegate
-		{
-			if (BaseSize.Width >= BaseSize.Height)
-			{
-				double num = (double)BaseSize.Width / (double)BaseSize.Height;
-				if ((double)baseControl.ClientSize.Width / (double)baseControl.ClientSize.Height <= num)
-				{
-					resMag = (double)BaseSize.Width / (double)baseControl.ClientSize.Width;
-					resVector.X = 0.0;
-					resVector.Y = ((double)baseControl.ClientSize.Height - (double)BaseSize.Height / resMag) * 0.5;
-				}
-				else
-				{
-					resMag = (double)BaseSize.Height / (double)baseControl.ClientSize.Height;
-					resVector.X = ((double)baseControl.ClientSize.Width - (double)BaseSize.Width / resMag) * 0.5;
-					resVector.Y = 0.0;
-				}
-			}
-			else
-			{
-				double num2 = (double)BaseSize.Height / (double)BaseSize.Width;
-				if ((double)baseControl.ClientSize.Height / (double)baseControl.ClientSize.Width <= num2)
-				{
-					resMag = (double)BaseSize.Height / (double)baseControl.ClientSize.Height;
-					resVector.X = ((double)baseControl.ClientSize.Width - (double)BaseSize.Width / resMag) * 0.5;
-					resVector.Y = 0.0;
-				}
-				else
-				{
-					resMag = (double)BaseSize.Width / (double)baseControl.ClientSize.Width;
-					resVector.X = 0.0;
-					resVector.Y = ((double)baseControl.ClientSize.Height - (double)BaseSize.Height / resMag) * 0.5;
-				}
-			}
-		};
-
-		BaseControl.gl_img.Resize = delegate (IntPtr window, int width, int height)
+		BaseControl.Resize = delegate (IntPtr window, int width, int height)
 		{
 			//TODO mess with viewport
             if (BaseSize.Width >= BaseSize.Height)
@@ -455,7 +347,8 @@ public class Med
 
             if (ShowFPS)
 			{
-                baseControl.Parent.Text = UITitle + " - FPS: " + System.Math.Round(FPSF.Value, 2);
+				//TODO fix
+                //baseControl.Parent.Text = UITitle + " - FPS: " + System.Math.Round(FPSF.Value, 2);
 			}
 			Application.DoEvents();
 			baseControl.PollEvents();
@@ -498,7 +391,9 @@ public class Med
 
 	public void InvokeL(Action a)
 	{
-		baseControl.Invoke(a);
+		//TODO this look right?
+		a();
+		//baseControl.Invoke(a);
 	}
 
 	public Color GetUniqueColor()

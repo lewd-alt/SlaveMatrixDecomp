@@ -1422,7 +1422,8 @@ public class TrainingUI : Ele
 		Focus = ハンド右CM;
 		if (Med.Mode == "Training")
 		{
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(ハンド右.位置B));
+            //TODO fix?
+            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(ハンド右.位置B));
 		}
 		Set持ち手();
 	}
@@ -1535,7 +1536,8 @@ public class TrainingUI : Ele
 		}
 		Focus.Ele.SetHitTrue();
 		Focus_nr = ハンド右CM;
-		Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(ハンド右.位置B));
+        //TODO fix?
+        //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(ハンド右.位置B));
 		Set持ち手();
 	}
 

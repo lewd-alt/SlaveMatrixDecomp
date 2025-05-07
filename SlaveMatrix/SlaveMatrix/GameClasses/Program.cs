@@ -36,8 +36,8 @@ internal static class Program
 		med.InitializeModes("Start", Mods.GetMods);
 
 		UI uI = new UI(med);
-		uI.Text = GameText.スレイブマトリクス;
-		uI.Show();
+		//uI.Text = GameText.スレイブマトリクス;
+		//uI.Show();
 
 		//main loop
 		med.Drawing();

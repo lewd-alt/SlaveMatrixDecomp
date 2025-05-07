@@ -30,7 +30,8 @@ public class Lab
 		}
 		set
 		{
-			if (!Med.BaseControl.Contains(tb))
+            //TODO fix?
+            //if (!Med.BaseControl.Contains(tb))
 			{
 				SetText(value);
 			}
@@ -82,7 +83,8 @@ public class Lab
 				{
 					if (e.KeyCode == Keys.Return)
 					{
-						this.Med.BaseControl.Controls.Remove(tb);
+                        //TODO fix?
+                        //this.Med.BaseControl.Controls.Remove(tb);
 						SetText(tb.Text);
 						e.SuppressKeyPress = true;
 					}
@@ -92,9 +94,10 @@ public class Lab
 			{
 				e.IsInputKey = true;
 			};
-			Med.BaseControl.Controls.Add(tb);
-			Med.BaseControl.Controls.Remove(tb);
-			((Control)Med.BaseControl).Resize += Lab_Resize;
+            //TODO fix?
+            //Med.BaseControl.Controls.Add(tb);
+			//Med.BaseControl.Controls.Remove(tb);
+			//((Control)Med.BaseControl).Resize += Lab_Resize;
 		}
 		Out[] array = new Out[1] { Shas.Get正方形() };
 		if (FramColor == Color.Empty || FramColor == Color.Transparent)
@@ -127,7 +130,8 @@ public class Lab
 
 	private void Lab_Resize(object sender, EventArgs e)
 	{
-		Med.BaseControl.Controls.Remove(tb);
+        //TODO fix?
+        //Med.BaseControl.Controls.Remove(tb);
 		SetText(tb.Text);
 	}
 
@@ -177,12 +181,13 @@ public class Lab
 
 	public bool Double(ref Color HitColor)
 	{
-		if (Input && parT.HitColor == HitColor && !Med.BaseControl.Controls.Contains(tb))
-		{
-			tb.Text = parT.Text;
+        //TODO fix?
+        //if (Input && parT.HitColor == HitColor && !Med.BaseControl.Controls.Contains(tb))
+        {
+            tb.Text = parT.Text;
 			parT.Text = "";
 			SetRectT();
-			Med.BaseControl.Controls.Add(tb);
+			//Med.BaseControl.Controls.Add(tb);
 			tb.SelectAll();
 			tb.Focus();
 			tb.BringToFront();
@@ -193,9 +198,10 @@ public class Lab
 
 	public void Click(ref Color HitColor)
 	{
-		if (Input && parT.HitColor != HitColor && Med.BaseControl.Controls.Contains(tb))
+        //TODO fix?
+        //if (Input && parT.HitColor != HitColor && Med.BaseControl.Controls.Contains(tb))
 		{
-			Med.BaseControl.Controls.Remove(tb);
+			//Med.BaseControl.Controls.Remove(tb);
 			SetText(tb.Text);
 		}
 	}
@@ -205,7 +211,8 @@ public class Lab
 		parT.Dispose();
 		if (Input)
 		{
-			((Control)Med.BaseControl).Resize -= Lab_Resize;
+            //TODO fix?
+            //((Control)Med.BaseControl).Resize -= Lab_Resize;
 		}
 		if (tb != null)
 		{

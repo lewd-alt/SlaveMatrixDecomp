@@ -484,7 +484,8 @@ public class ペニス処理 : 処理B
 			{
 				パイズリ.End();
 			}
-			Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
+            //TODO fix?
+            //Cursor.Position = Med.BaseControlC.PointToScreen(Med.FromBasePosition(対象.Ele.位置B));
 			調教UI.ハンド処理.バスト初期化.Start();
 			vc = Dat.Vec2DZero;
 			Bod.胸毛_人.位置C = vc;
