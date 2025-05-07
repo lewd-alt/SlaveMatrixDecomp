@@ -110,11 +110,11 @@ namespace _2DGAMELIB
 
     	public Med()
     	{
-    		Point dpi = GetDpi();
-    		dpiX = dpi.X;
-    		dpiY = dpi.Y;
-    		DpiX = 96.0 / dpiX;
-    		DpiY = 96.0 / dpiY;
+            //Point dpi = GetDpi();
+            //dpiX = dpi.X;
+            //dpiY = dpi.Y;
+            DpiX = 1.0; // 96.0 / dpiX;
+            DpiY = 1.0; // 96.0 / dpiY;
     	}
 
     	public void FadeIn(double Rate)
@@ -440,26 +440,27 @@ namespace _2DGAMELIB
     		Sce.Dispose();
     	}
 
-    	[DllImport("user32.dll")]
-    	private static extern bool SetProcessDPIAware();
+    	//[DllImport("user32.dll")]
+    	//private static extern bool SetProcessDPIAware();
 
-    	[DllImport("user32.dll")]
-    	private static extern IntPtr GetWindowDC(IntPtr hwnd);
+    	//[DllImport("user32.dll")]
+    	//private static extern IntPtr GetWindowDC(IntPtr hwnd);
 
-    	[DllImport("gdi32.dll")]
-    	private static extern int GetDeviceCaps(IntPtr hdc, int index);
+    	//[DllImport("gdi32.dll")]
+    	//private static extern int GetDeviceCaps(IntPtr hdc, int index);
 
-    	[DllImport("user32.dll")]
-    	private static extern int ReleaseDC(IntPtr hwnd, IntPtr hdc);
+    	//[DllImport("user32.dll")]
+    	//private static extern int ReleaseDC(IntPtr hwnd, IntPtr hdc);
 
+        /*
     	public static Point GetDpi()
     	{
-    		SetProcessDPIAware();
-    		IntPtr windowDC = GetWindowDC(IntPtr.Zero);
-    		Point result = new Point(GetDeviceCaps(windowDC, 88), GetDeviceCaps(windowDC, 90));
-    		ReleaseDC(IntPtr.Zero, windowDC);
-    		return result;
-    	}
+    		//SetProcessDPIAware();
+    		//IntPtr windowDC = GetWindowDC(IntPtr.Zero);
+    		//Point result = new Point(GetDeviceCaps(windowDC, 88), GetDeviceCaps(windowDC, 90));
+    		//ReleaseDC(IntPtr.Zero, windowDC);
+    		//return result;
+    	}*/
 
     	static Med()
     	{
