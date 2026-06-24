@@ -636,7 +636,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (!Cha.Body.目隠帯_表示)
+    			if (!Cha.Body.Blindfold_表示)
     			{
     				return 1.0;
     			}
@@ -648,7 +648,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (!Cha.Body.目隠帯_表示)
+    			if (!Cha.Body.Blindfold_表示)
     			{
     				return 1.0;
     			}
@@ -660,7 +660,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (!Cha.Body.玉口枷_表示)
+    			if (!Cha.Body.BallGag_表示)
     			{
     				return 1.0;
     			}
@@ -672,7 +672,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (!Cha.Body.玉口枷_表示)
+    			if (!Cha.Body.BallGag_表示)
     			{
     				return 1.0;
     			}
@@ -818,7 +818,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (奉仕1 && !Cha.Body.玉口枷_表示)
+    			if (奉仕1 && !Cha.Body.BallGag_表示)
     			{
     				return SkillL > 0.15 * GlobalState.GameData.TrainingTarget.MaxSkillL;
     			}
@@ -830,7 +830,7 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			if (!絶頂中 && 奉仕1 && !Cha.Body.玉口枷_表示 && SkillL > 0.5 * GlobalState.GameData.TrainingTarget.MaxSkillL)
+    			if (!絶頂中 && 奉仕1 && !Cha.Body.BallGag_表示 && SkillL > 0.5 * GlobalState.GameData.TrainingTarget.MaxSkillL)
     			{
     				return CurrentToolType == ToolType.Penis;
     			}
@@ -1291,7 +1291,7 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額目_上転();
+    				Cha.ForeheadEye_上転();
     			}
     		}
     		if (Rng.XS.NextBool())
@@ -1314,7 +1314,7 @@ namespace SlaveMatrix
     				}
     				if (Cha.Body.IsForeheadEye)
     				{
-    					Cha.額瞼_瞑();
+    					Cha.ForeheadEyelid_瞑();
     				}
     			}
     		}
@@ -1336,7 +1336,7 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額瞼_半1();
+    				Cha.ForeheadEyelid_半1();
     			}
     		}
     		if (手膣 && Stamina > 0.1 && Wetness > 0.6 && Tension == 0.0 && Lust > 0.7 && Affection > 0.7 && (Excitement * 0.05).Lot())
@@ -1347,11 +1347,11 @@ namespace SlaveMatrix
     		{
     			Cha.SquirtSmall.Start();
     		}
-    		if (Cha.Crying && Cha.Body.舌_表示 && (Cha.ClimaxIntensity * 0.0008).Lot())
+    		if (Cha.Crying && Cha.Body.Tounge_表示 && (Cha.ClimaxIntensity * 0.0008).Lot())
     		{
     			Cha.NoseDrip.Start();
     		}
-    		if ((Cha.Body.舌_表示 || Cha.Body.玉口枷_表示) && (Cha.ClimaxIntensity * 0.001).Lot())
+    		if ((Cha.Body.Tounge_表示 || Cha.Body.BallGag_表示) && (Cha.ClimaxIntensity * 0.001).Lot())
     		{
     			Cha.Drool.Start();
     		}
@@ -1427,13 +1427,13 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額目_見つめ();
+    				Cha.ForeheadEye_見つめ();
     			}
     		}
-    		if (!Cha.Body.玉口枷_表示 && !Cha.Body.舌_表示 && ((SkillL + Lust) * 0.05).Lot())
+    		if (!Cha.Body.BallGag_表示 && !Cha.Body.Tounge_表示 && ((SkillL + Lust) * 0.05).Lot())
     		{
     			Cha.口_開き();
-    			Cha.舌_出し();
+    			Cha.Tounge_出し();
     		}
     	}
 
@@ -1481,13 +1481,13 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額目_見つめ();
+    				Cha.ForeheadEye_見つめ();
     			}
     		}
-    		if (!Cha.Body.玉口枷_表示 && !Cha.Body.舌_表示 && ((SkillL + Lust) * 0.05).Lot())
+    		if (!Cha.Body.BallGag_表示 && !Cha.Body.Tounge_表示 && ((SkillL + Lust) * 0.05).Lot())
     		{
     			Cha.口_開き();
-    			Cha.舌_出し();
+    			Cha.Tounge_出し();
     		}
     	}
 
@@ -1554,7 +1554,7 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額瞼_瞑();
+    				Cha.ForeheadEyelid_瞑();
     			}
     		}
     		else
@@ -1575,7 +1575,7 @@ namespace SlaveMatrix
     			}
     			if (Cha.Body.IsForeheadEye)
     			{
-    				Cha.額瞼_半2();
+    				Cha.ForeheadEyelid_半2();
     			}
     		}
     	}
@@ -1822,7 +1822,7 @@ namespace SlaveMatrix
     		{
     			部位感度[CurrentContactType] = (部位感度[CurrentContactType] + 0.015 * 奴隷a * 調教力影響値 * 発情1_5w * 調教済1_1w).Clamp(0.0, 1.0);
     		}
-    		if (Cha.Body.玉口枷_表示 && 部位感度.ContainsKey(ContactType.Mouth))
+    		if (Cha.Body.BallGag_表示 && 部位感度.ContainsKey(ContactType.Mouth))
     		{
     			部位感度[ContactType.Mouth] = (部位感度[ContactType.Mouth] + 0.005 * 奴隷a * 調教力影響値 * 発情1_5w * 調教済1_1w).Clamp(0.0, 1.0);
     		}
@@ -1877,7 +1877,7 @@ namespace SlaveMatrix
     		{
     			部位感度[CurrentContactType] = (部位感度[CurrentContactType] + 0.03 * 奴隷a * 感度興奮差 * 調教力影響値 * 発情1_5w * 調教済1_1w * Rng.XS.NextDouble()).Clamp(0.0, 1.0);
     		}
-    		if (Cha.Body.玉口枷_表示 && 部位感度.ContainsKey(ContactType.Mouth))
+    		if (Cha.Body.BallGag_表示 && 部位感度.ContainsKey(ContactType.Mouth))
     		{
     			部位感度[ContactType.Mouth] = (部位感度[ContactType.Mouth] + 0.01 * 奴隷a * 調教力影響値 * 発情1_5w * 調教済1_1w).Clamp(0.0, 1.0);
     		}
@@ -2348,7 +2348,7 @@ namespace SlaveMatrix
     			GlobalState.GameData.TrainingTarget.Virgin = false;
     			UI.発音(Cha.Body.膣口位置.GetAreaPoint(0.04), GlobalState.処女喪失, Color.Red, 0.3, b: true);
     			Cha.Body.処女喪失 = true;
-    			if (Cha.Body.断面_表示)
+    			if (Cha.Body.XRay_表示)
     			{
     				Cha.Body.VaginalCumDrip.血液1_表示 = true;
     				Cha.Body.VaginalCumDrip.血液2_表示 = true;
@@ -2418,7 +2418,7 @@ namespace SlaveMatrix
     				}
     				if (Cha.Body.IsForeheadEye)
     				{
-    					Cha.額瞼_瞑();
+    					Cha.ForeheadEyelid_瞑();
     				}
     			}
     			else
@@ -2439,7 +2439,7 @@ namespace SlaveMatrix
     				}
     				if (Cha.Body.IsForeheadEye)
     				{
-    					Cha.額瞼_半2();
+    					Cha.ForeheadEyelid_半2();
     				}
     			}
     		}
@@ -2459,7 +2459,7 @@ namespace SlaveMatrix
     		{
     			Cha.Crying = false;
     		}
-    		if ((Cha.Body.玉口枷_表示 && Sensitivity.Lot()) || (CurrentActionType == ActionType.Insertion && CurrentContactType == ContactType.Mouth && Sensitivity > 0.5 && Excitement > 0.5 && Lust > 0.8 && Sensitivity.Lot() && ((CurrentToolType == ToolType.Hand && 手膣) || CurrentToolType == ToolType.Penis || CurrentToolType == ToolType.Dildo || CurrentToolType == ToolType.Vibrator || CurrentToolType == ToolType.Drill || CurrentToolType == ToolType.デンマ || CurrentToolType == ToolType.AnalVibrator)))
+    		if ((Cha.Body.BallGag_表示 && Sensitivity.Lot()) || (CurrentActionType == ActionType.Insertion && CurrentContactType == ContactType.Mouth && Sensitivity > 0.5 && Excitement > 0.5 && Lust > 0.8 && Sensitivity.Lot() && ((CurrentToolType == ToolType.Hand && 手膣) || CurrentToolType == ToolType.Penis || CurrentToolType == ToolType.Dildo || CurrentToolType == ToolType.Vibrator || CurrentToolType == ToolType.Drill || CurrentToolType == ToolType.デンマ || CurrentToolType == ToolType.AnalVibrator)))
     		{
     			Cha.Drool.Start();
     		}
@@ -2511,7 +2511,7 @@ namespace SlaveMatrix
     			string[][] n = GlobalState.n;
     			text = n[num][Rng.XS.Next(n[num].Length)];
     		}
-    		else if (Cha.Body.玉口枷_表示)
+    		else if (Cha.Body.BallGag_表示)
     		{
     			text = GlobalState.o[3][Rng.XS.Next(GlobalState.o[3].Length)];
     		}

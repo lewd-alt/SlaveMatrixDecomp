@@ -367,9 +367,9 @@ namespace SlaveMatrix
 
     	public static 髪留2情報 髪留2初期化;
 
-    	public static 玉口枷情報 玉口枷初期化;
+    	public static BallGagInformation 玉口枷初期化;
 
-    	public static 目隠帯情報 目隠帯初期化;
+    	public static BlindfoldInformation 目隠帯初期化;
 
     	public static 拘束具情報 拘束具初期化;
 
@@ -1325,18 +1325,18 @@ namespace SlaveMatrix
     		左右無し = new HashSet<ConnectionInfo>(new ConnectionInfo[67]
     		{
     			ConnectionInfo.none,
-    			ConnectionInfo.Head_基髪_接続,
-    			ConnectionInfo.Head_鼻_接続,
+    			ConnectionInfo.Head_BaseHair_接続,
+    			ConnectionInfo.Head_Nose_接続,
     			ConnectionInfo.Head_口_接続,
     			ConnectionInfo.Head_額_接続,
-    			ConnectionInfo.Head_鼻肌_接続,
-    			ConnectionInfo.Head_単眼目_接続,
-    			ConnectionInfo.Head_単眼眉_接続,
+    			ConnectionInfo.Head_NoseSkin_接続,
+    			ConnectionInfo.Head_MonoEye_接続,
+    			ConnectionInfo.Head_MonoEyebrow_接続,
     			ConnectionInfo.Head_大顎基_接続,
     			ConnectionInfo.Head_顔面_接続,
     			ConnectionInfo.Head_頭頂_接続,
-    			ConnectionInfo.基髪_前髪_接続,
-    			ConnectionInfo.基髪_後髪_接続,
+    			ConnectionInfo.BaseHair_FrontHair_接続,
+    			ConnectionInfo.BaseHair_後髪_接続,
     			ConnectionInfo.BackHair0_肢系_中央_接続,
     			ConnectionInfo.単目_瞼_接続,
     			ConnectionInfo.縦目_瞼_接続,
@@ -1349,22 +1349,22 @@ namespace SlaveMatrix
     			ConnectionInfo.Torso_肌_接続,
     			ConnectionInfo.Waist_Torso_接続,
     			ConnectionInfo.Waist_肌_接続,
-    			ConnectionInfo.Waist_膣基_接続,
-    			ConnectionInfo.Waist_肛門_接続,
+    			ConnectionInfo.Waist_VaginaOrigin_接続,
+    			ConnectionInfo.Waist_Anus_接続,
     			ConnectionInfo.Waist_尾_接続,
     			ConnectionInfo.Waist_半身_接続,
     			ConnectionInfo.Waist_上着_接続,
-    			ConnectionInfo.ボテ腹_人_腹板_接続,
-    			ConnectionInfo.ボテ腹_獣_腹板_接続,
-    			ConnectionInfo.肛門_人_肛門精液_接続,
-    			ConnectionInfo.肛門_獣_肛門精液_接続,
+    			ConnectionInfo.PregnantBelly_人_腹板_接続,
+    			ConnectionInfo.PregnantBelly_獣_腹板_接続,
+    			ConnectionInfo.Anus_人_肛門精液_接続,
+    			ConnectionInfo.Anus_獣_肛門精液_接続,
     			ConnectionInfo.性器_人_陰核_接続,
     			ConnectionInfo.性器_人_尿道_接続,
     			ConnectionInfo.性器_人_膣口_接続,
     			ConnectionInfo.性器_獣_陰核_接続,
     			ConnectionInfo.性器_獣_尿道_接続,
     			ConnectionInfo.性器_獣_膣口_接続,
-    			ConnectionInfo.上着ボトム_クロス_上着ボトム後_接続,
+    			ConnectionInfo.JacketBottom_クロス_JacketBottomRear_接続,
     			ConnectionInfo.頭頂_宇_頭部後_接続,
     			ConnectionInfo.尾_ヘ_尾先_接続,
     			ConnectionInfo.尾_ウ_尾先_接続,
@@ -1379,8 +1379,8 @@ namespace SlaveMatrix
     			ConnectionInfo.四足胸_背中_接続,
     			ConnectionInfo.四足胴_Waist_接続,
     			ConnectionInfo.四足胴_肌_接続,
-    			ConnectionInfo.四足腰_膣基_接続,
-    			ConnectionInfo.四足腰_肛門_接続,
+    			ConnectionInfo.四足腰_VaginaOrigin_接続,
+    			ConnectionInfo.四足腰_Anus_接続,
     			ConnectionInfo.四足腰_尾_接続,
     			ConnectionInfo.四足腰_半身_接続,
     			ConnectionInfo.四足腰_上着_接続,
@@ -1396,8 +1396,8 @@ namespace SlaveMatrix
     		bf = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
     		bfi = bf | BindingFlags.InvokeMethod;
     		髪留2初期化 = default(髪留2情報);
-    		玉口枷初期化 = default(玉口枷情報);
-    		目隠帯初期化 = default(目隠帯情報);
+    		玉口枷初期化 = default(BallGagInformation);
+    		目隠帯初期化 = default(BlindfoldInformation);
     		拘束具初期化 = default(拘束具情報);
     		ピアス初期化 = default(ピアス情報);
     		キャップ初期化 = default(キャップ情報);

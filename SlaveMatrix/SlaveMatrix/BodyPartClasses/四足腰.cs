@@ -626,9 +626,9 @@ namespace SlaveMatrix
 
     	public Element[] 腿右_接続;
 
-    	public Element[] 膣基_接続;
+    	public Element[] VaginaOrigin_接続;
 
-    	public Element[] 肛門_接続;
+    	public Element[] Anus_接続;
 
     	public Element[] 尾_接続;
 
@@ -1373,9 +1373,9 @@ namespace SlaveMatrix
 
     	public JointS 腿右_接続点 => new JointS(Body, X0Y0_Waist, 1);
 
-    	public JointS 膣基_接続点 => new JointS(Body, X0Y0_Waist, 3);
+    	public JointS VaginaOrigin_接続点 => new JointS(Body, X0Y0_Waist, 3);
 
-    	public JointS 肛門_接続点 => new JointS(Body, X0Y0_Waist, 4);
+    	public JointS Anus_接続点 => new JointS(Body, X0Y0_Waist, 4);
 
     	public JointS 尾_接続点 => new JointS(Body, X0Y0_Waist, 4);
 
@@ -1666,25 +1666,25 @@ namespace SlaveMatrix
     				return f;
     			}).ToArray();
     		}
-    		if (e.膣基_接続.Count > 0)
+    		if (e.VaginaOrigin_接続.Count > 0)
     		{
-    			膣基_接続 = e.膣基_接続.Select(delegate(ElementData g)
+    			VaginaOrigin_接続 = e.VaginaOrigin_接続.Select(delegate(ElementData g)
     			{
     				f = g.GetEle(DisUnit, Med, 体配色);
     				f.Par = 四足腰2;
-    				f.ConnectionType = ConnectionInfo.四足腰_膣基_接続;
-    				f.接続(四足腰2.膣基_接続点);
+    				f.ConnectionType = ConnectionInfo.四足腰_VaginaOrigin_接続;
+    				f.接続(四足腰2.VaginaOrigin_接続点);
     				return f;
     			}).ToArray();
     		}
-    		if (e.肛門_接続.Count > 0)
+    		if (e.Anus_接続.Count > 0)
     		{
-    			肛門_接続 = e.肛門_接続.Select(delegate(ElementData g)
+    			Anus_接続 = e.Anus_接続.Select(delegate(ElementData g)
     			{
     				f = g.GetEle(DisUnit, Med, 体配色);
     				f.Par = 四足腰2;
-    				f.ConnectionType = ConnectionInfo.四足腰_肛門_接続;
-    				f.接続(四足腰2.肛門_接続点);
+    				f.ConnectionType = ConnectionInfo.四足腰_Anus_接続;
+    				f.接続(四足腰2.Anus_接続点);
     				return f;
     			}).ToArray();
     		}

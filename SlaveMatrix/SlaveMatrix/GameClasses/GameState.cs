@@ -65,11 +65,11 @@ namespace SlaveMatrix
 
     	public bool 拘束具;
 
-    	public bool 目隠帯;
+    	public bool Blindfold;
 
-    	public bool 玉口枷;
+    	public bool BallGag;
 
-    	public bool 断面;
+    	public bool XRay;
 
     	public bool ガイド = true;
 
@@ -265,9 +265,9 @@ namespace SlaveMatrix
 
     		フロア数 = 1;
     		拘束具 = false;
-    		目隠帯 = false;
-    		玉口枷 = false;
-    		断面 = false;
+    		Blindfold = false;
+    		BallGag = false;
+    		XRay = false;
     		ガイド = true;
     		心眼 = false;
     		媚薬 = false;

@@ -14,34 +14,34 @@ namespace SlaveMatrix.GameClasses
         public static HeadD Get頭R()
         {
             HeadD obj = Uni.頭().SetRandom();
-            基髪D 基髪D2 = (基髪D)obj.基髪_接続[0];
+            BaseHairD BaseHairD2 = (BaseHairD)obj.BaseHair_接続[0];
             ElementData elementData = Get後髪0R();
-            基髪D2.後髪接続(elementData);
+            BaseHairD2.後髪接続(elementData);
             if ((elementData is BackHair0_ジグD || elementData is BackHair0_ハネD || elementData is BackHair0_パツD || elementData is BackHair0_カルD || elementData is BackHair0_肢系D) && Rng.XS.NextBool())
             {
-                基髪D2.後髪接続(Get後髪1R());
+                BaseHairD2.後髪接続(Get後髪1R());
             }
             elementData = Get横髪R(右: false);
-            基髪D2.横髪左接続(elementData);
-            基髪D2.横髪右接続(elementData.Get逆());
-            基髪D2.前髪接続(Get前髪R());
+            BaseHairD2.横髪左接続(elementData);
+            BaseHairD2.横髪右接続(elementData.Get逆());
+            BaseHairD2.前髪接続(GetFrontHairR());
             return obj;
         }
 
         public static HeadD Get頭R1()
         {
             HeadD obj = Uni.頭().SetRandom();
-            基髪D 基髪D2 = (基髪D)obj.基髪_接続[0];
+            BaseHairD BaseHairD2 = (BaseHairD)obj.BaseHair_接続[0];
             ElementData elementData = Get後髪0R();
-            基髪D2.後髪接続(elementData);
+            BaseHairD2.後髪接続(elementData);
             if ((elementData is BackHair0_ジグD || elementData is BackHair0_ハネD || elementData is BackHair0_パツD || elementData is BackHair0_カルD || elementData is BackHair0_肢系D) && Rng.XS.NextBool())
             {
-                基髪D2.後髪接続(Get後髪1R());
+                BaseHairD2.後髪接続(Get後髪1R());
             }
             elementData = Get横髪R(右: false);
-            基髪D2.横髪左接続(elementData);
-            基髪D2.横髪右接続(elementData.Get逆());
-            基髪D2.前髪接続(Get前髪R1());
+            BaseHairD2.横髪左接続(elementData);
+            BaseHairD2.横髪右接続(elementData.Get逆());
+            BaseHairD2.前髪接続(GetFrontHairR1());
             return obj;
         }
 
@@ -92,14 +92,14 @@ namespace SlaveMatrix.GameClasses
 
         public static 単目D Get単眼R()
         {
-            単目D obj = Uni.単眼目();
+            単目D obj = Uni.MonoEye();
             ((単瞼D)obj.瞼_接続[0]).SetRandom();
             return obj;
         }
 
-        public static 単眼眉D Get単眼眉R()
+        public static MonoEyebrowD GetMonoEyebrowR()
         {
-            return new 単眼眉D().SetRandom();
+            return new MonoEyebrowD().SetRandom();
         }
 
         public static 縦目D Get縦眼R()
@@ -116,13 +116,13 @@ namespace SlaveMatrix.GameClasses
             return obj;
         }
 
-        public static ElementData Get鼻R()
+        public static ElementData GetNoseR()
         {
             if (Rng.XS.NextM(1) == 0)
             {
-                return Uni.人鼻D();
+                return Uni.HumanNoseD();
             }
-            return Uni.獣鼻D();
+            return Uni.BeastNoseD();
         }
 
         public static ElementData[] Get口R()
@@ -209,48 +209,48 @@ namespace SlaveMatrix.GameClasses
             };
         }
 
-        public static ElementData Get前髪R()
+        public static ElementData GetFrontHairR()
         {
             return Rng.XS.NextM(18) switch
             {
-                0 => new 前髪_ジグD().SetRandom(),
-                1 => new 前髪_ジグ中寄D().SetRandom(),
-                2 => new 前髪_ジグ分けD().SetRandom(),
-                3 => new 前髪_モジャD().SetRandom(),
-                4 => new 前髪_パッツンD().SetRandom(),
-                5 => new 前髪_横流しD().SetRandom(),
-                6 => new 前髪_二分1D().SetRandom(),
-                7 => new 前髪_三分1D().SetRandom(),
-                8 => new 前髪_二分2D().SetRandom(),
-                9 => new 前髪_三分2D().SetRandom(),
-                10 => new 前髪_中分け1D().SetRandom(),
-                11 => new 前髪_中分け2D().SetRandom(),
-                12 => new 前髪_上げ短1D().SetRandom(),
-                13 => new 前髪_上げ短2D().SetRandom(),
-                14 => new 前髪_上げ長1D().SetRandom(),
-                15 => new 前髪_上げ長2D().SetRandom(),
-                16 => new 前髪_上げ片D().SetRandom(),
-                17 => new 前髪_目隠れ1D().SetRandom(),
-                _ => new 前髪_目隠れ2D().SetRandom(),
+                0 => new FrontHair_ジグD().SetRandom(),
+                1 => new FrontHair_ジグ中寄D().SetRandom(),
+                2 => new FrontHair_ジグ分けD().SetRandom(),
+                3 => new FrontHair_モジャD().SetRandom(),
+                4 => new FrontHair_パッツンD().SetRandom(),
+                5 => new FrontHair_横流しD().SetRandom(),
+                6 => new FrontHair_二分1D().SetRandom(),
+                7 => new FrontHair_三分1D().SetRandom(),
+                8 => new FrontHair_二分2D().SetRandom(),
+                9 => new FrontHair_三分2D().SetRandom(),
+                10 => new FrontHair_中分け1D().SetRandom(),
+                11 => new FrontHair_中分け2D().SetRandom(),
+                12 => new FrontHair_上げ短1D().SetRandom(),
+                13 => new FrontHair_上げ短2D().SetRandom(),
+                14 => new FrontHair_上げ長1D().SetRandom(),
+                15 => new FrontHair_上げ長2D().SetRandom(),
+                16 => new FrontHair_上げ片D().SetRandom(),
+                17 => new FrontHair_目隠れ1D().SetRandom(),
+                _ => new FrontHair_目隠れ2D().SetRandom(),
             };
         }
 
-        public static ElementData Get前髪R1()
+        public static ElementData GetFrontHairR1()
         {
             return Rng.XS.NextM(12) switch
             {
-                0 => new 前髪_ジグ分けD().SetRandom(),
-                1 => new 前髪_横流しD().SetRandom(),
-                2 => new 前髪_二分1D().SetRandom(),
-                3 => new 前髪_二分2D().SetRandom(),
-                4 => new 前髪_中分け1D().SetRandom(),
-                5 => new 前髪_中分け2D().SetRandom(),
-                6 => new 前髪_上げ短1D().SetRandom(),
-                7 => new 前髪_上げ短2D().SetRandom(),
-                8 => new 前髪_上げ長1D().SetRandom(),
-                9 => new 前髪_上げ長2D().SetRandom(),
-                10 => new 前髪_上げ片D().SetRandom(),
-                _ => new 前髪_目隠れ2D().SetRandom(),
+                0 => new FrontHair_ジグ分けD().SetRandom(),
+                1 => new FrontHair_横流しD().SetRandom(),
+                2 => new FrontHair_二分1D().SetRandom(),
+                3 => new FrontHair_二分2D().SetRandom(),
+                4 => new FrontHair_中分け1D().SetRandom(),
+                5 => new FrontHair_中分け2D().SetRandom(),
+                6 => new FrontHair_上げ短1D().SetRandom(),
+                7 => new FrontHair_上げ短2D().SetRandom(),
+                8 => new FrontHair_上げ長1D().SetRandom(),
+                9 => new FrontHair_上げ長2D().SetRandom(),
+                10 => new FrontHair_上げ片D().SetRandom(),
+                _ => new FrontHair_目隠れ2D().SetRandom(),
             };
         }
 
@@ -336,20 +336,20 @@ namespace SlaveMatrix.GameClasses
             頭.眉右接続(眉D2.Get逆());
         }
 
-        public static void Set単目R(this HeadD 頭)
+        public static void Set単目R(this HeadD head)
         {
-            頭.単眼目接続(Get単眼R());
-            頭.単眼眉接続(Get単眼眉R());
+            head.単眼目接続(Get単眼R());
+            head.単眼眉接続(GetMonoEyebrowR());
         }
 
-        public static void Set鼻R(this HeadD 頭)
+        public static void SetNoseR(this HeadD head)
         {
-            頭.鼻接続(Get鼻R());
+            head.鼻接続(GetNoseR());
         }
 
-        public static void Set鼻人(this HeadD 頭)
+        public static void SetHumanNose(this HeadD head)
         {
-            頭.鼻接続(Uni.人鼻D());
+            head.鼻接続(Uni.HumanNoseD());
         }
 
         public static void Set口R(this HeadD 頭)
@@ -381,12 +381,12 @@ namespace SlaveMatrix.GameClasses
 
         public static void Set舌短(this HeadD 頭)
         {
-            頭.口接続(new 舌_短D());
+            頭.口接続(new Tounge_短D());
         }
 
         public static void Set舌長(this HeadD 頭)
         {
-            頭.口接続(new 舌_長D());
+            頭.口接続(new Tounge_長D());
         }
 
         public static void Set耳人(this HeadD 頭)

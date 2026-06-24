@@ -727,11 +727,11 @@ namespace SlaveMatrix
     	public static Dictionary<ConnectionInfo, HashSet<string>> 接続範囲 = new Dictionary<ConnectionInfo, HashSet<string>>
     	{
     		{
-    			ConnectionInfo.基髪_頭頂左_接続,
+    			ConnectionInfo.BaseHair_頭頂左_接続,
     			側頭
     		},
     		{
-    			ConnectionInfo.基髪_頭頂右_接続,
+    			ConnectionInfo.BaseHair_頭頂右_接続,
     			側頭
     		},
     		{
@@ -1668,7 +1668,7 @@ namespace SlaveMatrix
     						flag3 = true;
     					}
     				}
-    				if ((flag2 && 体色2.頬目左 != 体色2.頬目右) || (flag && 体色2.目左 != 体色2.目右) || (flag3 && (体色2.目左 != 体色2.縦目 || 体色2.目右 != 体色2.縦目)))
+    				if ((flag2 && 体色2.CheekEyeLeft != 体色2.頬目右) || (flag && 体色2.EyeLeft != 体色2.目右) || (flag3 && (体色2.EyeLeft != 体色2.縦目 || 体色2.目右 != 体色2.縦目)))
     				{
     					体色2.血統.Add(GameText.オッドアイ);
     				}
@@ -1678,38 +1678,38 @@ namespace SlaveMatrix
     				switch (Rng.XS.Next(6))
     				{
     				case 0:
-    					体色2.縦目 = 体色2.目左;
-    					体色2.頬目左 = 体色2.目左;
-    					体色2.頬目右 = 体色2.目左;
-    					体色2.目右 = 体色2.目左;
+    					体色2.縦目 = 体色2.EyeLeft;
+    					体色2.CheekEyeLeft = 体色2.EyeLeft;
+    					体色2.頬目右 = 体色2.EyeLeft;
+    					体色2.目右 = 体色2.EyeLeft;
     					break;
     				case 1:
     					体色2.縦目 = 体色2.目右;
-    					体色2.頬目左 = 体色2.目右;
+    					体色2.CheekEyeLeft = 体色2.目右;
     					体色2.頬目右 = 体色2.目右;
-    					体色2.目左 = 体色2.目右;
+    					体色2.EyeLeft = 体色2.目右;
     					break;
     				case 2:
-    					GeometryUtils.GetInter(ref 体色2.目左, ref 体色2.目右, out 体色2.縦目);
-    					体色2.頬目左 = 体色2.目左;
-    					体色2.頬目右 = 体色2.目左;
-    					体色2.目右 = 体色2.目左;
+    					GeometryUtils.GetInter(ref 体色2.EyeLeft, ref 体色2.目右, out 体色2.縦目);
+    					体色2.CheekEyeLeft = 体色2.EyeLeft;
+    					体色2.頬目右 = 体色2.EyeLeft;
+    					体色2.目右 = 体色2.EyeLeft;
     					break;
     				case 3:
-    					GeometryUtils.GetInter(ref 体色2.目左, ref 体色2.目右, out 体色2.縦目);
-    					体色2.頬目左 = 体色2.目右;
+    					GeometryUtils.GetInter(ref 体色2.EyeLeft, ref 体色2.目右, out 体色2.縦目);
+    					体色2.CheekEyeLeft = 体色2.目右;
     					体色2.頬目右 = 体色2.目右;
-    					体色2.目左 = 体色2.目右;
+    					体色2.EyeLeft = 体色2.目右;
     					break;
     				case 4:
-    					体色2.頬目左 = 体色2.目左;
-    					体色2.頬目右 = 体色2.目左;
-    					体色2.目右 = 体色2.目左;
+    					体色2.CheekEyeLeft = 体色2.EyeLeft;
+    					体色2.頬目右 = 体色2.EyeLeft;
+    					体色2.目右 = 体色2.EyeLeft;
     					break;
     				default:
-    					体色2.頬目左 = 体色2.目右;
+    					体色2.CheekEyeLeft = 体色2.目右;
     					体色2.頬目右 = 体色2.目右;
-    					体色2.目左 = 体色2.目右;
+    					体色2.EyeLeft = 体色2.目右;
     					break;
     				}
     			}
@@ -1734,7 +1734,7 @@ namespace SlaveMatrix
     					flag6 = true;
     				}
     			}
-    			if ((flag5 && 体色2.頬目左 != 体色2.頬目右) || (flag4 && 体色2.目左 != 体色2.目右) || (flag6 && (体色2.目左 != 体色2.縦目 || 体色2.目右 != 体色2.縦目)))
+    			if ((flag5 && 体色2.CheekEyeLeft != 体色2.頬目右) || (flag4 && 体色2.EyeLeft != 体色2.目右) || (flag6 && (体色2.EyeLeft != 体色2.縦目 || 体色2.目右 != 体色2.縦目)))
     			{
     				体色2.血統.Add(GameText.オッドアイ);
     			}
@@ -1744,38 +1744,38 @@ namespace SlaveMatrix
     			switch (Rng.XS.Next(6))
     			{
     			case 0:
-    				体色2.縦目 = 体色2.目左;
-    				体色2.頬目左 = 体色2.目左;
-    				体色2.頬目右 = 体色2.目左;
-    				体色2.目右 = 体色2.目左;
+    				体色2.縦目 = 体色2.EyeLeft;
+    				体色2.CheekEyeLeft = 体色2.EyeLeft;
+    				体色2.頬目右 = 体色2.EyeLeft;
+    				体色2.目右 = 体色2.EyeLeft;
     				break;
     			case 1:
     				体色2.縦目 = 体色2.目右;
-    				体色2.頬目左 = 体色2.目右;
+    				体色2.CheekEyeLeft = 体色2.目右;
     				体色2.頬目右 = 体色2.目右;
-    				体色2.目左 = 体色2.目右;
+    				体色2.EyeLeft = 体色2.目右;
     				break;
     			case 2:
-    				GeometryUtils.GetInter(ref 体色2.目左, ref 体色2.目右, out 体色2.縦目);
-    				体色2.頬目左 = 体色2.目左;
-    				体色2.頬目右 = 体色2.目左;
-    				体色2.目右 = 体色2.目左;
+    				GeometryUtils.GetInter(ref 体色2.EyeLeft, ref 体色2.目右, out 体色2.縦目);
+    				体色2.CheekEyeLeft = 体色2.EyeLeft;
+    				体色2.頬目右 = 体色2.EyeLeft;
+    				体色2.目右 = 体色2.EyeLeft;
     				break;
     			case 3:
-    				GeometryUtils.GetInter(ref 体色2.目左, ref 体色2.目右, out 体色2.縦目);
-    				体色2.頬目左 = 体色2.目右;
+    				GeometryUtils.GetInter(ref 体色2.EyeLeft, ref 体色2.目右, out 体色2.縦目);
+    				体色2.CheekEyeLeft = 体色2.目右;
     				体色2.頬目右 = 体色2.目右;
-    				体色2.目左 = 体色2.目右;
+    				体色2.EyeLeft = 体色2.目右;
     				break;
     			case 4:
-    				体色2.頬目左 = 体色2.目左;
-    				体色2.頬目右 = 体色2.目左;
-    				体色2.目右 = 体色2.目左;
+    				体色2.CheekEyeLeft = 体色2.EyeLeft;
+    				体色2.頬目右 = 体色2.EyeLeft;
+    				体色2.目右 = 体色2.EyeLeft;
     				break;
     			default:
-    				体色2.頬目左 = 体色2.目右;
+    				体色2.CheekEyeLeft = 体色2.目右;
     				体色2.頬目右 = 体色2.目右;
-    				体色2.目左 = 体色2.目右;
+    				体色2.EyeLeft = 体色2.目右;
     				break;
     			}
     		}
@@ -1798,8 +1798,8 @@ namespace SlaveMatrix
     		Dictionary<ConnectionInfo, List<Type>> 接続構成 = Get接続構成(母方, 父方);
     		Type[] 要素構成 = Get要素構成(母方, 父方);
     		HeadD HeadD2 = Mix<HeadD>(母方, 父方, i, 原種モード);
-    		基髪D 基髪D2 = new 基髪D();
-    		HeadD2.基髪接続(基髪D2);
+    		BaseHairD BaseHairD2 = new BaseHairD();
+    		HeadD2.基髪接続(BaseHairD2);
     		HeadD2.目左接続(new 目傷D());
     		HeadD2.目右接続(new 目傷D
     		{
@@ -1810,17 +1810,17 @@ namespace SlaveMatrix
     		{
     			右 = true
     		});
-    		鼻肌D 鼻肌D2;
-    		HeadD2.鼻肌接続(鼻肌D2 = Mix<鼻肌D>(母方, 父方, i, 原種モード));
-    		HeadD2.鼻肌接続(new 紅潮D());
+    		NoseSkinD NoseSkinD2;
+    		HeadD2.鼻肌接続(NoseSkinD2 = Mix<NoseSkinD>(母方, 父方, i, 原種モード));
+    		HeadD2.鼻肌接続(new CrimsonSquirtD());
     		頬肌D 頬肌D2 = Mix<頬肌D>(母方, 父方, 右: false, i, 原種モード);
     		HeadD2.頬肌左接続(頬肌D2);
     		HeadD2.頬肌右接続(頬肌D2.Get逆());
     		顔ハイライトD 顔ハイライトD2 = Mix<顔ハイライトD>(母方, 父方, 右: false, i, 原種モード);
     		HeadD2.頬左接続(顔ハイライトD2);
     		HeadD2.頬右接続(顔ハイライトD2.Get逆());
-    		HeadD2.単眼目接続(new 目隠帯D());
-    		HeadD2.口接続(new 玉口枷D());
+    		HeadD2.単眼目接続(new BlindfoldD());
+    		HeadD2.口接続(new BallGagData());
     		HeadD2.AlignC();
     		NeckD 首D2 = Mix<NeckD>(母方, 父方, i, 原種モード);
     		首D2.頭接続(HeadD2);
@@ -1832,7 +1832,7 @@ namespace SlaveMatrix
     		乳房D2.噴乳接続(new 下着乳首D());
     		ChestD2.胸左接続(乳房D2);
     		ChestD2.胸右接続(乳房D2.Get逆());
-    		ChestD2.肌接続(Mix<胸毛D>(母方, 父方, i, 原種モード));
+    		ChestD2.肌接続(Mix<ChestHairData>(母方, 父方, i, 原種モード));
     		ChestD2.肌接続(Mix<胸肌D>(母方, 父方, i, 原種モード));
     		胸腹板D 胸腹板D2;
     		ChestD2.肌接続(胸腹板D2 = Mix<胸腹板D>(母方, 父方, i, 原種モード));
@@ -1845,34 +1845,34 @@ namespace SlaveMatrix
     		ChestD2.AlignC();
     		ChestD2.首接続(首D2);
     		TorsoD TorsoD2 = Mix<TorsoD>(母方, 父方, i, 原種モード);
-    		胴腹板D 胴腹板D2;
-    		TorsoD2.肌接続(胴腹板D2 = Mix<胴腹板D>(母方, 父方, i, 原種モード));
-    		TorsoD2.肌接続(Mix<胴肌D>(母方, 父方, i, 原種モード));
+    		TorsoPlateD TorsoPlateD2;
+    		TorsoD2.肌接続(TorsoPlateD2 = Mix<TorsoPlateD>(母方, 父方, i, 原種モード));
+    		TorsoD2.肌接続(Mix<TorsoSkinD>(母方, 父方, i, 原種モード));
     		TorsoD2.肌接続(new 上着ミドル_ドレスD());
     		TorsoD2.AlignC();
     		TorsoD2.胴接続(ChestD2);
     		WaistD Waist = Mix<WaistD>(母方, 父方, i, 原種モード);
-    		Waist.膣基接続(new 膣基_人D());
-    		Waist.膣基接続(new 膣内精液_人D());
-    		Waist.膣基接続(new 断面_人D());
+    		Waist.膣基接続(new VaginaOrigin_人D());
+    		Waist.膣基接続(new InternalSemen_人D());
+    		Waist.膣基接続(new XRay_人D());
     		Waist.膣基接続(Uni.性器());
-    		Waist.肛門接続(Uni.肛門());
-    		Waist.肌接続(Uni.ボテ腹());
-    		腰肌D 腰肌;
-    		Waist.肌接続(腰肌 = Mix<腰肌D>(母方, 父方, i, 原種モード));
-    		Waist.肌接続(new 下着ボトム_ノーマルD());
-    		Waist.肌接続(new 下着ボトム_マイクロD());
-    		上着ボトム_クロスD 上着ボトム_クロスD2 = new 上着ボトム_クロスD();
-    		上着ボトム_クロスD2.上着ボトム後接続(new 上着ボトム_クロス後D());
-    		Waist.上着接続(上着ボトム_クロスD2);
-    		Waist.上着接続(new 上着ボトム_前掛けD());
+    		Waist.肛門接続(Uni.Anus());
+    		Waist.肌接続(Uni.PregnantBelly());
+    		WaistSkinD WaistSkin;
+    		Waist.肌接続(WaistSkin = Mix<WaistSkinD>(母方, 父方, i, 原種モード));
+    		Waist.肌接続(new UnderwearBottom_ノーマルD());
+    		Waist.肌接続(new UnderwearBottom_マイクロD());
+    		JacketBottom_クロスD JacketBottom_クロスD2 = new JacketBottom_クロスD();
+    		JacketBottom_クロスD2.JacketBottomRear接続(new JacketBottom_クロス後D());
+    		Waist.上着接続(JacketBottom_クロスD2);
+    		Waist.上着接続(new JacketBottom_前掛けD());
     		Waist.AlignC();
     		Waist.胴接続(TorsoD2);
     		TorsoD2.肥大 = Waist.肥大;
     		if (Rng.XS.NextBool())
     		{
     			ElementData elementData = SlaveMatrix.GameClasses._Con.Get後髪0R();
-    			基髪D2.後髪接続(elementData);
+    			BaseHairD2.後髪接続(elementData);
     			elementData.AlignR();
     			if (elementData is BackHair0_肢系D && 変異率.Lot())
     			{
@@ -1884,15 +1884,15 @@ namespace SlaveMatrix
     			if ((elementData is BackHair0_ジグD || elementData is BackHair0_ハネD || elementData is BackHair0_パツD || elementData is BackHair0_カルD || elementData is BackHair0_肢系D) && Rng.XS.NextBool())
     			{
     				ElementData e2 = SlaveMatrix.GameClasses._Con.Get後髪1R();
-    				基髪D2.後髪接続(e2);
+    				BaseHairD2.後髪接続(e2);
     				e2.AlignR();
     			}
     			ElementData eleD2 = SlaveMatrix.GameClasses._Con.Get横髪R(右: false);
-    			基髪D2.横髪左接続(eleD2);
+    			BaseHairD2.横髪左接続(eleD2);
     			eleD2.AlignR();
-    			基髪D2.横髪右接続(eleD2.Get逆());
-    			ElementData e3 = SlaveMatrix.GameClasses._Con.Get前髪R();
-    			基髪D2.前髪接続(e3);
+    			BaseHairD2.横髪右接続(eleD2.Get逆());
+    			ElementData e3 = SlaveMatrix.GameClasses._Con.GetFrontHairR();
+    			BaseHairD2.前髪接続(e3);
     			e3.AlignR();
     		}
     		else
@@ -1900,7 +1900,7 @@ namespace SlaveMatrix
     			後髪0D 後髪0D2 = Mix<後髪0D>(母方, 父方, i, 原種モード);
     			if (後髪0D2 != null)
     			{
-    				基髪D2.後髪接続(後髪0D2);
+    				BaseHairD2.後髪接続(後髪0D2);
     				後髪0D2.AlignR();
     				if (後髪0D2 is BackHair0_肢系D && 変異率.Lot())
     				{
@@ -1914,7 +1914,7 @@ namespace SlaveMatrix
     					BackHair1D 後髪1D2 = Mix<BackHair1D>(母方, 父方, i, 原種モード);
     					if (後髪1D2 != null)
     					{
-    						基髪D2.後髪接続(後髪1D2);
+    						BaseHairD2.後髪接続(後髪1D2);
     						後髪1D2.AlignR();
     					}
     				}
@@ -1924,16 +1924,16 @@ namespace SlaveMatrix
     				BackHair1D 後髪1D3 = Mix<BackHair1D>(母方, 父方, i, 原種モード);
     				if (後髪1D3 != null)
     				{
-    					基髪D2.後髪接続(後髪1D3);
+    					BaseHairD2.後髪接続(後髪1D3);
     					後髪1D3.AlignR();
     				}
     			}
     			SideHairD 横髪D2 = Mix<SideHairD>(母方, 父方, 右: false, i, 原種モード);
-    			基髪D2.横髪左接続(横髪D2);
+    			BaseHairD2.横髪左接続(横髪D2);
     			横髪D2.AlignR();
-    			基髪D2.横髪右接続(横髪D2.Get逆());
-    			前髪D e4 = Mix<前髪D>(母方, 父方, i, 原種モード);
-    			基髪D2.前髪接続(e4);
+    			BaseHairD2.横髪右接続(横髪D2.Get逆());
+    			FrontHairData e4 = Mix<FrontHairData>(母方, 父方, i, 原種モード);
+    			BaseHairD2.前髪接続(e4);
     			e4.AlignR();
     		}
     		双目D 双目D2 = null;
@@ -2009,8 +2009,8 @@ namespace SlaveMatrix
     			{
     				単目D2 = Mix<単目D>(母方, 父方, i, 原種モード);
     				単瞼D2 = Mix<単瞼D>(母方, 父方, i, 原種モード);
-    				単眼眉D 単眼眉D2 = Mix<単眼眉D>(母方, 父方, i, 原種モード);
-    				if (単目D2 != null && 単瞼D2 != null && 単眼眉D2 != null)
+    				MonoEyebrowD MonoEyebrowD2 = Mix<MonoEyebrowD>(母方, 父方, i, 原種モード);
+    				if (単目D2 != null && 単瞼D2 != null && MonoEyebrowD2 != null)
     				{
     					単目D2.瞼接続(単瞼D2);
     					単目D2.瞼接続(new 涙D
@@ -2023,13 +2023,13 @@ namespace SlaveMatrix
     						基準C = new Vector2D(-0.01, 0.0)
     					});
     					HeadD2.単眼目接続(単目D2);
-    					HeadD2.単眼眉接続(単眼眉D2);
+    					HeadD2.単眼眉接続(MonoEyebrowD2);
     				}
     				else
     				{
     					HeadD2.単眼目接続(単目D2 = SlaveMatrix.GameClasses._Con.Get単眼R());
     					単瞼D2 = 単目D2.瞼_接続.GetEleD<単瞼D>();
-    					HeadD2.単眼眉接続(SlaveMatrix.GameClasses._Con.Get単眼眉R());
+    					HeadD2.単眼眉接続(SlaveMatrix.GameClasses._Con.GetMonoEyebrowR());
     				}
     			}
     		}
@@ -2090,8 +2090,8 @@ namespace SlaveMatrix
     		{
     			単目D2 = Mix<単目D>(母方, 父方, i, 原種モード);
     			単瞼D2 = Mix<単瞼D>(母方, 父方, i, 原種モード);
-    			単眼眉D 単眼眉D3 = Mix<単眼眉D>(母方, 父方, i, 原種モード);
-    			if (単目D2 != null && 単瞼D2 != null && 単眼眉D3 != null)
+    			MonoEyebrowD MonoEyebrowD3 = Mix<MonoEyebrowD>(母方, 父方, i, 原種モード);
+    			if (単目D2 != null && 単瞼D2 != null && MonoEyebrowD3 != null)
     			{
     				単目D2.瞼接続(単瞼D2);
     				単目D2.瞼接続(new 涙D
@@ -2104,24 +2104,24 @@ namespace SlaveMatrix
     					基準C = new Vector2D(-0.01, 0.0)
     				});
     				HeadD2.単眼目接続(単目D2);
-    				HeadD2.単眼眉接続(単眼眉D3);
+    				HeadD2.単眼眉接続(MonoEyebrowD3);
     			}
     			else
     			{
     				HeadD2.単眼目接続(単目D2 = SlaveMatrix.GameClasses._Con.Get単眼R());
     				単瞼D2 = 単目D2.瞼_接続.GetEleD<単瞼D>();
-    				HeadD2.単眼眉接続(SlaveMatrix.GameClasses._Con.Get単眼眉R());
+    				HeadD2.単眼眉接続(SlaveMatrix.GameClasses._Con.GetMonoEyebrowR());
     			}
     		}
-    		鼻D 鼻D2 = Mix<鼻D>(母方, 父方, i, 原種モード);
-    		if (鼻D2 != null)
+    		NoseD NoseD2 = Mix<NoseD>(母方, 父方, i, 原種モード);
+    		if (NoseD2 != null)
     		{
-    			鼻D2.鼻水左接続(new 鼻水D());
-    			鼻D2.鼻水右接続(new 鼻水D
+    			NoseD2.鼻水左接続(new 鼻水D());
+    			NoseD2.鼻水右接続(new 鼻水D
     			{
     				右 = true
     			});
-    			HeadD2.鼻接続(鼻D2);
+    			HeadD2.鼻接続(NoseD2);
     		}
     		口D 口D2 = Mix<口D>(母方, 父方, i, 原種モード);
     		if (口D2 != null)
@@ -2147,14 +2147,14 @@ namespace SlaveMatrix
     			HeadD2.口接続(new 性器精液_人D());
     			HeadD2.口接続(new 咳D());
     			HeadD2.口接続(new 呼気D());
-    			舌D 舌D2 = Mix<舌D>(母方, 父方, i, 原種モード);
-    			if (舌D2 != null)
+    			ToungeD ToungeD2 = Mix<ToungeD>(母方, 父方, i, 原種モード);
+    			if (ToungeD2 != null)
     			{
-    				HeadD2.口接続(舌D2);
+    				HeadD2.口接続(ToungeD2);
     			}
     		}
     		HeadD2.接続(母方, 父方, i, ConnectionInfo.Head_耳左_接続, 要素構成, 接続構成, 変異率, 原種モード);
-    		基髪D2.接続(母方, 父方, i, ConnectionInfo.基髪_頭頂左_接続, 要素構成, 接続構成, 変異率, 原種モード);
+    		BaseHairD2.接続(母方, 父方, i, ConnectionInfo.BaseHair_頭頂左_接続, 要素構成, 接続構成, 変異率, 原種モード);
     		HeadD2.接続(母方, 父方, i, ConnectionInfo.Head_頬左_接続, 要素構成, 接続構成, 変異率, 原種モード);
     		HeadD2.接続(母方, 父方, i, ConnectionInfo.Head_大顎基_接続, 要素構成, 接続構成, 変異率, 原種モード);
     		HeadD2.接続(母方, 父方, i, ConnectionInfo.Head_顔面_接続, 要素構成, 接続構成, 変異率, 原種モード);
@@ -2404,12 +2404,12 @@ namespace SlaveMatrix
     				長物_蛇D2.AlignC();
     				if (長物_蛇D2.ガード)
     				{
-    					腰肌.竜性_鱗1_表示 = false;
-    					腰肌.竜性_鱗2_表示 = false;
-    					腰肌.竜性_鱗3_表示 = false;
-    					腰肌.竜性_鱗4_表示 = false;
-    					腰肌.獣性_獣毛_表示 = false;
-    					腰肌.陰毛_表示 = false;
+    					WaistSkin.竜性_鱗1_表示 = false;
+    					WaistSkin.竜性_鱗2_表示 = false;
+    					WaistSkin.竜性_鱗3_表示 = false;
+    					WaistSkin.竜性_鱗4_表示 = false;
+    					WaistSkin.獣性_獣毛_表示 = false;
+    					WaistSkin.陰毛_表示 = false;
     				}
     				Waist.接続(母方, 父方, i, ConnectionInfo.Waist_腿左_接続, 要素構成, 接続構成, 変異率, 原種モード);
     				for (int num15 = Waist.腿左_接続.Count - 1; num15 > -1; num15--)
@@ -2477,14 +2477,14 @@ namespace SlaveMatrix
     			else if (半身 is 四足胸D)
     			{
     				四足胸D 四足胸D2 = (四足胸D)半身;
-    				胸毛D 胸毛D2 = null;
+    				ChestHairData ChestHairD2 = null;
     				胸肌D 胸肌D2 = null;
-    				四足胸D2.肌接続(胸毛D2 = Mix<胸毛D>(母方, 父方, i, 原種モード));
+    				四足胸D2.肌接続(ChestHairD2 = Mix<ChestHairData>(母方, 父方, i, 原種モード));
     				四足胸D2.肌接続(胸肌D2 = Mix<胸肌D>(母方, 父方, i, 原種モード));
     				四足胸D2.AlignC();
-    				if (胸毛D2 != null)
+    				if (ChestHairD2 != null)
     				{
-    					胸毛D2.尺度B *= 1.4;
+    					ChestHairD2.尺度B *= 1.4;
     				}
     				if (胸肌D2 != null)
     				{
@@ -2500,12 +2500,12 @@ namespace SlaveMatrix
     				四足胴D 四足胴D2 = Mix<四足胴D>(母方, 父方, i, 原種モード);
     				if (四足胴D2 != null)
     				{
-    					胴肌D 胴肌D2 = null;
-    					四足胴D2.肌接続(胴肌D2 = Mix<胴肌D>(母方, 父方, i, 原種モード));
+    					TorsoSkinD TorsoSkinD2 = null;
+    					四足胴D2.肌接続(TorsoSkinD2 = Mix<TorsoSkinD>(母方, 父方, i, 原種モード));
     					四足胴D2.AlignC();
-    					if (胴肌D2 != null)
+    					if (TorsoSkinD2 != null)
     					{
-    						胴肌D2.尺度B *= 1.35;
+    						TorsoSkinD2.尺度B *= 1.35;
     					}
     					四足胸D2.胴接続(四足胴D2);
     					四足胴D2.肥大 = Waist.肥大;
@@ -2513,57 +2513,57 @@ namespace SlaveMatrix
     				四足腰D 四足腰D2 = Mix<四足腰D>(母方, 父方, i, 原種モード);
     				if (四足腰D2 != null)
     				{
-    					腰肌D 腰肌D2 = null;
-    					四足腰D2.膣基接続(new 膣基_獣D());
-    					四足腰D2.膣基接続(new 膣内精液_獣D());
-    					四足腰D2.膣基接続(new 断面_獣D());
+    					WaistSkinD WaistSkinD2 = null;
+    					四足腰D2.膣基接続(new VaginaOrigin_獣D());
+    					四足腰D2.膣基接続(new InternalSemen_獣D());
+    					四足腰D2.膣基接続(new XRay_獣D());
     					四足腰D2.膣基接続(Uni.四足性器());
     					四足腰D2.肛門接続(Uni.四足肛門());
-    					四足腰D2.肌接続(new ボテ腹_獣D());
-    					四足腰D2.肌接続(腰肌D2 = Mix<腰肌D>(母方, 父方, i, 原種モード));
-    					Waist.膣基_接続.SetEleD(delegate(性器_人D e)
+    					四足腰D2.肌接続(new PregnantBelly_獣D());
+    					四足腰D2.肌接続(WaistSkinD2 = Mix<WaistSkinD>(母方, 父方, i, 原種モード));
+    					Waist.VaginaOrigin_接続.SetEleD(delegate(性器_人D e)
     					{
     						e.表示 = false;
     					});
-    					Waist.肛門_接続.SetEleD(delegate(肛門_人D e)
+    					Waist.Anus_接続.SetEleD(delegate(Anus_人D e)
     					{
     						e.表示 = false;
     					});
-    					四足腰D2.肌_接続.SetEleD(delegate(腰肌D e)
+    					四足腰D2.肌_接続.SetEleD(delegate(WaistSkinD e)
     					{
     						e.陰毛_表示 = false;
     					});
     					四足腰D2.AlignC();
-    					if (腰肌D2 != null)
+    					if (WaistSkinD2 != null)
     					{
-    						腰肌D2.尺度B *= 1.4;
-    						腰肌D2.虫性_腹板1_腹板_表示 = false;
-    						腰肌D2.虫性_腹板2_腹板_表示 = false;
-    						腰肌D2.虫性_腹板1_縦線_表示 = false;
-    						腰肌D2.虫性_腹板2_縦線_表示 = false;
-    						腰肌D2.陰毛_表示 = false;
+    						WaistSkinD2.尺度B *= 1.4;
+    						WaistSkinD2.虫性_腹板1_腹板_表示 = false;
+    						WaistSkinD2.虫性_腹板2_腹板_表示 = false;
+    						WaistSkinD2.虫性_腹板1_縦線_表示 = false;
+    						WaistSkinD2.虫性_腹板2_縦線_表示 = false;
+    						WaistSkinD2.陰毛_表示 = false;
     					}
     					四足胴D2.腰接続(四足腰D2);
     					四足腰D2.肥大 = Waist.肥大;
-    					if ((腰肌D2.淫タトゥ_ハート_タトゥ右1_表示 || 腰肌D2.淫タトゥ_ハート_タトゥ右2_表示 || 腰肌D2.淫タトゥ_ハート_タトゥ左1_表示 || 腰肌D2.淫タトゥ_ハート_タトゥ左2_表示) && (腰肌D2.植タトゥ_タトゥ左_表示 || 腰肌D2.植タトゥ_タトゥ右_表示))
+    					if ((WaistSkinD2.淫タトゥ_ハート_タトゥ右1_表示 || WaistSkinD2.淫タトゥ_ハート_タトゥ右2_表示 || WaistSkinD2.淫タトゥ_ハート_タトゥ左1_表示 || WaistSkinD2.淫タトゥ_ハート_タトゥ左2_表示) && (WaistSkinD2.植タトゥ_タトゥ左_表示 || WaistSkinD2.植タトゥ_タトゥ右_表示))
     					{
     						if (Rng.XS.NextBool())
     						{
-    							腰肌D2.淫タトゥ_ハート_タトゥ右1_表示 = true;
-    							腰肌D2.淫タトゥ_ハート_タトゥ右2_表示 = true;
-    							腰肌D2.淫タトゥ_ハート_タトゥ左1_表示 = true;
-    							腰肌D2.淫タトゥ_ハート_タトゥ左2_表示 = true;
-    							腰肌D2.植タトゥ_タトゥ左_表示 = false;
-    							腰肌D2.植タトゥ_タトゥ右_表示 = false;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ右1_表示 = true;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ右2_表示 = true;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ左1_表示 = true;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ左2_表示 = true;
+    							WaistSkinD2.植タトゥ_タトゥ左_表示 = false;
+    							WaistSkinD2.植タトゥ_タトゥ右_表示 = false;
     						}
     						else
     						{
-    							腰肌D2.淫タトゥ_ハート_タトゥ右1_表示 = false;
-    							腰肌D2.淫タトゥ_ハート_タトゥ右2_表示 = false;
-    							腰肌D2.淫タトゥ_ハート_タトゥ左1_表示 = false;
-    							腰肌D2.淫タトゥ_ハート_タトゥ左2_表示 = false;
-    							腰肌D2.植タトゥ_タトゥ左_表示 = true;
-    							腰肌D2.植タトゥ_タトゥ右_表示 = true;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ右1_表示 = false;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ右2_表示 = false;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ左1_表示 = false;
+    							WaistSkinD2.淫タトゥ_ハート_タトゥ左2_表示 = false;
+    							WaistSkinD2.植タトゥ_タトゥ左_表示 = true;
+    							WaistSkinD2.植タトゥ_タトゥ右_表示 = true;
     						}
     					}
     				}
@@ -3780,7 +3780,7 @@ namespace SlaveMatrix
     			{
     				item32.尺度YB = 1.0;
     			}
-    			else if (item32 is UpperArm_蝙D && (item32.接続情報 == ConnectionInfo.基髪_頭頂左_接続 || item32.接続情報 == ConnectionInfo.基髪_頭頂右_接続))
+    			else if (item32 is UpperArm_蝙D && (item32.接続情報 == ConnectionInfo.BaseHair_頭頂左_接続 || item32.接続情報 == ConnectionInfo.BaseHair_頭頂右_接続))
     			{
     				((UpperArm_蝙D)item32).竜性_鱗1_表示 = false;
     			}
@@ -3799,12 +3799,12 @@ namespace SlaveMatrix
     		}
     		bool flag4 = false;
     		flag4 |= 胸腹板D2.虫性_腹板_表示;
-    		flag4 |= 胴腹板D2.虫性_腹板_表示;
-    		flag4 |= 腰肌.虫性_腹板1_腹板_表示 || 腰肌.虫性_腹板2_腹板_表示;
+    		flag4 |= TorsoPlateD2.虫性_腹板_表示;
+    		flag4 |= WaistSkin.虫性_腹板1_腹板_表示 || WaistSkin.虫性_腹板2_腹板_表示;
     		bool flag5 = false;
     		flag5 |= 胸腹板D2.虫性_縦線_表示;
-    		flag5 |= 胴腹板D2.虫性_縦線_表示;
-    		flag5 |= 腰肌.虫性_腹板1_縦線_表示 || 腰肌.虫性_腹板2_縦線_表示;
+    		flag5 |= TorsoPlateD2.虫性_縦線_表示;
+    		flag5 |= WaistSkin.虫性_腹板1_縦線_表示 || WaistSkin.虫性_腹板2_縦線_表示;
     		flag5 = flag5 && flag4;
     		if (flag5)
     		{
@@ -3812,12 +3812,12 @@ namespace SlaveMatrix
     		}
     		胸腹板D2.虫性_腹板_表示 = flag4;
     		胸腹板D2.虫性_縦線_表示 = flag5;
-    		胴腹板D2.虫性_腹板_表示 = flag4;
-    		胴腹板D2.虫性_縦線_表示 = flag5;
-    		腰肌.虫性_腹板1_腹板_表示 = flag4;
-    		腰肌.虫性_腹板2_腹板_表示 = flag4;
-    		腰肌.虫性_腹板1_縦線_表示 = flag5;
-    		腰肌.虫性_腹板2_縦線_表示 = flag5;
+    		TorsoPlateD2.虫性_腹板_表示 = flag4;
+    		TorsoPlateD2.虫性_縦線_表示 = flag5;
+    		WaistSkin.虫性_腹板1_腹板_表示 = flag4;
+    		WaistSkin.虫性_腹板2_腹板_表示 = flag4;
+    		WaistSkin.虫性_腹板1_縦線_表示 = flag5;
+    		WaistSkin.虫性_腹板2_縦線_表示 = flag5;
     		if (Rng.XS.NextBool())
     		{
     			bool flag6 = false;
@@ -3901,18 +3901,18 @@ namespace SlaveMatrix
     		}
     		if (単目D2 != null)
     		{
-    			鼻肌D2.紋柄_紋左_紋1_表示 = false;
-    			鼻肌D2.紋柄_紋左_紋2_表示 = false;
-    			鼻肌D2.紋柄_紋左_紋3_表示 = false;
-    			鼻肌D2.紋柄_紋左_紋4_表示 = false;
-    			鼻肌D2.紋柄_紋右_紋1_表示 = false;
-    			鼻肌D2.紋柄_紋右_紋2_表示 = false;
-    			鼻肌D2.紋柄_紋右_紋3_表示 = false;
-    			鼻肌D2.紋柄_紋右_紋4_表示 = false;
+    			NoseSkinD2.紋柄_紋左_紋1_表示 = false;
+    			NoseSkinD2.紋柄_紋左_紋2_表示 = false;
+    			NoseSkinD2.紋柄_紋左_紋3_表示 = false;
+    			NoseSkinD2.紋柄_紋左_紋4_表示 = false;
+    			NoseSkinD2.紋柄_紋右_紋1_表示 = false;
+    			NoseSkinD2.紋柄_紋右_紋2_表示 = false;
+    			NoseSkinD2.紋柄_紋右_紋3_表示 = false;
+    			NoseSkinD2.紋柄_紋右_紋4_表示 = false;
     		}
     		bool flag12 = 顔面D2?.触覚左_接続.IsEleD<触覚D>() ?? false;
     		bool flag13 = HeadD2.触覚左_接続.IsEleD<触覚D>();
-    		bool flag14 = 基髪D2.頭頂左_接続.IsEleD<触覚D>();
+    		bool flag14 = BaseHairD2.頭頂左_接続.IsEleD<触覚D>();
     		if (!flag12 && flag13 && flag14)
     		{
     			if (Rng.XS.NextBool())
@@ -3922,8 +3922,8 @@ namespace SlaveMatrix
     			}
     			else
     			{
-    				基髪D2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
     			}
     		}
     		else if (flag12 && !flag13 && flag14)
@@ -3935,8 +3935,8 @@ namespace SlaveMatrix
     			}
     			else
     			{
-    				基髪D2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
     			}
     		}
     		else if (flag12 && flag13 && !flag14)
@@ -3959,14 +3959,14 @@ namespace SlaveMatrix
     			case 0:
     				HeadD2.触覚左_接続.RemoveAll((ElementData e) => e is 触覚D);
     				HeadD2.触覚右_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
     				break;
     			case 1:
     				顔面D2.触覚左_接続.RemoveAll((ElementData e) => e is 触覚D);
     				顔面D2.触覚右_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
-    				基髪D2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂左_接続.RemoveAll((ElementData e) => e is 触覚D);
+    				BaseHairD2.頭頂右_接続.RemoveAll((ElementData e) => e is 触覚D);
     				break;
     			case 2:
     				顔面D2.触覚左_接続.RemoveAll((ElementData e) => e is 触覚D);
@@ -3989,15 +3989,15 @@ namespace SlaveMatrix
     			HeadD2.触覚左_接続.RemoveAll((ElementData e) => e is 触覚D);
     			HeadD2.触覚右_接続.RemoveAll((ElementData e) => e is 触覚D);
     		}
-    		if (腰肌.陰毛_表示 && 腰肌.獣性_獣毛_表示)
+    		if (WaistSkin.陰毛_表示 && WaistSkin.獣性_獣毛_表示)
     		{
     			if (Rng.XS.NextBool())
     			{
-    				腰肌.陰毛_表示 = false;
+    				WaistSkin.陰毛_表示 = false;
     			}
     			else
     			{
-    				腰肌.獣性_獣毛_表示 = false;
+    				WaistSkin.獣性_獣毛_表示 = false;
     			}
     		}
     		if (縦瞼D2 != null)
@@ -4058,25 +4058,25 @@ namespace SlaveMatrix
     				単瞼D2.睫毛下下右_長さ = 単瞼D2.睫毛下下左_長さ;
     			}
     		}
-    		if ((腰肌.淫タトゥ_ハート_タトゥ右1_表示 || 腰肌.淫タトゥ_ハート_タトゥ右2_表示 || 腰肌.淫タトゥ_ハート_タトゥ左1_表示 || 腰肌.淫タトゥ_ハート_タトゥ左2_表示) && (腰肌.植タトゥ_タトゥ左_表示 || 腰肌.植タトゥ_タトゥ右_表示))
+    		if ((WaistSkin.淫タトゥ_ハート_タトゥ右1_表示 || WaistSkin.淫タトゥ_ハート_タトゥ右2_表示 || WaistSkin.淫タトゥ_ハート_タトゥ左1_表示 || WaistSkin.淫タトゥ_ハート_タトゥ左2_表示) && (WaistSkin.植タトゥ_タトゥ左_表示 || WaistSkin.植タトゥ_タトゥ右_表示))
     		{
     			if (Rng.XS.NextBool())
     			{
-    				腰肌.淫タトゥ_ハート_タトゥ右1_表示 = true;
-    				腰肌.淫タトゥ_ハート_タトゥ右2_表示 = true;
-    				腰肌.淫タトゥ_ハート_タトゥ左1_表示 = true;
-    				腰肌.淫タトゥ_ハート_タトゥ左2_表示 = true;
-    				腰肌.植タトゥ_タトゥ左_表示 = false;
-    				腰肌.植タトゥ_タトゥ右_表示 = false;
+    				WaistSkin.淫タトゥ_ハート_タトゥ右1_表示 = true;
+    				WaistSkin.淫タトゥ_ハート_タトゥ右2_表示 = true;
+    				WaistSkin.淫タトゥ_ハート_タトゥ左1_表示 = true;
+    				WaistSkin.淫タトゥ_ハート_タトゥ左2_表示 = true;
+    				WaistSkin.植タトゥ_タトゥ左_表示 = false;
+    				WaistSkin.植タトゥ_タトゥ右_表示 = false;
     			}
     			else
     			{
-    				腰肌.淫タトゥ_ハート_タトゥ右1_表示 = false;
-    				腰肌.淫タトゥ_ハート_タトゥ右2_表示 = false;
-    				腰肌.淫タトゥ_ハート_タトゥ左1_表示 = false;
-    				腰肌.淫タトゥ_ハート_タトゥ左2_表示 = false;
-    				腰肌.植タトゥ_タトゥ左_表示 = true;
-    				腰肌.植タトゥ_タトゥ右_表示 = true;
+    				WaistSkin.淫タトゥ_ハート_タトゥ右1_表示 = false;
+    				WaistSkin.淫タトゥ_ハート_タトゥ右2_表示 = false;
+    				WaistSkin.淫タトゥ_ハート_タトゥ左1_表示 = false;
+    				WaistSkin.淫タトゥ_ハート_タトゥ左2_表示 = false;
+    				WaistSkin.植タトゥ_タトゥ左_表示 = true;
+    				WaistSkin.植タトゥ_タトゥ右_表示 = true;
     			}
     		}
     		if (flag3)

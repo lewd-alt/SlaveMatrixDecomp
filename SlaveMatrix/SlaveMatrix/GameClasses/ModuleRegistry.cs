@@ -1011,17 +1011,17 @@ namespace SlaveMatrix
     	{
     		if (GlobalState.GameData.TrainingTarget.妊娠状態変数 > -1)
     		{
-    			TrainingTarget.Body.ボテ腹i = GlobalState.GameData.TrainingTarget.妊娠状態変数;
-    			TrainingTarget.Body.ボテ腹_表示 = true;
+    			TrainingTarget.Body.PregnantBellyi = GlobalState.GameData.TrainingTarget.妊娠状態変数;
+    			TrainingTarget.Body.PregnantBelly_表示 = true;
     			if (!TrainingTarget.Body.Is獣)
     			{
-    				TrainingTarget.Body.ボテ腹_人.ハイライト表示 = GlobalState.GameData.TrainingTarget.妊娠状態変数 > 2;
+    				TrainingTarget.Body.PregnantBelly_人.ハイライト表示 = GlobalState.GameData.TrainingTarget.妊娠状態変数 > 2;
     			}
     		}
     		else
     		{
-    			TrainingTarget.Body.ボテ腹i = 0;
-    			TrainingTarget.Body.ボテ腹_表示 = false;
+    			TrainingTarget.Body.PregnantBellyi = 0;
+    			TrainingTarget.Body.PregnantBelly_表示 = false;
     		}
     		//TrainingTarget.Bod.断面_表示 = TrainingTarget.Bod.断面_表示;
     		TrainingTarget.Body.変動ステート更新();
@@ -1642,7 +1642,7 @@ namespace SlaveMatrix
     			}
     			if (TrainingTarget.Body.Is双眉)
     			{
-    				TrainingTarget.Body.眉左.眉間_表示 = false;
+    				TrainingTarget.Body.EyebrowLeft.眉間_表示 = false;
     				TrainingTarget.Body.眉右.眉間_表示 = false;
     			}
     			if (TrainingTarget.Body.IsDualEyes)
@@ -1666,10 +1666,10 @@ namespace SlaveMatrix
     			}
     			if (TrainingTarget.Body.IsForeheadEye)
     			{
-    				TrainingTarget.額瞼_半1();
-    				TrainingTarget.額目_見つめ();
+    				TrainingTarget.ForeheadEyelid_半1();
+    				TrainingTarget.ForeheadEye_見つめ();
     			}
-    			if (!TrainingTarget.Body.玉口枷_表示)
+    			if (!TrainingTarget.Body.BallGag_表示)
     			{
     				TrainingTarget.口_閉笑();
     			}
@@ -1742,8 +1742,8 @@ namespace SlaveMatrix
                     Player.UI.キャップ3CharacterElement.Show = GlobalState.GameData.PurchasedTools[8];
                     Player.UI.ロータCM.Show = GlobalState.GameData.PurchasedTools[9];
                     Player.UI.パールCM.Show = GlobalState.GameData.PurchasedTools[10];
-                    Player.UI.目隠帯.Dra = GlobalState.GameData.PurchasedTools[11];
-                    Player.UI.玉口枷.Dra = GlobalState.GameData.PurchasedTools[12];
+                    Player.UI.Blindfold.Dra = GlobalState.GameData.PurchasedTools[11];
+                    Player.UI.BallGag.Dra = GlobalState.GameData.PurchasedTools[12];
                     Player.UI.撮影.Dra = GlobalState.GameData.PurchasedTools[13];
                     Player.表示ステート更新();
                     Player.ModBox();
@@ -1933,7 +1933,7 @@ namespace SlaveMatrix
                     Player.絶頂終了処理_();
                     Player.射精終了処理_();
                     TrainingTarget.Body.VaginalCumDrip.精液濃度 = 0.0;
-                    TrainingTarget.Body.断面.精液濃度 = 0.0;
+                    TrainingTarget.Body.XRay.精液濃度 = 0.0;
                     TrainingTarget.Body.スタンプClear();
                     TrainingTarget.Body.Waist.位置B = Med.Base.GetPosition(new Vector2D(0.5, 0.5));
                     TrainingTarget.Body.汗染み濃度 = 0.0;
@@ -1942,7 +1942,7 @@ namespace SlaveMatrix
                     TrainingTarget.Body.UrineStainIntensity = 0.0;
                     if (!TrainingTarget.Body.Is粘)
                     {
-                        TrainingTarget.Body.断面_表示 = false;
+                        TrainingTarget.Body.XRay_表示 = false;
                     }
                     TrainingTarget.EyeTracking.End();
                     TrainingTarget.MouthCumDrip.End();
@@ -1964,7 +1964,7 @@ namespace SlaveMatrix
                     TrainingTarget.Emotion();
                     TrainingTarget.SetInitialExpression();
                     TrainingTarget.口修正();
-                    TrainingTarget.舌_無し();
+                    TrainingTarget.Tounge_無し();
                     TrainingTarget.Set衣装(GlobalState.GameData.TrainingTarget.着衣);
                     Player.SetState();
                     Player.表示ステート更新();
@@ -1978,10 +1978,10 @@ namespace SlaveMatrix
                     Result2 = false;
                     Result3 = false;
                     si.Set(bre: false);
-                    GlobalState.GameData.目隠帯 = false;
-                    GlobalState.GameData.玉口枷 = false;
+                    GlobalState.GameData.Blindfold = false;
+                    GlobalState.GameData.BallGag = false;
                     GlobalState.GameData.拘束具 = false;
-                    GlobalState.GameData.断面 = false;
+                    GlobalState.GameData.XRay = false;
                 },
                 Draw = delegate (FpsCounter FPS)
                 {
@@ -2523,7 +2523,7 @@ namespace SlaveMatrix
     					}
     					if (TrainingTarget.Body.IsForeheadEye)
     					{
-    						TrainingTarget.額目_見つめ();
+    						TrainingTarget.ForeheadEye_見つめ();
     					}
     					if (GlobalState.GameData.TrainingTarget.Mother.Race == GameText.ヴィオランテ)
     					{
@@ -2567,7 +2567,7 @@ namespace SlaveMatrix
     					}
     					if (TrainingTarget.Body.IsForeheadEye)
     					{
-    						TrainingTarget.額目_見つめ();
+    						TrainingTarget.ForeheadEye_見つめ();
     					}
     					if (GlobalState.GameData.TrainingTarget.Father.Race == GameText.ヴィオランテ)
     					{
@@ -3369,7 +3369,7 @@ namespace SlaveMatrix
     				}
     				if (祝福.Body.IsForeheadEye)
     				{
-    					祝福.額目_見つめ();
+    					祝福.ForeheadEye_見つめ();
     				}
     				if (GlobalState.GameData.祝福.Race == GameText.ヴィオランテ)
     				{
@@ -3409,7 +3409,7 @@ namespace SlaveMatrix
     				}
     				if (祝福.Body.IsForeheadEye)
     				{
-    					祝福.額目_見つめ();
+    					祝福.ForeheadEye_見つめ();
     				}
     				if (GlobalState.GameData.祝福.Mother.Race == GameText.ヴィオランテ)
     				{
@@ -3449,7 +3449,7 @@ namespace SlaveMatrix
     				}
     				if (祝福.Body.IsForeheadEye)
     				{
-    					祝福.額目_見つめ();
+    					祝福.ForeheadEye_見つめ();
     				}
     				if (GlobalState.GameData.祝福.Father.Race == GameText.ヴィオランテ)
     				{
@@ -5190,10 +5190,10 @@ namespace SlaveMatrix
     		}), new TextAction(GameText.ｱﾅﾙﾊﾟｰﾙ + "     20,000,000", delegate(ButtonBase b)
     		{
     			buy(b, 10, 20000000uL);
-    		}), new TextAction(GameText.目隠帯 + "      25,000,000", delegate(ButtonBase b)
+    		}), new TextAction(GameText.Blindfold + "      25,000,000", delegate(ButtonBase b)
     		{
     			buy(b, 11, 25000000uL);
-    		}), new TextAction(GameText.玉口枷 + "      20,000,000", delegate(ButtonBase b)
+    		}), new TextAction(GameText.BallGag + "      20,000,000", delegate(ButtonBase b)
     		{
     			buy(b, 12, 20000000uL);
     		}), new TextAction(GameText.カメラ + "     100,000,000", delegate(ButtonBase b)

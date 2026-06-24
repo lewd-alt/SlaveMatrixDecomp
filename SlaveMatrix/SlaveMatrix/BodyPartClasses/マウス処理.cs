@@ -204,8 +204,8 @@ namespace SlaveMatrix
     				}
     				else if (cd.c == ContactType.Anal)
     				{
-    					調教UI.Set_肛門(対象.Element);
-    					吸引時(GameText.肛門 + "\r\n");
+    					調教UI.Set_Anus(対象.Element);
+    					吸引時(GameText.Anus + "\r\n");
     					調教UI.肛門演出();
     				}
     				else if (cd.c == ContactType.Thread)
@@ -285,7 +285,7 @@ namespace SlaveMatrix
     			}
     			else if (cd.c == ContactType.Anal)
     			{
-    				オーバー時(GameText.肛門 + "\r\n", ref cd);
+    				オーバー時(GameText.Anus + "\r\n", ref cd);
     			}
     			else
     			{
@@ -365,7 +365,7 @@ namespace SlaveMatrix
     					マウス処理2.対象.Element.尺度C = s * d;
     				}
     				マウス処理2.対象.Element.位置C = GeometryUtils.GetRandomVector() * d * 0.0005;
-    				調教UI.マウス.X2Y0_舌.SetPositionCont(GeometryUtils.GetRandomVector() * d * 0.001);
+    				調教UI.マウス.X2Y0_Tounge.SetPositionCont(GeometryUtils.GetRandomVector() * d * 0.001);
     				if (sw.IsRunning)
     				{
     					if (sw.ElapsedMilliseconds > 250)
@@ -413,7 +413,7 @@ namespace SlaveMatrix
     				m.ResetValue();
     				マウス処理2.対象.Element.尺度C = 1.0;
     				マウス処理2.対象.Element.位置C = DataConsts.Vec2DZero;
-    				調教UI.マウス.X2Y0_舌.SetPositionCont(DataConsts.Vec2DZero);
+    				調教UI.マウス.X2Y0_Tounge.SetPositionCont(DataConsts.Vec2DZero);
     			}
     		};
     		調教UI.Mots.Add(キスモーション.GetHashCode().ToString(), キスモーション);

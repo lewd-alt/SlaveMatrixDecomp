@@ -253,7 +253,7 @@ namespace SlaveMatrix
     				Bod.乳房左.Yv = 0.2 + 0.4 * d;
     				Bod.乳房右.Yv = 0.2 + 0.4 * d;
     				vc.Y = -0.002 * d;
-    				Bod.胸毛_人.位置C = vc;
+    				Bod.ChestHair_人.位置C = vc;
     				対象.Element.角度C = (100.0 * x).Clamp(-5.0, 5.0);
     				if (yi != Bod.乳房左.Yi && Bod.乳房左.Yi == 1)
     				{
@@ -491,7 +491,7 @@ namespace SlaveMatrix
 
                 調教UI.ハンド処理.バスト初期化.Start();
     			vc = DataConsts.Vec2DZero;
-    			Bod.胸毛_人.位置C = vc;
+    			Bod.ChestHair_人.位置C = vc;
     			調教UI.ハンド左表示 = false;
     			調教UI.ハンド右.位置C = DataConsts.Vec2DZero;
     			調教UI.ハンド左.位置C = DataConsts.Vec2DZero;
@@ -648,7 +648,7 @@ namespace SlaveMatrix
     		};
     		調教UI.Mots.Add(射精.GetHashCode().ToString(), 射精);
     		bool 外出し = false;
-    		bool 断面 = false;
+    		bool XRay = false;
     		ShapePart p;
     		Vector2D cp;
     		Color hc;
@@ -667,7 +667,7 @@ namespace SlaveMatrix
     				}
     				else
     				{
-    					断面 = ペニス処理2.Bod.断面_表示 && ペニス処理2.挿入箇所 == ContactType.Vagina;
+    					XRay = ペニス処理2.Bod.XRay_表示 && ペニス処理2.挿入箇所 == ContactType.Vagina;
     				}
     			},
     			OnUpdate = delegate(Motion m)
@@ -691,10 +691,10 @@ namespace SlaveMatrix
     				}
     				else
     				{
-    					if (断面 && ペニス処理2.挿入箇所 == ContactType.Vagina)
+    					if (XRay && ペニス処理2.挿入箇所 == ContactType.Vagina)
     					{
     						ペニス処理2.Bod.VaginalCumDrip.精液濃度 = (ペニス処理2.Bod.VaginalCumDrip.精液濃度 + 0.05).Clamp(0.0, 1.0);
-    						ペニス処理2.Bod.断面.精液濃度 = (ペニス処理2.Bod.断面.精液濃度 + 0.025).Clamp(0.0, 1.0);
+    						ペニス処理2.Bod.XRay.精液濃度 = (ペニス処理2.Bod.XRay.精液濃度 + 0.025).Clamp(0.0, 1.0);
     					}
     					調教UI.Action(ペニス処理2.挿入箇所, ActionType.Insertion, CurrentState.Start, ToolType.Penis, 0, 1, 機械: false, 射精: true);
     					Player.中出し処理();
@@ -714,7 +714,7 @@ namespace SlaveMatrix
     					調教UI.射精.表示 = false;
     					調教UI.射精.Yi = 0;
     				}
-    				else if (断面)
+    				else if (XRay)
     				{
     					_ = ペニス処理2.挿入箇所;
     					_ = 14;
@@ -829,7 +829,7 @@ namespace SlaveMatrix
     			{
     				ペニス処理2.Bod.頬濃度 = 0.0;
     				ペニス処理2.Bod.口.Yi = 13;
-    				ペニス処理2.Bod.舌_表示 = true;
+    				ペニス処理2.Bod.Tounge_表示 = true;
     				s = Rng.XS.NextSign();
     				調教UI.Action(ContactType.Mouth, ActionType.Insertion, CurrentState.Start, ToolType.Penis, 0, 1, 機械: false, 射精: false);
     				Player.奴体力消費小();
@@ -842,7 +842,7 @@ namespace SlaveMatrix
     				d2 = m.Value * 調教UI.ペニス.Yv * t;
     				ペニス処理2.Bod.頬濃度 = d1;
     				ペニス処理2.Bod.頭.角度C = s * 5.0 * d2;
-    				ペニス処理2.Bod.舌.角度C = s * -60.0 * d2;
+    				ペニス処理2.Bod.Tounge.角度C = s * -60.0 * d2;
     				調教UI.Action(ContactType.Mouth, ActionType.Insertion, CurrentState.Continue, ToolType.Penis, 0, 1, 機械: false, 射精: false);
     				Player.奴体力消費小();
     				Player.主精力消費小();
@@ -857,10 +857,10 @@ namespace SlaveMatrix
     			OnEnd = delegate(Motion m)
     			{
     				m.ResetValue();
-    				ペニス処理2.Bod.舌_表示 = false;
+    				ペニス処理2.Bod.Tounge_表示 = false;
     				ペニス処理2.Bod.頬濃度 = 0.0;
     				ペニス処理2.Bod.頭.角度C = 0.0;
-    				ペニス処理2.Bod.舌.角度C = 0.0;
+    				ペニス処理2.Bod.Tounge.角度C = 0.0;
     				調教UI.Action(ContactType.Mouth, ActionType.Insertion, CurrentState.End, ToolType.Penis, 0, 1, 機械: false, 射精: false);
     				Player.奴体力消費小();
     				Player.主精力消費小();
@@ -939,16 +939,16 @@ namespace SlaveMatrix
     				}
     				ペニス処理2.Bod.乳房左.Yv = 0.2 + 0.5 * vl;
     				ペニス処理2.Bod.乳房右.Yv = 0.2 + 0.5 * vr;
-    				if (ペニス処理2.Bod.胸毛_人 != null)
+    				if (ペニス処理2.Bod.ChestHair_人 != null)
     				{
     					if (ペニス処理2.Isパイズリ相互)
     					{
-    						ペニス処理2.Bod.胸毛_人.角度C = s * -2.5 + s * 5.0 * vl;
+    						ペニス処理2.Bod.ChestHair_人.角度C = s * -2.5 + s * 5.0 * vl;
     					}
     					else
     					{
     						vc.Y = -0.002 * vl;
-    						ペニス処理2.Bod.胸毛_人.位置C = vc;
+    						ペニス処理2.Bod.ChestHair_人.位置C = vc;
     					}
     				}
     				if (ペニス処理2.Bod.EI腕前 != null)
@@ -969,8 +969,8 @@ namespace SlaveMatrix
     			{
     				ペニス処理2.手固定 = false;
     				調教UI.ハンド処理.バスト初期化.Start();
-    				ペニス処理2.Bod.胸毛_人.角度C = 0.0;
-    				ペニス処理2.Bod.胸毛_人.位置C = DataConsts.Vec2DZero;
+    				ペニス処理2.Bod.ChestHair_人.角度C = 0.0;
+    				ペニス処理2.Bod.ChestHair_人.位置C = DataConsts.Vec2DZero;
     				if (ペニス処理2.肩左 != null)
     				{
     					ペニス処理2.肩左.角度C = 0.0;

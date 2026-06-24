@@ -427,7 +427,7 @@ namespace SlaveMatrix
 
     	public static string 口枷 => Trai[16];
 
-    	public static string 断面 => Trai[17];
+    	public static string XRay => Trai[17];
 
     	public static string 媚薬 => Trai[18];
 
@@ -457,7 +457,7 @@ namespace SlaveMatrix
 
     	public static string 口腔 => Trai[31];
 
-    	public static string 肛門 => Trai[32];
+    	public static string Anus => Trai[32];
 
     	public static string 膣腔 => Trai[33];
 
@@ -711,9 +711,9 @@ namespace SlaveMatrix
 
     	public static string ｱﾅﾙﾊﾟｰﾙ => Tool[11];
 
-    	public static string 目隠帯 => Tool[12];
+    	public static string Blindfold => Tool[12];
 
-    	public static string 玉口枷 => Tool[13];
+    	public static string BallGag => Tool[13];
 
     	public static string カメラ => Tool[14];
 

@@ -207,7 +207,7 @@ namespace SlaveMatrix
     	{
     		瞼_宇 瞼_宇2 = this;
     		ThisType = GetType();
-    		Body = new VariantGrid(GlobalState.胴体["エイリアン目左"]);
+    		Body = new VariantGrid(GlobalState.胴体["AlienEyeLeft"]);
     		PartGroup partGroup = Body[0][0];
     		X0Y0_目 = partGroup["目"].ToPar();
     		X0Y0_ハイライト = partGroup["ハイライト"].ToPar();
@@ -334,7 +334,7 @@ namespace SlaveMatrix
 
     	private void 配色N0(BodyColorSet 体配色)
     	{
-    		目CD = new ColorD(ref ColorHelper.Black, ref 体配色.目左O);
+    		目CD = new ColorD(ref ColorHelper.Black, ref 体配色.EyeLeftO);
     		ハイライトCD = new ColorD(ref ColorHelper.Empty, ref 体配色.ハイライト);
     		瞬膜CD = new ColorD(ref ColorHelper.Black, ref 体配色.白部O);
     	}

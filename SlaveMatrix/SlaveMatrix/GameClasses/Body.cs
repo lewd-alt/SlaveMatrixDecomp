@@ -1,10 +1,10 @@
-﻿using System;
+﻿using _2DGAMELIB;
+using SlaveMatrix.GameClasses;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using _2DGAMELIB;
-using SlaveMatrix.GameClasses;
 
 namespace SlaveMatrix
 {
@@ -63,11 +63,11 @@ namespace SlaveMatrix
 
     	public Head 頭;
 
-    	public 基髪 基髪;
+    	public BaseHair BaseHair;
 
-    	public 前髪 前髪;
+    	public FrontHair FrontHair;
 
-    	public SideHair 横髪左;
+    	public SideHair SideHairLeft;
 
     	public SideHair 横髪右;
 
@@ -75,11 +75,11 @@ namespace SlaveMatrix
 
     	public BackHair0 後髪0;
 
-    	public 単目 単眼目;
+    	public 単目 MonoEye;
 
-    	public 単瞼 単眼瞼;
+    	public 単瞼 MonoEyelid;
 
-    	public 双目 目左;
+    	public 双目 EyeLeft;
 
     	public 双目 目右;
 
@@ -87,15 +87,15 @@ namespace SlaveMatrix
 
     	public 双瞼 瞼右;
 
-    	public 縦目 額目;
+    	public 縦目 ForeheadEye;
 
-    	public 縦瞼 額瞼;
+    	public 縦瞼 ForeheadEyelid;
 
-    	public 頬目 頬目左;
+    	public 頬目 CheekEyeLeft;
 
     	public 頬目 頬目右;
 
-    	public 頬瞼 頬瞼左;
+    	public 頬瞼 CheekEyelidLeft;
 
     	public 頬瞼 頬瞼右;
 
@@ -103,9 +103,9 @@ namespace SlaveMatrix
 
     	public 涙 RightTear;
 
-    	public 目隠帯 目隠帯;
+    	public Blindfold Blindfold;
 
-    	public 鼻 鼻;
+    	public Nose Nose;
 
     	public 鼻水 LeftNoseDrip;
 
@@ -113,7 +113,7 @@ namespace SlaveMatrix
 
     	public 口 口;
 
-    	public 舌 舌;
+    	public Tounge Tounge;
 
     	public 涎 LeftDrool;
 
@@ -125,31 +125,31 @@ namespace SlaveMatrix
 
     	public 呼気 呼気;
 
-    	public 玉口枷 玉口枷;
+    	public BallGag BallGag;
 
-    	public 単眼眉 単眼眉;
+    	public MonoEyebrow MonoEyebrow;
 
-    	public 眉 眉左;
+    	public 眉 EyebrowLeft;
 
     	public 眉 眉右;
 
-    	public 鼻肌 鼻肌;
+    	public NoseSkin NoseSkin;
 
-    	public 頬肌 頬肌左;
+    	public 頬肌 CheekSkinLeft;
 
     	public 頬肌 頬肌右;
 
-    	public 目尻影 目尻影左;
+    	public 目尻影 EyeCornerShadowLeft;
 
     	public 目尻影 目尻影右;
 
-    	public 紅潮 紅潮;
+    	public CrimsonSquirt CrimsonSquirt;
 
-    	public 目傷 目傷左;
+    	public 目傷 EyeScarLeft;
 
     	public 目傷 目傷右;
 
-    	public 顔ハイライト 顔ハイライト左;
+    	public 顔ハイライト FaceHighlightLeft;
 
     	public 顔ハイライト 顔ハイライト右;
 
@@ -157,17 +157,17 @@ namespace SlaveMatrix
 
     	public 胸肌 胸肌_人;
 
-    	public 胸毛 胸毛_人;
+    	public ChestHair ChestHair_人;
 
-    	public 胴腹板 胴腹板_人;
+    	public TorsoPlate TorsoPlate_人;
 
-    	public 胴肌 胴肌_人;
+    	public TorsoSkin TorsoSkin_人;
 
-    	public ボテ腹_人 ボテ腹_人;
+    	public PregnantBelly_人 PregnantBelly_人;
 
-    	public ボテ腹板 ボテ腹板_人;
+    	public PregnantBellyPlate PregnantBellyPlate_人;
 
-    	public 腰肌 腰肌_人;
+    	public WaistSkin WaistSkin_人;
 
     	public 乳房 乳房左;
 
@@ -185,11 +185,11 @@ namespace SlaveMatrix
 
     	public キャップ2 キャップ2右;
 
-    	public 膣基_人 膣基_人;
+    	public VaginaOrigin_人 VaginaOrigin_人;
 
-    	public 膣内精液_人 膣内精液_人;
+    	public InternalSemen_人 InternalSemen_人;
 
-    	public 断面_人 断面_人;
+    	public XRay_人 XRay_人;
 
     	public 性器_人 性器_人;
 
@@ -207,7 +207,7 @@ namespace SlaveMatrix
 
     	public キャップ1 キャップ1;
 
-    	public 肛門_人 肛門_人;
+    	public Anus_人 Anus_人;
 
     	public 肛門精液_人 肛門精液_人;
 
@@ -221,25 +221,25 @@ namespace SlaveMatrix
 
     	public 下着トップ_ブラ 下着T_ブラ;
 
-    	public 下着乳首 下着乳首左;
+    	public 下着乳首 UnderwearNippleLeft;
 
     	public 下着乳首 下着乳首右;
 
-    	public 下着ボトム_ノーマル 下着B_ノーマル;
+    	public UnderwearBottom_ノーマル 下着B_ノーマル;
 
-    	public 下着ボトム_マイクロ 下着B_マイクロ;
+    	public UnderwearBottom_マイクロ 下着B_マイクロ;
 
-    	public 下着陰核 下着陰核;
+    	public UnderwearClitoris UnderwearClitoris;
 
     	public 上着ミドル_ドレス 上着M_ドレス;
 
     	public 上着トップ_ドレス 上着T_ドレス;
 
-    	public 上着ボトム_クロス 上着B_クロス;
+    	public JacketBottom_クロス 上着B_クロス;
 
-    	public 上着ボトム_クロス後 上着B_クロス後;
+    	public JacketBottom_クロス後 上着B_クロス後;
 
-    	public 上着ボトム_前掛け 上着B_前掛け;
+    	public JacketBottom_前掛け 上着B_前掛け;
 
     	public 長物_魚 魚;
 
@@ -263,23 +263,23 @@ namespace SlaveMatrix
 
     	public 胸肌 胸肌_獣;
 
-    	public 胴肌 胴肌_獣;
+    	public TorsoSkin TorsoSkin_獣;
 
-    	public 腰肌 腰肌_獣;
+    	public WaistSkin WaistSkin_獣;
 
-    	public 胸毛 胸毛_獣;
+    	public ChestHair ChestHair_獣;
 
-    	public ボテ腹_獣 ボテ腹_獣;
+    	public PregnantBelly_獣 PregnantBelly_獣;
 
-    	public 肛門_獣 肛門_獣;
+    	public Anus_獣 Anus_獣;
 
     	public 肛門精液_獣 肛門精液_獣;
 
-    	public 膣基_獣 膣基_獣;
+    	public VaginaOrigin_獣 VaginaOrigin_獣;
 
-    	public 膣内精液_獣 膣内精液_獣;
+    	public InternalSemen_獣 InternalSemen_獣;
 
-    	public 断面_獣 断面_獣;
+    	public XRay_獣 XRay_獣;
 
     	public 性器_獣 性器_獣;
 
@@ -701,11 +701,11 @@ namespace SlaveMatrix
 
     	public bool 処女喪失;
 
-    	public 膣基 膣基;
+    	public VaginaOrigin VaginaOrigin;
 
-    	public 膣内精液 VaginalCumDrip;
+    	public InternalSemen VaginalCumDrip;
 
-    	public 断面 断面;
+    	public XRay XRay;
 
     	public 性器 性器;
 
@@ -719,7 +719,7 @@ namespace SlaveMatrix
 
     	public 放尿 Urination;
 
-    	public 肛門 肛門;
+    	public Anus Anus;
 
     	public 肛門精液 AnalCum;
 
@@ -733,9 +733,9 @@ namespace SlaveMatrix
 
     	private double 子宮下がり_;
 
-    	private double 肛門y;
+    	private double Anusy;
 
-    	private double 肛門v;
+    	private double Anusv;
 
     	private double 肛門開き_;
 
@@ -769,9 +769,9 @@ namespace SlaveMatrix
 
     	private 髪留2情報 横髪髪留i;
 
-    	private 玉口枷情報 玉口枷i;
+    	private BallGagInformation BallGagi;
 
-    	private 目隠帯情報 目隠帯i;
+    	private BlindfoldInformation Blindfoldi;
 
     	private 拘束具情報 拘束具i;
 
@@ -867,34 +867,34 @@ namespace SlaveMatrix
 
     	public int 長胴n;
 
-    	public bool 舌_表示
+    	public bool Tounge_表示
     	{
     		get
     		{
-    			return 舌.表示;
+    			return Tounge.表示;
     		}
     		set
     		{
-    			舌.表示 = value;
-    			舌.SetValues("股", value && Is舌股);
+    			Tounge.表示 = value;
+    			Tounge.SetValues("股", value && Is舌股);
     		}
     	}
 
-    	public bool 断面_表示
+    	public bool XRay_表示
     	{
     		get
     		{
-    			if (!膣基.表示 && !VaginalCumDrip.表示)
+    			if (!VaginaOrigin.表示 && !VaginalCumDrip.表示)
     			{
-    				return 断面.表示;
+    				return XRay.表示;
     			}
     			return true;
     		}
     		set
     		{
-    			膣基.表示 = value;
+    			VaginaOrigin.表示 = value;
     			VaginalCumDrip.精液_表示 = value;
-    			断面.表示 = value;
+    			XRay.表示 = value;
     			if (処女喪失)
     			{
     				VaginalCumDrip.血液1_表示 = value;
@@ -904,86 +904,86 @@ namespace SlaveMatrix
     			{
     				if (Is獣)
     				{
-    					断面_獣.子宮_表示 = !ボテ腹_表示;
-    					断面_獣.子宮口_表示 = !ボテ腹_表示;
-    					断面_獣.子宮内_表示 = !ボテ腹_表示;
-    					断面_獣.卵管左_表示 = !ボテ腹_表示;
-    					断面_獣.卵巣左_表示 = !ボテ腹_表示;
-    					断面_獣.卵管右_表示 = !ボテ腹_表示;
-    					断面_獣.卵巣右_表示 = !ボテ腹_表示;
-    					断面_獣.精液_表示 = !ボテ腹_表示;
+    					XRay_獣.子宮_表示 = !PregnantBelly_表示;
+    					XRay_獣.子宮口_表示 = !PregnantBelly_表示;
+    					XRay_獣.子宮内_表示 = !PregnantBelly_表示;
+    					XRay_獣.卵管左_表示 = !PregnantBelly_表示;
+    					XRay_獣.卵巣左_表示 = !PregnantBelly_表示;
+    					XRay_獣.卵管右_表示 = !PregnantBelly_表示;
+    					XRay_獣.卵巣右_表示 = !PregnantBelly_表示;
+    					XRay_獣.精液_表示 = !PregnantBelly_表示;
     				}
     				else
     				{
-    					断面_人.子宮_表示 = !ボテ腹_表示;
-    					断面_人.子宮口_表示 = !ボテ腹_表示;
-    					断面_人.子宮内_表示 = !ボテ腹_表示;
-    					断面_人.卵管左_表示 = !ボテ腹_表示;
-    					断面_人.卵巣左_表示 = !ボテ腹_表示;
-    					断面_人.卵管右_表示 = !ボテ腹_表示;
-    					断面_人.卵巣右_表示 = !ボテ腹_表示;
-    					断面_人.精液_表示 = !ボテ腹_表示;
+    					XRay_人.子宮_表示 = !PregnantBelly_表示;
+    					XRay_人.子宮口_表示 = !PregnantBelly_表示;
+    					XRay_人.子宮内_表示 = !PregnantBelly_表示;
+    					XRay_人.卵管左_表示 = !PregnantBelly_表示;
+    					XRay_人.卵巣左_表示 = !PregnantBelly_表示;
+    					XRay_人.卵管右_表示 = !PregnantBelly_表示;
+    					XRay_人.卵巣右_表示 = !PregnantBelly_表示;
+    					XRay_人.精液_表示 = !PregnantBelly_表示;
     				}
     			}
     		}
     	}
 
-    	public bool ボテ腹_表示
+    	public bool PregnantBelly_表示
     	{
     		get
     		{
     			if (!Is獣)
     			{
-    				return ボテ腹_人.表示;
+    				return PregnantBelly_人.表示;
     			}
-    			return ボテ腹_獣.表示;
+    			return PregnantBelly_獣.表示;
     		}
     		set
     		{
     			if (Is獣)
     			{
-    				ボテ腹_獣.表示 = value;
+    				PregnantBelly_獣.表示 = value;
     				return;
     			}
-    			if (!ボテ腹_人.表示 && value)
+    			if (!PregnantBelly_人.表示 && value)
     			{
-    				ボテ腹板_人.腹板1_腹板_表示 = 胸腹板_人.虫性_腹板_表示;
-    				ボテ腹板_人.腹板1_縦線_表示 = 胸腹板_人.虫性_縦線_表示;
-    				ボテ腹板_人.腹板2_腹板_表示 = 胴腹板_人.虫性_腹板_表示;
-    				ボテ腹板_人.腹板2_縦線_表示 = 胴腹板_人.虫性_縦線_表示;
-    				ボテ腹板_人.腹板3_腹板_表示 = 腰肌_人.虫性_腹板1_腹板_表示;
-    				ボテ腹板_人.腹板3_縦線_表示 = 腰肌_人.虫性_腹板1_縦線_表示;
-    				ボテ腹板_人.腹板4_腹板_表示 = 腰肌_人.虫性_腹板2_腹板_表示;
-    				ボテ腹板_人.腹板4_縦線_表示 = 腰肌_人.虫性_腹板2_縦線_表示;
+    				PregnantBellyPlate_人.腹板1_腹板_表示 = 胸腹板_人.虫性_腹板_表示;
+    				PregnantBellyPlate_人.腹板1_縦線_表示 = 胸腹板_人.虫性_縦線_表示;
+    				PregnantBellyPlate_人.腹板2_腹板_表示 = TorsoPlate_人.虫性_腹板_表示;
+    				PregnantBellyPlate_人.腹板2_縦線_表示 = TorsoPlate_人.虫性_縦線_表示;
+    				PregnantBellyPlate_人.腹板3_腹板_表示 = WaistSkin_人.虫性_腹板1_腹板_表示;
+    				PregnantBellyPlate_人.腹板3_縦線_表示 = WaistSkin_人.虫性_腹板1_縦線_表示;
+    				PregnantBellyPlate_人.腹板4_腹板_表示 = WaistSkin_人.虫性_腹板2_腹板_表示;
+    				PregnantBellyPlate_人.腹板4_縦線_表示 = WaistSkin_人.虫性_腹板2_縦線_表示;
     				胸腹板_人.虫性_腹板_表示 = false;
     				胸腹板_人.虫性_縦線_表示 = false;
-    				胴腹板_人.虫性_腹板_表示 = false;
-    				胴腹板_人.虫性_縦線_表示 = false;
-    				腰肌_人.虫性_腹板1_腹板_表示 = false;
-    				腰肌_人.虫性_腹板1_縦線_表示 = false;
-    				腰肌_人.虫性_腹板2_腹板_表示 = false;
-    				腰肌_人.虫性_腹板2_縦線_表示 = false;
+    				TorsoPlate_人.虫性_腹板_表示 = false;
+    				TorsoPlate_人.虫性_縦線_表示 = false;
+    				WaistSkin_人.虫性_腹板1_腹板_表示 = false;
+    				WaistSkin_人.虫性_腹板1_縦線_表示 = false;
+    				WaistSkin_人.虫性_腹板2_腹板_表示 = false;
+    				WaistSkin_人.虫性_腹板2_縦線_表示 = false;
     			}
-    			else if (ボテ腹_人.表示 && !value)
+    			else if (PregnantBelly_人.表示 && !value)
     			{
-    				胸腹板_人.虫性_腹板_表示 = ボテ腹板_人.腹板1_腹板_表示;
-    				胸腹板_人.虫性_縦線_表示 = ボテ腹板_人.腹板1_縦線_表示;
-    				胴腹板_人.虫性_腹板_表示 = ボテ腹板_人.腹板2_腹板_表示;
-    				胴腹板_人.虫性_縦線_表示 = ボテ腹板_人.腹板2_縦線_表示;
-    				腰肌_人.虫性_腹板1_腹板_表示 = ボテ腹板_人.腹板3_腹板_表示;
-    				腰肌_人.虫性_腹板1_縦線_表示 = ボテ腹板_人.腹板3_縦線_表示;
-    				腰肌_人.虫性_腹板2_腹板_表示 = ボテ腹板_人.腹板4_腹板_表示;
-    				腰肌_人.虫性_腹板2_縦線_表示 = ボテ腹板_人.腹板4_縦線_表示;
-    				ボテ腹板_人.腹板1_腹板_表示 = false;
-    				ボテ腹板_人.腹板1_縦線_表示 = false;
-    				ボテ腹板_人.腹板2_腹板_表示 = false;
-    				ボテ腹板_人.腹板2_縦線_表示 = false;
-    				ボテ腹板_人.腹板3_腹板_表示 = false;
-    				ボテ腹板_人.腹板3_縦線_表示 = false;
-    				ボテ腹板_人.腹板4_腹板_表示 = false;
-    				ボテ腹板_人.腹板4_縦線_表示 = false;
+    				胸腹板_人.虫性_腹板_表示 = PregnantBellyPlate_人.腹板1_腹板_表示;
+    				胸腹板_人.虫性_縦線_表示 = PregnantBellyPlate_人.腹板1_縦線_表示;
+    				TorsoPlate_人.虫性_腹板_表示 = PregnantBellyPlate_人.腹板2_腹板_表示;
+    				TorsoPlate_人.虫性_縦線_表示 = PregnantBellyPlate_人.腹板2_縦線_表示;
+    				WaistSkin_人.虫性_腹板1_腹板_表示 = PregnantBellyPlate_人.腹板3_腹板_表示;
+    				WaistSkin_人.虫性_腹板1_縦線_表示 = PregnantBellyPlate_人.腹板3_縦線_表示;
+    				WaistSkin_人.虫性_腹板2_腹板_表示 = PregnantBellyPlate_人.腹板4_腹板_表示;
+    				WaistSkin_人.虫性_腹板2_縦線_表示 = PregnantBellyPlate_人.腹板4_縦線_表示;
+    				PregnantBellyPlate_人.腹板1_腹板_表示 = false;
+    				PregnantBellyPlate_人.腹板1_縦線_表示 = false;
+    				PregnantBellyPlate_人.腹板2_腹板_表示 = false;
+    				PregnantBellyPlate_人.腹板2_縦線_表示 = false;
+    				PregnantBellyPlate_人.腹板3_腹板_表示 = false;
+    				PregnantBellyPlate_人.腹板3_縦線_表示 = false;
+    				PregnantBellyPlate_人.腹板4_腹板_表示 = false;
+    				PregnantBellyPlate_人.腹板4_縦線_表示 = false;
     			}
-    			ボテ腹_人.表示 = value;
+    			PregnantBelly_人.表示 = value;
     		}
     	}
 
@@ -992,7 +992,7 @@ namespace SlaveMatrix
     		get
     		{
     			Chest.接続P();
-    			return Chest.X0Y0_胸郭.ToGlobal((Chest.X0Y0_胸郭.GetOP()[8].ps[2] + Chest.X0Y0_胸郭.GetOP()[2].ps[2]) * 0.5);
+    			return Chest.X0Y0_RibCage.ToGlobal((Chest.X0Y0_RibCage.GetOP()[8].ps[2] + Chest.X0Y0_RibCage.GetOP()[2].ps[2]) * 0.5);
     		}
     	}
 
@@ -1001,8 +1001,8 @@ namespace SlaveMatrix
     		get
     		{
     			性器.接続P();
-    			肛門.接続P();
-    			return (性器.位置 + 肛門.位置) * 0.5;
+    			Anus.接続P();
+    			return (性器.位置 + Anus.位置) * 0.5;
     		}
     	}
 
@@ -1069,8 +1069,8 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			肛門.接続PA();
-    			return 肛門.位置;
+    			Anus.接続PA();
+    			return Anus.位置;
     		}
     	}
 
@@ -1279,11 +1279,11 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			return 下着乳首左.染み濃度;
+    			return UnderwearNippleLeft.染み濃度;
     		}
     		set
     		{
-    			下着乳首左.染み濃度 = value;
+    			UnderwearNippleLeft.染み濃度 = value;
     			下着乳首右.染み濃度 = value;
     		}
     	}
@@ -1304,11 +1304,11 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			return 下着陰核.Intensity;
+    			return UnderwearClitoris.Intensity;
     		}
     		set
     		{
-    			下着陰核.Intensity = value;
+    			UnderwearClitoris.Intensity = value;
     			double sizeCont = 1.0 + 0.1 * value;
     			if (Is獣)
     			{
@@ -1333,11 +1333,11 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			return 下着乳首左.乳首CD.不透明度;
+    			return UnderwearNippleLeft.乳首CD.不透明度;
     		}
     		set
     		{
-    			下着乳首左.乳首CD.不透明度 = value;
+    			UnderwearNippleLeft.乳首CD.不透明度 = value;
     			下着乳首右.乳首CD.不透明度 = value;
     			double sizeCont = 1.0 + 0.1 * value;
     			乳房左.X0Y0_乳首.SetSizeCont(sizeCont);
@@ -1357,15 +1357,15 @@ namespace SlaveMatrix
     	{
     		get
     		{
-    			return 紅潮.Intensity;
+    			return CrimsonSquirt.Intensity;
     		}
     		set
     		{
-    			紅潮.Intensity = value;
-    			if (頬瞼左 != null)
+    			CrimsonSquirt.Intensity = value;
+    			if (CheekEyelidLeft != null)
     			{
-    				頬瞼左.瞼左_瞼CD.色 = Cha.CharacterData.body_color.人肌.BlendP1(Color.FromArgb((int)(128.0 * value), Cha.CharacterData.body_color.粘膜)).GetSkinGrad();
-    				頬瞼左.瞼右_瞼CD.色 = Cha.CharacterData.body_color.人肌.BlendP1(Color.FromArgb((int)(128.0 * value), Cha.CharacterData.body_color.粘膜)).GetSkinGrad();
+    				CheekEyelidLeft.瞼左_瞼CD.色 = Cha.CharacterData.body_color.人肌.BlendP1(Color.FromArgb((int)(128.0 * value), Cha.CharacterData.body_color.粘膜)).GetSkinGrad();
+    				CheekEyelidLeft.瞼右_瞼CD.色 = Cha.CharacterData.body_color.人肌.BlendP1(Color.FromArgb((int)(128.0 * value), Cha.CharacterData.body_color.粘膜)).GetSkinGrad();
     			}
     			if (頬瞼右 != null)
     			{
@@ -1401,19 +1401,19 @@ namespace SlaveMatrix
     			double num = -0.003;
     			if (Is獣)
     			{
-    				断面_獣.X0Y0_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_獣.X0Y1_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_獣.X0Y2_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_獣.X0Y3_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_獣.X0Y4_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_獣.X0Y0_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_獣.X0Y1_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_獣.X0Y2_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_獣.X0Y3_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_獣.X0Y4_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
     			}
     			else
     			{
-    				断面_人.X0Y0_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_人.X0Y1_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_人.X0Y2_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_人.X0Y3_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
-    				断面_人.X0Y4_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_人.X0Y0_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_人.X0Y1_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_人.X0Y2_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_人.X0Y3_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
+    				XRay_人.X0Y4_子宮.SetBasePointCont(DataConsts.Vec2DUnitY * num * 子宮下がり_);
     			}
     		}
     	}
@@ -1432,32 +1432,32 @@ namespace SlaveMatrix
     			double num3 = 2.0;
     			if (Is獣)
     			{
-    				肛門_獣.X0Y0_肛門1.SetSizeYBase(肛門y + num * 肛門開き_);
-    				肛門_獣.X0Y0_肛門1.SetSizeBase(肛門v + num2 * 肛門開き_);
-    				肛門_獣.X0Y0_肛門2.SetSizeBase(肛門v + num3 * 肛門開き_);
+    				Anus_獣.X0Y0_Anus1.SetSizeYBase(Anusy + num * 肛門開き_);
+    				Anus_獣.X0Y0_Anus1.SetSizeBase(Anusv + num2 * 肛門開き_);
+    				Anus_獣.X0Y0_Anus2.SetSizeBase(Anusv + num3 * 肛門開き_);
     			}
     			else
     			{
-    				肛門_人.X0Y0_肛門1.SetSizeYBase(肛門y + num * 肛門開き_);
-    				肛門_人.X0Y0_肛門1.SetSizeBase(肛門v + num2 * 肛門開き_);
-    				肛門_人.X0Y0_肛門2.SetSizeBase(肛門v + num3 * 肛門開き_);
+    				Anus_人.X0Y0_Anus1.SetSizeYBase(Anusy + num * 肛門開き_);
+    				Anus_人.X0Y0_Anus1.SetSizeBase(Anusv + num2 * 肛門開き_);
+    				Anus_人.X0Y0_Anus2.SetSizeBase(Anusv + num3 * 肛門開き_);
     			}
     		}
     	}
 
-    	public double 肛門C
+    	public double AnusC
     	{
     		set
     		{
     			if (Is獣)
     			{
-    				肛門_獣.X0Y0_肛門1.SetSizeCont(value);
-    				肛門_獣.X0Y0_肛門1.SetSizeCont(value);
+    				Anus_獣.X0Y0_Anus1.SetSizeCont(value);
+    				Anus_獣.X0Y0_Anus1.SetSizeCont(value);
     			}
     			else
     			{
-    				肛門_人.X0Y0_肛門1.SetSizeCont(value);
-    				肛門_人.X0Y0_肛門1.SetSizeCont(value);
+    				Anus_人.X0Y0_Anus1.SetSizeCont(value);
+    				Anus_人.X0Y0_Anus1.SetSizeCont(value);
     			}
     		}
     	}
@@ -1592,7 +1592,7 @@ namespace SlaveMatrix
     		set
     		{
     			Waist.Yv = value;
-    			腰肌_人.Yv = value;
+    			WaistSkin_人.Yv = value;
     			下着B_ノーマル.Yv = value;
     			下着B_マイクロ.Yv = value;
     			性器_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
@@ -1600,7 +1600,7 @@ namespace SlaveMatrix
     			{
     				item.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * 0.001 + 0.001));
     			}
-    			肛門_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
+    			Anus_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
     			foreach (ShapePart item2 in 上着B_クロス.Body.EnumJoinRoot)
     			{
     				item2.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * 0.003));
@@ -1622,7 +1622,7 @@ namespace SlaveMatrix
     		set
     		{
     			Waist.Yi = value;
-    			腰肌_人.Yi = value;
+    			WaistSkin_人.Yi = value;
     			下着B_ノーマル.Yi = value;
     			下着B_マイクロ.Yi = value;
     			性器_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
@@ -1630,7 +1630,7 @@ namespace SlaveMatrix
     			{
     				item.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * 0.001 + 0.001));
     			}
-    			肛門_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
+    			Anus_人.Body.SetSizeYCont(0.65 + Waist.Yv * 0.35);
     			foreach (ShapePart item2 in 上着B_クロス.Body.EnumJoinRoot)
     			{
     				item2.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * 0.003));
@@ -1652,13 +1652,13 @@ namespace SlaveMatrix
     		set
     		{
     			Waist_獣.Yv = value;
-    			腰肌_獣.Yv = value;
+    			WaistSkin_獣.Yv = value;
     			性器_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
     			foreach (ShapePart item in 性器_獣.Body.EnumJoinRoot)
     			{
     				item.SetPositionCont(DataConsts.Vec2DUnitY * (Waist_獣.Yv * 0.001 + 0.001));
     			}
-    			肛門_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
+    			Anus_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
     			腰振り_獣();
     		}
     	}
@@ -1672,13 +1672,13 @@ namespace SlaveMatrix
     		set
     		{
     			Waist_獣.Yi = value;
-    			腰肌_獣.Yi = value;
+    			WaistSkin_獣.Yi = value;
     			性器_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
     			foreach (ShapePart item in 性器_獣.Body.EnumJoinRoot)
     			{
     				item.SetPositionCont(DataConsts.Vec2DUnitY * (Waist_獣.Yv * 0.001 + 0.001));
     			}
-    			肛門_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
+    			Anus_獣.Body.SetSizeYCont(0.65 + Waist_獣.Yv * 0.35);
     			腰振り_獣();
     		}
     	}
@@ -2001,54 +2001,54 @@ namespace SlaveMatrix
     		}
     	}
 
-    	public double ボテ腹v
+    	public double PregnantBellyv
     	{
     		get
     		{
     			if (!Is獣)
     			{
-    				return ボテ腹_人.Yv;
+    				return PregnantBelly_人.Yv;
     			}
-    			return ボテ腹_獣.Yv;
+    			return PregnantBelly_獣.Yv;
     		}
     		set
     		{
     			if (Is獣)
     			{
-    				ボテ腹_獣.Yv = value;
+    				PregnantBelly_獣.Yv = value;
     			}
     			else
     			{
-    				ボテ腹_人.Yv = value;
-    				ボテ腹板_人.Yv = value;
+    				PregnantBelly_人.Yv = value;
+    				PregnantBellyPlate_人.Yv = value;
     			}
-    			上着B_前掛け.X0Y0_帯.SetSizeXCont(1.0 + 0.1 * ボテ腹v);
+    			上着B_前掛け.X0Y0_帯.SetSizeXCont(1.0 + 0.1 * PregnantBellyv);
     			上着B_前掛け.X0Y1_帯.SetSizeXCont(上着B_前掛け.X0Y0_帯.GetSizeXCont());
     		}
     	}
 
-    	public int ボテ腹i
+    	public int PregnantBellyi
     	{
     		get
     		{
     			if (!Is獣)
     			{
-    				return ボテ腹_人.Yi;
+    				return PregnantBelly_人.Yi;
     			}
-    			return ボテ腹_獣.Yi;
+    			return PregnantBelly_獣.Yi;
     		}
     		set
     		{
     			if (Is獣)
     			{
-    				ボテ腹_獣.Yi = value;
+    				PregnantBelly_獣.Yi = value;
     			}
     			else
     			{
-    				ボテ腹_人.Yi = value;
-    				ボテ腹板_人.Yi = value;
+    				PregnantBelly_人.Yi = value;
+    				PregnantBellyPlate_人.Yi = value;
     			}
-    			上着B_前掛け.X0Y0_帯.SetSizeXCont(1.0 + 0.1 * ボテ腹v);
+    			上着B_前掛け.X0Y0_帯.SetSizeXCont(1.0 + 0.1 * PregnantBellyv);
     			上着B_前掛け.X0Y1_帯.SetSizeXCont(上着B_前掛け.X0Y0_帯.GetSizeXCont());
     		}
     	}
@@ -2068,8 +2068,8 @@ namespace SlaveMatrix
     			if (瞼左 != null)
     			{
     				瞼左.Yi = value;
-    				目傷左.Yi = value;
-    				目傷左.Yi = 目傷左.Yi.Limit(0, 2);
+    				EyeScarLeft.Yi = value;
+    				EyeScarLeft.Yi = EyeScarLeft.Yi.Limit(0, 2);
     			}
     		}
     	}
@@ -2089,8 +2089,8 @@ namespace SlaveMatrix
     			if (瞼左 != null)
     			{
     				瞼左.Yv = value;
-    				目傷左.Yv = value;
-    				目傷左.Yi = 目傷左.Yi.Limit(0, 2);
+    				EyeScarLeft.Yv = value;
+    				EyeScarLeft.Yi = EyeScarLeft.Yi.Limit(0, 2);
     			}
     		}
     	}
@@ -2177,9 +2177,9 @@ namespace SlaveMatrix
     		set
     		{
     			横髪髪留i = value;
-    			if (横髪左 != null && 横髪左 is SideHair_編み)
+    			if (SideHairLeft != null && SideHairLeft is SideHair_編み)
     			{
-    				SideHair_編み obj = (SideHair_編み)横髪左;
+    				SideHair_編み obj = (SideHair_編み)SideHairLeft;
     				obj.髪縛1_表示 = value.髪留左.髪縛1_表示;
     				obj.髪縛2_表示 = value.髪留左.髪縛2_表示;
     				obj.髪留配色(value.髪留左.色);
@@ -2194,36 +2194,36 @@ namespace SlaveMatrix
     		}
     	}
 
-    	public 玉口枷情報 Set玉口枷
+    	public BallGagInformation SetBallGag
     	{
     		get
     		{
-    			return 玉口枷i;
+    			return BallGagi;
     		}
     		set
     		{
-    			玉口枷i = value;
-    			if (玉口枷 != null)
+    			BallGagi = value;
+    			if (BallGag != null)
     			{
-    				Set表示(玉口枷, 玉口枷i);
-    				玉口枷.配色(玉口枷i.色);
+    				Set表示(BallGag, BallGagi);
+    				BallGag.配色(BallGagi.色);
     			}
     		}
     	}
 
-    	public 目隠帯情報 Set目隠帯
+    	public BlindfoldInformation SetBlindfold
     	{
     		get
     		{
-    			return 目隠帯i;
+    			return Blindfoldi;
     		}
     		set
     		{
-    			目隠帯i = value;
-    			if (目隠帯 != null)
+    			Blindfoldi = value;
+    			if (Blindfold != null)
     			{
-    				Set表示(目隠帯, 目隠帯i);
-    				目隠帯.配色(目隠帯i.色);
+    				Set表示(Blindfold, Blindfoldi);
+    				Blindfold.配色(Blindfoldi.色);
     			}
     		}
     	}
@@ -2328,10 +2328,10 @@ namespace SlaveMatrix
     				Set表示(ピアス, ピアスi);
     				ピアス.配色(ピアスi.色);
     				ピアス.SetHitFalse();
-    				腰肌_人.陰毛_ハート_表示 = (腰肌_人.陰毛_表示 || 腰肌_人.獣性_獣毛_表示) && ピアス.表示;
-    				腰肌_人.陰毛CD.不透明度 = Cha.CharacterData.現陰毛 * Cha.CharacterData.最陰毛濃度;
-    				腰肌_人.獣性_獣毛CD.不透明度 = Cha.CharacterData.現陰毛;
-    				腰肌_人.陰毛_ハートCD.不透明度 = Cha.CharacterData.現陰毛.Inverse() * Cha.CharacterData.最陰毛濃度;
+    				WaistSkin_人.陰毛_ハート_表示 = (WaistSkin_人.陰毛_表示 || WaistSkin_人.獣性_獣毛_表示) && ピアス.表示;
+    				WaistSkin_人.陰毛CD.不透明度 = Cha.CharacterData.現陰毛 * Cha.CharacterData.最陰毛濃度;
+    				WaistSkin_人.獣性_獣毛CD.不透明度 = Cha.CharacterData.現陰毛;
+    				WaistSkin_人.陰毛_ハートCD.不透明度 = Cha.CharacterData.現陰毛.Inverse() * Cha.CharacterData.最陰毛濃度;
     			}
     		}
     	}
@@ -2457,9 +2457,9 @@ namespace SlaveMatrix
     				乳房左.着衣 = isShow;
     				乳房右.着衣 = isShow;
     				下着T_チューブ.SetHitFalse();
-    				下着乳首左.表示 = !乳房左.虫性_甲殻_表示 && isShow;
+    				UnderwearNippleLeft.表示 = !乳房左.虫性_甲殻_表示 && isShow;
     				下着乳首右.表示 = !乳房右.虫性_甲殻_表示 && isShow;
-    				下着乳首左.配色(下着T_チューブi.色.生地色);
+    				UnderwearNippleLeft.配色(下着T_チューブi.色.生地色);
     				下着乳首右.配色(下着T_チューブi.色.生地色);
     				乳首勃起 = 乳首勃起;
     				if (LeftMilkSpray.母乳垂れ1_表示)
@@ -2491,9 +2491,9 @@ namespace SlaveMatrix
     				乳房左.着衣 = isShow;
     				乳房右.着衣 = isShow;
     				下着T_クロス.SetHitFalse();
-    				下着乳首左.表示 = !乳房左.虫性_甲殻_表示 && isShow;
+    				UnderwearNippleLeft.表示 = !乳房左.虫性_甲殻_表示 && isShow;
     				下着乳首右.表示 = !乳房右.虫性_甲殻_表示 && isShow;
-    				下着乳首左.配色(下着T_クロスi.色.生地色);
+    				UnderwearNippleLeft.配色(下着T_クロスi.色.生地色);
     				下着乳首右.配色(下着T_クロスi.色.生地色);
     				乳首勃起 = 乳首勃起;
     				if (LeftMilkSpray.母乳垂れ1_表示)
@@ -2525,9 +2525,9 @@ namespace SlaveMatrix
     				乳房左.着衣 = isShow;
     				乳房右.着衣 = isShow;
     				下着T_ビキニ.SetHitFalse();
-    				下着乳首左.表示 = !乳房左.虫性_甲殻_表示 && isShow;
+    				UnderwearNippleLeft.表示 = !乳房左.虫性_甲殻_表示 && isShow;
     				下着乳首右.表示 = !乳房右.虫性_甲殻_表示 && isShow;
-    				下着乳首左.配色(下着T_ビキニi.色.生地色);
+    				UnderwearNippleLeft.配色(下着T_ビキニi.色.生地色);
     				下着乳首右.配色(下着T_ビキニi.色.生地色);
     				乳首勃起 = 乳首勃起;
     				if (LeftMilkSpray.母乳垂れ1_表示)
@@ -2559,9 +2559,9 @@ namespace SlaveMatrix
     				乳房左.着衣 = isShow;
     				乳房右.着衣 = isShow;
     				下着T_マイクロ.SetHitFalse();
-    				下着乳首左.表示 = !乳房左.虫性_甲殻_表示 && isShow;
+    				UnderwearNippleLeft.表示 = !乳房左.虫性_甲殻_表示 && isShow;
     				下着乳首右.表示 = !乳房右.虫性_甲殻_表示 && isShow;
-    				下着乳首左.配色(下着T_マイクロi.色.生地色);
+    				UnderwearNippleLeft.配色(下着T_マイクロi.色.生地色);
     				下着乳首右.配色(下着T_マイクロi.色.生地色);
     				乳首勃起 = 乳首勃起;
     				if (LeftMilkSpray.母乳垂れ1_表示)
@@ -2593,7 +2593,7 @@ namespace SlaveMatrix
     				乳房左.着衣 = isShow;
     				乳房右.着衣 = isShow;
     				下着T_ブラ.SetHitFalse();
-    				下着乳首左.表示 = false;
+    				UnderwearNippleLeft.表示 = false;
     				下着乳首右.表示 = false;
     				if (LeftMilkSpray.母乳垂れ1_表示)
     				{
@@ -2621,8 +2621,8 @@ namespace SlaveMatrix
     				Set表示(下着B_ノーマル, 下着B_ノーマルi);
     				下着B_ノーマル.配色(下着B_ノーマルi.色);
     				下着B_ノーマル.SetHitFalse();
-    				下着陰核.表示 = 下着B_ノーマルi.IsShow || 下着B_マイクロi.IsShow;
-    				下着陰核.配色(下着B_ノーマルi.色.生地色);
+    				UnderwearClitoris.表示 = 下着B_ノーマルi.IsShow || 下着B_マイクロi.IsShow;
+    				UnderwearClitoris.配色(下着B_ノーマルi.色.生地色);
     				陰核勃起 = 陰核勃起;
     			}
     		}
@@ -2642,8 +2642,8 @@ namespace SlaveMatrix
     				Set表示(下着B_マイクロ, 下着B_マイクロi);
     				下着B_マイクロ.配色(下着B_マイクロi.色);
     				下着B_マイクロ.SetHitFalse();
-    				下着陰核.表示 = 下着B_マイクロi.IsShow || 下着B_ノーマルi.IsShow;
-    				下着陰核.配色(下着B_マイクロi.色.生地色);
+    				UnderwearClitoris.表示 = 下着B_マイクロi.IsShow || 下着B_ノーマルi.IsShow;
+    				UnderwearClitoris.配色(下着B_マイクロi.色.生地色);
     				陰核勃起 = 陰核勃起;
     			}
     		}
@@ -2696,7 +2696,7 @@ namespace SlaveMatrix
     				Set表示(上着B_クロス, 上着B_クロスi);
     				上着B_クロス.配色(上着B_クロスi.色);
     				上着B_クロス後.配色(上着B_クロスi.色);
-    				上着B_クロス.上着ボトム後_接続[0].表示 = 上着B_クロスi.IsShow;
+    				上着B_クロス.JacketBottomRear_接続[0].表示 = 上着B_クロスi.IsShow;
     				上着B_クロス.SetHitFalse();
     				上着B_クロス.Yi = (捲り判定0 ? 1 : 0);
     				if (捲り判定0)
@@ -2836,43 +2836,43 @@ namespace SlaveMatrix
     		}
     	}
 
-    	public bool 目隠帯_表示
+    	public bool Blindfold_表示
     	{
     		get
     		{
-    			return Set目隠帯.革_表示;
+    			return SetBlindfold.革_表示;
     		}
     		set
     		{
     			if (value)
     			{
-    				Set目隠帯 = 目隠帯情報.GetDefault();
+    				SetBlindfold = BlindfoldInformation.GetDefault();
     				Cha.瞼();
     			}
     			else
     			{
-    				Set目隠帯 = GlobalState.目隠帯初期化;
+    				SetBlindfold = GlobalState.目隠帯初期化;
     			}
     		}
     	}
 
-    	public bool 玉口枷_表示
+    	public bool BallGag_表示
     	{
     		get
     		{
-    			return Set玉口枷.革_表示;
+    			return SetBallGag.革_表示;
     		}
     		set
     		{
     			if (value)
     			{
     				口i = 9;
-    				Cha.舌_無し();
-    				Set玉口枷 = 玉口枷情報.GetDefault();
+    				Cha.Tounge_無し();
+    				SetBallGag = BallGagInformation.GetDefault();
     			}
     			else
     			{
-    				Set玉口枷 = GlobalState.玉口枷初期化;
+    				SetBallGag = GlobalState.玉口枷初期化;
     			}
     		}
     	}
@@ -2970,7 +2970,7 @@ namespace SlaveMatrix
     					((拘束鎖)fieldInfo.GetValue(current_element)).SetSize();
     				}
     			}
-    			if (current_element is 角2_鬼 && current_element.ConnectionType != ConnectionInfo.基髪_頭頂左_接続 && current_element.ConnectionType != ConnectionInfo.基髪_頭頂右_接続)
+    			if (current_element is 角2_鬼 && current_element.ConnectionType != ConnectionInfo.BaseHair_頭頂左_接続 && current_element.ConnectionType != ConnectionInfo.BaseHair_頭頂右_接続)
     			{
     				((角2_鬼)current_element).SetBasePoint();
     			}
@@ -3265,7 +3265,7 @@ namespace SlaveMatrix
     								翼獣.手 = 手;
     								p = 翼獣.UpperArm.Par;
     								pp = 翼獣.UpperArm.Par.Par;
-    								if (p is 基髪)
+    								if (p is BaseHair)
     								{
     									翼獣.UpperArm.接着 = () => bod.頭.X0Y0_Head.ToGlobal(bod.頭.X0Y0_Head.GetBasePointBase());
     								}
@@ -3658,7 +3658,7 @@ namespace SlaveMatrix
     							翼獣.手 = 手;
     							p = 翼獣.UpperArm.Par;
     							pp = 翼獣.UpperArm.Par.Par;
-    							if (p is 基髪)
+    							if (p is BaseHair)
     							{
     								翼獣.UpperArm.接着 = () => bod.頭.X0Y0_Head.ToGlobal(bod.頭.X0Y0_Head.GetBasePointBase());
     							}
@@ -3831,35 +3831,35 @@ namespace SlaveMatrix
     		if (Waist != null)
     		{
     			Torso = Waist.Torso_接続.GetEle<Torso>();
-    			ボテ腹_人 = Waist.肌_接続.GetEle<ボテ腹_人>();
-    			ボテ腹板_人 = ボテ腹_人.腹板_接続.GetEle<ボテ腹板>();
-    			ボテ腹板_人.SetHitFalse();
-    			腰肌_人 = Waist.肌_接続.GetEle<腰肌>();
-    			腰肌_人.X0Y0_陰毛.Hit = true;
-    			腰肌_人.X0Y0_陰毛_ハート.Hit = true;
-    			腰肌_人.X0Y0_獣性_獣毛.Hit = true;
-    			腰肌_人.X0Y1_陰毛.Hit = true;
-    			腰肌_人.X0Y1_陰毛_ハート.Hit = true;
-    			腰肌_人.X0Y1_獣性_獣毛.Hit = true;
-    			腰肌_人.X0Y2_陰毛.Hit = true;
-    			腰肌_人.X0Y2_陰毛_ハート.Hit = true;
-    			腰肌_人.X0Y2_獣性_獣毛.Hit = true;
-    			腰肌_人.X0Y3_陰毛.Hit = true;
-    			腰肌_人.X0Y3_陰毛_ハート.Hit = true;
-    			腰肌_人.X0Y3_獣性_獣毛.Hit = true;
-    			腰肌_人.X0Y4_陰毛.Hit = true;
-    			腰肌_人.X0Y4_陰毛_ハート.Hit = true;
-    			腰肌_人.X0Y4_獣性_獣毛.Hit = true;
-    			肛門_人 = Waist.肛門_接続.GetEle<肛門_人>();
-    			肛門精液_人 = 肛門_人.肛門精液_接続.GetEle<肛門精液_人>();
+    			PregnantBelly_人 = Waist.肌_接続.GetEle<PregnantBelly_人>();
+    			PregnantBellyPlate_人 = PregnantBelly_人.腹板_接続.GetEle<PregnantBellyPlate>();
+    			PregnantBellyPlate_人.SetHitFalse();
+    			WaistSkin_人 = Waist.肌_接続.GetEle<WaistSkin>();
+    			WaistSkin_人.X0Y0_陰毛.Hit = true;
+    			WaistSkin_人.X0Y0_陰毛_ハート.Hit = true;
+    			WaistSkin_人.X0Y0_獣性_獣毛.Hit = true;
+    			WaistSkin_人.X0Y1_陰毛.Hit = true;
+    			WaistSkin_人.X0Y1_陰毛_ハート.Hit = true;
+    			WaistSkin_人.X0Y1_獣性_獣毛.Hit = true;
+    			WaistSkin_人.X0Y2_陰毛.Hit = true;
+    			WaistSkin_人.X0Y2_陰毛_ハート.Hit = true;
+    			WaistSkin_人.X0Y2_獣性_獣毛.Hit = true;
+    			WaistSkin_人.X0Y3_陰毛.Hit = true;
+    			WaistSkin_人.X0Y3_陰毛_ハート.Hit = true;
+    			WaistSkin_人.X0Y3_獣性_獣毛.Hit = true;
+    			WaistSkin_人.X0Y4_陰毛.Hit = true;
+    			WaistSkin_人.X0Y4_陰毛_ハート.Hit = true;
+    			WaistSkin_人.X0Y4_獣性_獣毛.Hit = true;
+    			Anus_人 = Waist.Anus_接続.GetEle<Anus_人>();
+    			肛門精液_人 = Anus_人.肛門精液_接続.GetEle<肛門精液_人>();
     			肛門精液_人.SetHitFalse();
-    			膣基_人 = Waist.膣基_接続.GetEle<膣基_人>();
-    			膣内精液_人 = Waist.膣基_接続.GetEle<膣内精液_人>();
-    			断面_人 = Waist.膣基_接続.GetEle<断面_人>();
-    			膣基_人.SetHitFalse();
-    			膣内精液_人.SetHitFalse();
-    			断面_人.SetHitFalse();
-    			性器_人 = Waist.膣基_接続.GetEle<性器_人>();
+    			VaginaOrigin_人 = Waist.VaginaOrigin_接続.GetEle<VaginaOrigin_人>();
+    			InternalSemen_人 = Waist.VaginaOrigin_接続.GetEle<InternalSemen_人>();
+    			XRay_人 = Waist.VaginaOrigin_接続.GetEle<XRay_人>();
+    			VaginaOrigin_人.SetHitFalse();
+    			InternalSemen_人.SetHitFalse();
+    			XRay_人.SetHitFalse();
+    			性器_人 = Waist.VaginaOrigin_接続.GetEle<性器_人>();
     			性器精液_人 = 性器_人.膣口_接続.GetEle<性器精液_人>();
     			飛沫_人 = 性器_人.膣口_接続.GetEle<飛沫_人>();
     			潮吹_小_人 = 性器_人.尿道_接続.GetEle<潮吹_小_人>();
@@ -3867,21 +3867,21 @@ namespace SlaveMatrix
     			放尿_人 = 性器_人.尿道_接続.GetEle<放尿_人>();
     			ピアス = 性器_人.陰核_接続.GetEle<ピアス>();
     			キャップ1 = 性器_人.陰核_接続.GetEle<キャップ1>();
-    			下着陰核 = 性器_人.陰核_接続.GetEle<下着陰核>();
+    			UnderwearClitoris = 性器_人.陰核_接続.GetEle<UnderwearClitoris>();
     			性器精液_人.SetHitFalse();
     			飛沫_人.SetHitFalse();
     			潮吹_小_人.SetHitFalse();
     			潮吹_大_人.SetHitFalse();
     			放尿_人.SetHitFalse();
     			ピアス.SetHitFalse();
-    			下着陰核.SetHitFalse();
-    			下着B_ノーマル = Waist.肌_接続.GetEle<下着ボトム_ノーマル>();
-    			下着B_マイクロ = Waist.肌_接続.GetEle<下着ボトム_マイクロ>();
+    			UnderwearClitoris.SetHitFalse();
+    			下着B_ノーマル = Waist.肌_接続.GetEle<UnderwearBottom_ノーマル>();
+    			下着B_マイクロ = Waist.肌_接続.GetEle<UnderwearBottom_マイクロ>();
     			下着B_ノーマル.SetHitFalse();
     			下着B_マイクロ.SetHitFalse();
-    			上着B_クロス = Waist.上着_接続.GetEle<上着ボトム_クロス>();
-    			上着B_クロス後 = (上着ボトム_クロス後)上着B_クロス.上着ボトム後_接続[0];
-    			上着B_前掛け = Waist.上着_接続.GetEle<上着ボトム_前掛け>();
+    			上着B_クロス = Waist.上着_接続.GetEle<JacketBottom_クロス>();
+    			上着B_クロス後 = (JacketBottom_クロス後)上着B_クロス.JacketBottomRear_接続[0];
+    			上着B_前掛け = Waist.上着_接続.GetEle<JacketBottom_前掛け>();
     			上着B_クロス.SetHitFalse();
     			上着B_クロス後.SetHitFalse();
     			上着B_前掛け.SetHitFalse();
@@ -3889,10 +3889,10 @@ namespace SlaveMatrix
     		if (Torso != null)
     		{
     			Chest = Torso.Chest_接続.GetEle<Chest>();
-    			胴腹板_人 = Torso.肌_接続.GetEle<胴腹板>();
-    			胴肌_人 = Torso.肌_接続.GetEle<胴肌>();
-    			胴腹板_人.SetHitFalse();
-    			胴肌_人.SetHitFalse();
+    			TorsoPlate_人 = Torso.肌_接続.GetEle<TorsoPlate>();
+    			TorsoSkin_人 = Torso.肌_接続.GetEle<TorsoSkin>();
+    			TorsoPlate_人.SetHitFalse();
+    			TorsoSkin_人.SetHitFalse();
     			上着M_ドレス = Torso.肌_接続.GetEle<上着ミドル_ドレス>();
     			上着M_ドレス.SetHitFalse();
     		}
@@ -3901,17 +3901,17 @@ namespace SlaveMatrix
     			Neck = Chest.Neck_接続.GetEle<Neck>();
     			胸腹板_人 = Chest.肌_接続.GetEle<胸腹板>();
     			胸肌_人 = Chest.肌_接続.GetEle<胸肌>();
-    			胸毛_人 = Chest.肌_接続.GetEle<胸毛>();
+    			ChestHair_人 = Chest.肌_接続.GetEle<ChestHair>();
     			胸腹板_人.SetHitFalse();
     			胸肌_人.SetHitFalse();
-    			乳房左 = Chest.胸左_接続.GetEle<乳房>();
+    			乳房左 = Chest.LeftBreast_接続.GetEle<乳房>();
     			LeftMilkSpray = 乳房左.噴乳_接続.GetEle<噴乳>();
     			ピアス左 = 乳房左.噴乳_接続.GetEle<ピアス>();
     			キャップ2左 = 乳房左.噴乳_接続.GetEle<キャップ2>();
-    			下着乳首左 = 乳房左.噴乳_接続.GetEle<下着乳首>();
+    			UnderwearNippleLeft = 乳房左.噴乳_接続.GetEle<下着乳首>();
     			LeftMilkSpray.SetHitFalse();
     			ピアス左.SetHitFalse();
-    			下着乳首左.SetHitFalse();
+    			UnderwearNippleLeft.SetHitFalse();
     			乳房右 = Chest.胸右_接続.GetEle<乳房>();
     			RightMilkSpary = 乳房右.噴乳_接続.GetEle<噴乳>();
     			ピアス右 = 乳房右.噴乳_接続.GetEle<ピアス>();
@@ -3939,25 +3939,25 @@ namespace SlaveMatrix
     		}
     		if (頭 != null)
     		{
-    			基髪 = 頭.基髪_接続.GetEle<基髪>();
-    			単眼目 = 頭.単眼目_接続.GetEle<単目>();
-    			if (単眼目 != null)
+    			BaseHair = 頭.BaseHair_接続.GetEle<BaseHair>();
+    			MonoEye = 頭.MonoEye_接続.GetEle<単目>();
+    			if (MonoEye != null)
     			{
-    				単眼瞼 = 単眼目.瞼_接続.GetEle<単瞼>();
-    				LeftTear = 単眼目.瞼_接続.GetEle<涙>(右: false);
-    				RightTear = 単眼目.瞼_接続.GetEle<涙>(右: true);
-    				単眼目.SetHitFalse();
-    				単眼瞼.SetHitFalse();
+    				MonoEyelid = MonoEye.瞼_接続.GetEle<単瞼>();
+    				LeftTear = MonoEye.瞼_接続.GetEle<涙>(右: false);
+    				RightTear = MonoEye.瞼_接続.GetEle<涙>(右: true);
+    				MonoEye.SetHitFalse();
+    				MonoEyelid.SetHitFalse();
     				LeftTear.SetHitFalse();
     				RightTear.SetHitFalse();
     			}
-    			目左 = 頭.目左_接続.GetEle<双目>();
+    			EyeLeft = 頭.EyeLeft_接続.GetEle<双目>();
     			目右 = 頭.目右_接続.GetEle<双目>();
-    			if (目左 != null)
+    			if (EyeLeft != null)
     			{
-    				瞼左 = 目左.瞼_接続.GetEle<双瞼>();
-    				LeftTear = 目左.瞼_接続.GetEle<涙>();
-    				目左.SetHitFalse();
+    				瞼左 = EyeLeft.瞼_接続.GetEle<双瞼>();
+    				LeftTear = EyeLeft.瞼_接続.GetEle<涙>();
+    				EyeLeft.SetHitFalse();
     				瞼左.SetHitFalse();
     				LeftTear.SetHitFalse();
     			}
@@ -3969,20 +3969,20 @@ namespace SlaveMatrix
     				瞼右.SetHitFalse();
     				RightTear.SetHitFalse();
     			}
-    			額目 = 頭.額_接続.GetEle<縦目>();
-    			頬目左 = 頭.頬肌左_接続.GetEle<頬目>();
+    			ForeheadEye = 頭.額_接続.GetEle<縦目>();
+    			CheekEyeLeft = 頭.CheekSkinLeft_接続.GetEle<頬目>();
     			頬目右 = 頭.頬肌右_接続.GetEle<頬目>();
-    			if (額目 != null)
+    			if (ForeheadEye != null)
     			{
-    				額瞼 = 額目.瞼_接続.GetEle<縦瞼>();
-    				額目.SetHitFalse();
-    				額瞼.SetHitFalse();
+    				ForeheadEyelid = ForeheadEye.瞼_接続.GetEle<縦瞼>();
+    				ForeheadEye.SetHitFalse();
+    				ForeheadEyelid.SetHitFalse();
     			}
-    			if (頬目左 != null)
+    			if (CheekEyeLeft != null)
     			{
-    				頬瞼左 = 頬目左.瞼_接続.GetEle<頬瞼>();
-    				頬目左.SetHitFalse();
-    				頬瞼左.SetHitFalse();
+    				CheekEyelidLeft = CheekEyeLeft.瞼_接続.GetEle<頬瞼>();
+    				CheekEyeLeft.SetHitFalse();
+    				CheekEyelidLeft.SetHitFalse();
     			}
     			if (頬目右 != null)
     			{
@@ -3990,20 +3990,20 @@ namespace SlaveMatrix
     				頬目右.SetHitFalse();
     				頬瞼右.SetHitFalse();
     			}
-    			目隠帯 = 頭.単眼目_接続.GetEle<目隠帯>();
-    			鼻 = 頭.鼻_接続.GetEle<鼻>();
-    			if (鼻 != null)
+    			Blindfold = 頭.MonoEye_接続.GetEle<Blindfold>();
+    			Nose = 頭.Nose_接続.GetEle<Nose>();
+    			if (Nose != null)
     			{
-    				LeftNoseDrip = 鼻.鼻水左_接続.GetEle<鼻水>();
-    				RightNoseDrip = 鼻.鼻水右_接続.GetEle<鼻水>();
-    				鼻.SetHitFalse();
+    				LeftNoseDrip = Nose.NoseDripLeft_接続.GetEle<鼻水>();
+    				RightNoseDrip = Nose.鼻水右_接続.GetEle<鼻水>();
+    				Nose.SetHitFalse();
     				LeftNoseDrip.SetHitFalse();
     				RightNoseDrip.SetHitFalse();
     			}
     			口 = 頭.口_接続.GetEle<口>();
     			口.SetHitFalse();
-    			舌 = 頭.口_接続.GetEle<舌>();
-    			舌.SetHitFalse();
+    			Tounge = 頭.口_接続.GetEle<Tounge>();
+    			Tounge.SetHitFalse();
     			LeftDrool = 頭.口_接続.GetEle<涎>(右: false);
     			RightDrool = 頭.口_接続.GetEle<涎>(右: true);
     			LeftDrool.SetHitFalse();
@@ -4014,50 +4014,50 @@ namespace SlaveMatrix
     			咳.SetHitFalse();
     			呼気 = 頭.口_接続.GetEle<呼気>();
     			呼気.SetHitFalse();
-    			玉口枷 = 頭.口_接続.GetEle<玉口枷>();
-    			単眼眉 = 頭.単眼眉_接続.GetEle<単眼眉>();
-    			if (単眼眉 != null)
+    			BallGag = 頭.口_接続.GetEle<BallGag>();
+    			MonoEyebrow = 頭.MonoEyebrow_接続.GetEle<MonoEyebrow>();
+    			if (MonoEyebrow != null)
     			{
-    				単眼眉.SetHitFalse();
+    				MonoEyebrow.SetHitFalse();
     			}
-    			眉左 = 頭.眉左_接続.GetEle<眉>();
+    			EyebrowLeft = 頭.EyebrowLeft_接続.GetEle<眉>();
     			眉右 = 頭.眉右_接続.GetEle<眉>();
-    			if (眉左 != null)
+    			if (EyebrowLeft != null)
     			{
-    				眉左.SetHitFalse();
+    				EyebrowLeft.SetHitFalse();
     			}
     			if (眉右 != null)
     			{
     				眉右.SetHitFalse();
     			}
-    			頬肌左 = 頭.頬肌左_接続.GetEle<頬肌>();
+    			CheekSkinLeft = 頭.CheekSkinLeft_接続.GetEle<頬肌>();
     			頬肌右 = 頭.頬肌右_接続.GetEle<頬肌>();
-    			頬肌左.SetHitFalse();
+    			CheekSkinLeft.SetHitFalse();
     			頬肌右.SetHitFalse();
-    			鼻肌 = 頭.鼻肌_接続.GetEle<鼻肌>();
-    			鼻肌.SetHitFalse();
-    			目尻影左 = 頭.目左_接続.GetEle<目尻影>();
+    			NoseSkin = 頭.NoseSkin_接続.GetEle<NoseSkin>();
+    			NoseSkin.SetHitFalse();
+    			EyeCornerShadowLeft = 頭.EyeLeft_接続.GetEle<目尻影>();
     			目尻影右 = 頭.目右_接続.GetEle<目尻影>();
-    			目尻影左.SetHitFalse();
+    			EyeCornerShadowLeft.SetHitFalse();
     			目尻影右.SetHitFalse();
-    			紅潮 = 頭.鼻肌_接続.GetEle<紅潮>();
-    			紅潮.SetHitFalse();
-    			目傷左 = 頭.目左_接続.GetEle<目傷>();
+    			CrimsonSquirt = 頭.NoseSkin_接続.GetEle<CrimsonSquirt>();
+    			CrimsonSquirt.SetHitFalse();
+    			EyeScarLeft = 頭.EyeLeft_接続.GetEle<目傷>();
     			目傷右 = 頭.目右_接続.GetEle<目傷>();
-    			目傷左.SetHitFalse();
+    			EyeScarLeft.SetHitFalse();
     			目傷右.SetHitFalse();
-    			顔ハイライト左 = 頭.頬左_接続.GetEle<顔ハイライト>();
+    			FaceHighlightLeft = 頭.頬左_接続.GetEle<顔ハイライト>();
     			顔ハイライト右 = 頭.頬右_接続.GetEle<顔ハイライト>();
-    			顔ハイライト左.SetHitFalse();
+    			FaceHighlightLeft.SetHitFalse();
     			顔ハイライト右.SetHitFalse();
     		}
-    		if (基髪 != null)
+    		if (BaseHair != null)
     		{
-    			前髪 = 基髪.前髪_接続.GetEle<前髪>();
-    			横髪左 = 基髪.横髪左_接続.GetEle<SideHair>();
-    			横髪右 = 基髪.横髪右_接続.GetEle<SideHair>();
-    			後髪1 = 基髪.後髪_接続.GetEle<BackHair1>();
-    			後髪0 = 基髪.後髪_接続.GetEle<BackHair0>();
+    			FrontHair = BaseHair.FrontHair_接続.GetEle<FrontHair>();
+    			SideHairLeft = BaseHair.SideHairLeft_接続.GetEle<SideHair>();
+    			横髪右 = BaseHair.横髪右_接続.GetEle<SideHair>();
+    			後髪1 = BaseHair.後髪_接続.GetEle<BackHair1>();
+    			後髪0 = BaseHair.後髪_接続.GetEle<BackHair0>();
     		}
     		Neck.キスマーク = new スタンプK(Med, Are, Cha, this, kd, Neck);
     		sk.Add(Neck.キスマーク);
@@ -4075,10 +4075,10 @@ namespace SlaveMatrix
     		sk.Add(Waist.キスマーク);
     		Waist.鞭痕 = new スタンプW(Med, Are, Cha, this, wd, Waist);
     		sw.Add(Waist.鞭痕);
-    		ボテ腹_人.キスマーク = new スタンプK(Med, Are, Cha, this, kd, ボテ腹_人);
-    		sk.Add(ボテ腹_人.キスマーク);
-    		ボテ腹_人.鞭痕 = new スタンプW(Med, Are, Cha, this, wd, ボテ腹_人);
-    		sw.Add(ボテ腹_人.鞭痕);
+    		PregnantBelly_人.キスマーク = new スタンプK(Med, Are, Cha, this, kd, PregnantBelly_人);
+    		sk.Add(PregnantBelly_人.キスマーク);
+    		PregnantBelly_人.鞭痕 = new スタンプW(Med, Are, Cha, this, wd, PregnantBelly_人);
+    		sw.Add(PregnantBelly_人.鞭痕);
     		乳房左.キスマーク = new スタンプK(Med, Are, Cha, this, kd, 乳房左);
     		sk.Add(乳房左.キスマーク);
     		乳房左.鞭痕 = new スタンプW(Med, Are, Cha, this, wd, 乳房左);
@@ -4093,7 +4093,7 @@ namespace SlaveMatrix
     		ぶっかけ大 = new スタンプB(Med, Are, Cha, this, new ぶっかけ_大D(), Cha.Motions);
     		Is瞼宇 = 瞼左 is 瞼_宇;
     		涙描画 = LeftTear != null;
-    		鼻描画 = 鼻 != null;
+    		鼻描画 = Nose != null;
     		if (後髪1 != null)
     		{
     			Sort(後髪1.EnumEle(), 後髪接続);
@@ -4132,23 +4132,23 @@ namespace SlaveMatrix
     		{
     			Sort(頭.頬右_接続.Select((Element e) => e.EnumEle()).JoinEnum(), 頬右接続);
     		}
-    		if (基髪.頭頂左_接続 != null)
+    		if (BaseHair.頭頂左_接続 != null)
     		{
-    			角左接続.AddRange(基髪.頭頂左_接続.GetEles<角2>());
-    			獣耳左 = 基髪.頭頂左_接続.GetEle<獣耳>();
-    			Sort((from e in 基髪.頭頂左_接続.GetEles<植>()
+    			角左接続.AddRange(BaseHair.頭頂左_接続.GetEles<角2>());
+    			獣耳左 = BaseHair.頭頂左_接続.GetEle<獣耳>();
+    			Sort((from e in BaseHair.頭頂左_接続.GetEles<植>()
     				select e.EnumEle()).JoinEnum(), 植左接続);
-    			Sort((from e in 基髪.頭頂左_接続
+    			Sort((from e in BaseHair.頭頂左_接続
     				where !(e is 角2) && !(e is 獣耳) && !(e is 植) && !(e is SideHair)
     				select e.EnumEle()).JoinEnum(), 頭頂左後接続);
     		}
-    		if (基髪.頭頂右_接続 != null)
+    		if (BaseHair.頭頂右_接続 != null)
     		{
-    			角右接続.AddRange(基髪.頭頂右_接続.GetEles<角2>());
-    			獣耳右 = 基髪.頭頂右_接続.GetEle<獣耳>();
-    			Sort((from e in 基髪.頭頂右_接続.GetEles<植>()
+    			角右接続.AddRange(BaseHair.頭頂右_接続.GetEles<角2>());
+    			獣耳右 = BaseHair.頭頂右_接続.GetEle<獣耳>();
+    			Sort((from e in BaseHair.頭頂右_接続.GetEles<植>()
     				select e.EnumEle()).JoinEnum(), 植右接続);
-    			Sort((from e in 基髪.頭頂右_接続
+    			Sort((from e in BaseHair.頭頂右_接続
     				where !(e is 角2) && !(e is 獣耳) && !(e is 植) && !(e is SideHair)
     				select e.EnumEle()).JoinEnum(), 頭頂右後接続);
     		}
@@ -4495,41 +4495,41 @@ namespace SlaveMatrix
     					{
     						胸肌_獣 = (胸肌)item22;
     					}
-    					else if (item22 is 胴肌)
+    					else if (item22 is TorsoSkin)
     					{
-    						胴肌_獣 = (胴肌)item22;
+    						TorsoSkin_獣 = (TorsoSkin)item22;
     					}
-    					else if (item22 is 腰肌)
+    					else if (item22 is WaistSkin)
     					{
-    						腰肌_獣 = (腰肌)item22;
+    						WaistSkin_獣 = (WaistSkin)item22;
     					}
-    					else if (item22 is 胸毛)
+    					else if (item22 is ChestHair)
     					{
-    						胸毛_獣 = (胸毛)item22;
+    						ChestHair_獣 = (ChestHair)item22;
     					}
-    					else if (item22 is ボテ腹_獣)
+    					else if (item22 is PregnantBelly_獣)
     					{
-    						ボテ腹_獣 = (ボテ腹_獣)item22;
+    						PregnantBelly_獣 = (PregnantBelly_獣)item22;
     					}
-    					else if (item22 is 肛門_獣)
+    					else if (item22 is Anus_獣)
     					{
-    						肛門_獣 = (肛門_獣)item22;
+    						Anus_獣 = (Anus_獣)item22;
     					}
     					else if (item22 is 肛門精液_獣)
     					{
     						肛門精液_獣 = (肛門精液_獣)item22;
     					}
-    					else if (item22 is 膣基_獣)
+    					else if (item22 is VaginaOrigin_獣)
     					{
-    						膣基_獣 = (膣基_獣)item22;
+    						VaginaOrigin_獣 = (VaginaOrigin_獣)item22;
     					}
-    					else if (item22 is 膣内精液_獣)
+    					else if (item22 is InternalSemen_獣)
     					{
-    						膣内精液_獣 = (膣内精液_獣)item22;
+    						InternalSemen_獣 = (InternalSemen_獣)item22;
     					}
-    					else if (item22 is 断面_獣)
+    					else if (item22 is XRay_獣)
     					{
-    						断面_獣 = (断面_獣)item22;
+    						XRay_獣 = (XRay_獣)item22;
     					}
     					else if (item22 is 性器_獣)
     					{
@@ -4565,34 +4565,34 @@ namespace SlaveMatrix
     					}
     				}
     				胸肌_獣.SetHitFalse();
-    				胴肌_獣.SetHitFalse();
-    				腰肌_獣.SetHitFalse();
-    				腰肌_獣.X0Y0_陰毛.Hit = true;
-    				腰肌_獣.X0Y0_陰毛_ハート.Hit = true;
-    				腰肌_獣.X0Y0_獣性_獣毛.Hit = true;
-    				腰肌_獣.X0Y1_陰毛.Hit = true;
-    				腰肌_獣.X0Y1_陰毛_ハート.Hit = true;
-    				腰肌_獣.X0Y1_獣性_獣毛.Hit = true;
-    				腰肌_獣.X0Y2_陰毛.Hit = true;
-    				腰肌_獣.X0Y2_陰毛_ハート.Hit = true;
-    				腰肌_獣.X0Y2_獣性_獣毛.Hit = true;
-    				腰肌_獣.X0Y3_陰毛.Hit = true;
-    				腰肌_獣.X0Y3_陰毛_ハート.Hit = true;
-    				腰肌_獣.X0Y3_獣性_獣毛.Hit = true;
-    				腰肌_獣.X0Y4_陰毛.Hit = true;
-    				腰肌_獣.X0Y4_陰毛_ハート.Hit = true;
-    				腰肌_獣.X0Y4_獣性_獣毛.Hit = true;
+    				TorsoSkin_獣.SetHitFalse();
+    				WaistSkin_獣.SetHitFalse();
+    				WaistSkin_獣.X0Y0_陰毛.Hit = true;
+    				WaistSkin_獣.X0Y0_陰毛_ハート.Hit = true;
+    				WaistSkin_獣.X0Y0_獣性_獣毛.Hit = true;
+    				WaistSkin_獣.X0Y1_陰毛.Hit = true;
+    				WaistSkin_獣.X0Y1_陰毛_ハート.Hit = true;
+    				WaistSkin_獣.X0Y1_獣性_獣毛.Hit = true;
+    				WaistSkin_獣.X0Y2_陰毛.Hit = true;
+    				WaistSkin_獣.X0Y2_陰毛_ハート.Hit = true;
+    				WaistSkin_獣.X0Y2_獣性_獣毛.Hit = true;
+    				WaistSkin_獣.X0Y3_陰毛.Hit = true;
+    				WaistSkin_獣.X0Y3_陰毛_ハート.Hit = true;
+    				WaistSkin_獣.X0Y3_獣性_獣毛.Hit = true;
+    				WaistSkin_獣.X0Y4_陰毛.Hit = true;
+    				WaistSkin_獣.X0Y4_陰毛_ハート.Hit = true;
+    				WaistSkin_獣.X0Y4_獣性_獣毛.Hit = true;
     				肛門精液_獣.SetHitFalse();
-    				膣基_獣.SetHitFalse();
-    				膣内精液_獣.SetHitFalse();
-    				断面_獣.SetHitFalse();
+    				VaginaOrigin_獣.SetHitFalse();
+    				InternalSemen_獣.SetHitFalse();
+    				XRay_獣.SetHitFalse();
     				性器精液_獣.SetHitFalse();
     				飛沫_獣.SetHitFalse();
     				潮吹_小_獣.SetHitFalse();
     				潮吹_大_獣.SetHitFalse();
     				放尿_獣.SetHitFalse();
     				ピアス.SetHitFalse();
-    				Waist.WaistCD.c2.Col2 = Chest_獣.胸郭CD.c2.Col1;
+    				Waist.WaistCD.c2.Col2 = Chest_獣.RibCageCD.c2.Col1;
     				if (Waist_獣 != null)
     				{
     					半身中1接続.Add(Waist_獣);
@@ -4609,17 +4609,17 @@ namespace SlaveMatrix
     				{
     					半身中1接続.Add(new DrawableElement(Chest_獣, Chest_獣.肌描画));
     				}
-    				if (ボテ腹_獣 != null)
+    				if (PregnantBelly_獣 != null)
     				{
-    					半身中1接続.Add(ボテ腹_獣);
+    					半身中1接続.Add(PregnantBelly_獣);
     				}
-    				if (腰肌_獣 != null)
+    				if (WaistSkin_獣 != null)
     				{
-    					半身中1接続.Add(腰肌_獣);
+    					半身中1接続.Add(WaistSkin_獣);
     				}
-    				if (胴肌_獣 != null)
+    				if (TorsoSkin_獣 != null)
     				{
-    					半身中1接続.Add(胴肌_獣);
+    					半身中1接続.Add(TorsoSkin_獣);
     				}
     				if (胸肌_獣 != null)
     				{
@@ -4694,19 +4694,19 @@ namespace SlaveMatrix
     						Sort(Chest_獣.翼下右_接続.Select((Element e) => e.EnumEle()).JoinEnum(), 半身後接続);
     					}
     				}
-    				if (胸毛_獣 != null)
+    				if (ChestHair_獣 != null)
     				{
     					if (捲り判定0)
     					{
-    						半身前接続.Add(胸毛_獣);
+    						半身前接続.Add(ChestHair_獣);
     					}
     					else
     					{
-    						半身中2接続.Add(胸毛_獣);
+    						半身中2接続.Add(ChestHair_獣);
     					}
     				}
     				Sort(from e in ele.EnumEle().Skip(1)
-    					where !bod.半身前接続.Contains(e) && !bod.半身中1接続.Contains(e) && !bod.半身後接続.Contains(e) && !(e is 四足脇) && e != bod.肛門_獣 && e != bod.肛門精液_獣 && e != bod.膣基_獣 && e != bod.膣内精液_獣 && e != bod.断面_獣 && e != bod.性器_獣 && e != bod.性器精液_獣 && e != bod.飛沫_獣 && e != bod.潮吹_小_獣 && e != bod.潮吹_大_獣 && e != bod.放尿_獣 && e != bod.ピアス && e != bod.キャップ1
+    					where !bod.半身前接続.Contains(e) && !bod.半身中1接続.Contains(e) && !bod.半身後接続.Contains(e) && !(e is 四足脇) && e != bod.Anus_獣 && e != bod.肛門精液_獣 && e != bod.VaginaOrigin_獣 && e != bod.InternalSemen_獣 && e != bod.XRay_獣 && e != bod.性器_獣 && e != bod.性器精液_獣 && e != bod.飛沫_獣 && e != bod.潮吹_小_獣 && e != bod.潮吹_大_獣 && e != bod.放尿_獣 && e != bod.ピアス && e != bod.キャップ1
     					select e, 半身後接続);
     			}
     			else if (ele is 多足_蛸)
@@ -5192,15 +5192,15 @@ namespace SlaveMatrix
     			触覚左 = src.GetEle<触覚>();
     			触覚右 = src2.GetEle<触覚>();
     		}
-    		頭色更新 = new 頭色更新(頭, 単眼瞼, Is瞼宇 ? null : 瞼左, Is瞼宇 ? null : 瞼右, 額瞼, 頬瞼左, 頬瞼右);
+    		頭色更新 = new 頭色更新(頭, MonoEyelid, Is瞼宇 ? null : 瞼左, Is瞼宇 ? null : 瞼右, ForeheadEyelid, CheekEyelidLeft, 頬瞼右);
     		ドレス色更新 = new ドレス色更新(上着T_ドレス, 上着M_ドレス);
     		鯨色更新 = from e in Elements
     			where e.Par != null && e.Par is 長物_鯨 && e is 尾_鯨
     			select new 鯨色更新((長物_鯨)e.Par, (尾_鯨)e);
     		飛膜色更新 = 蝙通常.Select((蝙通常 e) => new 飛膜色更新(e.UpperArm.飛膜, e.手.飛膜));
     		色更新 = Elements.Where((Element e) => !bod.頭色更新.Contains(e) && !bod.ドレス色更新.Contains(e) && !bod.鯨色更新.Any((鯨色更新 f) => f.Contains(e)));
-    		Is双眉 = 眉左 != null;
-    		Is単眉 = 単眼眉 != null;
+    		Is双眉 = EyebrowLeft != null;
+    		Is単眉 = MonoEyebrow != null;
     		Is人耳 = 耳左 != null;
     		Is獣耳 = 獣耳左 != null;
     		Is虫角 = 額接続.IsEle<角1_虫>();
@@ -5227,11 +5227,11 @@ namespace SlaveMatrix
     		Is触覚他 = 触覚左 != null;
     		Is触覚甲 = 触覚甲左 != null;
     		Is触覚 = Is触覚他 || Is触覚甲;
-    		IsDualEyes = 目左 != null;
-    		IsSingleEye = 単眼目 != null;
-    		IsCheekEyes = 頬目左 != null;
-    		IsForeheadEye = 額目 != null;
-    		Is舌股 = 舌 is 舌_長 && ((舌_長)舌).舌股右_舌1_表示;
+    		IsDualEyes = EyeLeft != null;
+    		IsSingleEye = MonoEye != null;
+    		IsCheekEyes = CheekEyeLeft != null;
+    		IsForeheadEye = ForeheadEye != null;
+    		Is舌股 = Tounge is Tounge_長 && ((Tounge_長)Tounge).舌股右_Tounge1_表示;
     		Is最前腕人 = 肩左 != null && 肩左.UpperArm_接続.IsEle<UpperArm_人>();
     		Is最前手人 = 肩左 != null && 肩左.EnumEle().IsEle<手_人>();
     		Is腕人 = LowerArm以降左.IsEle<LowerArm_人>();
@@ -5243,8 +5243,8 @@ namespace SlaveMatrix
     		Is腿獣 = Waist.腿左_接続.IsEle<獣腿>();
     		Is腿魚 = Waist.腿左_接続.IsEle<尾_魚>();
     		Is腿犬 = Waist.腿左_接続.IsEle<触手_犬>();
-    		紅潮.紅潮線左右表示 = false;
-    		舌_表示 = false;
+    		CrimsonSquirt.紅潮線左右表示 = false;
+    		Tounge_表示 = false;
     		if (Is頭頂_宇)
     		{
     			foreach (Element item51 in 顔触覚左接続)
@@ -5269,13 +5269,13 @@ namespace SlaveMatrix
     			頭.X0Y0_Head.GetJP()[7] = new JointPoint(頭.X0Y0_Head.GetJP()[7].Joint.MulY(0.96));
     			頭.X0Y0_Head.GetJP()[17] = new JointPoint(頭.X0Y0_Head.GetJP()[17].Joint.MulY(0.96));
     			頭.X0Y0_Head.GetJP()[18] = new JointPoint(頭.X0Y0_Head.GetJP()[18].Joint.MulY(0.96));
-    			紅潮.紅潮1_表示 = false;
-    			紅潮.X0Y0_紅潮左.SetAngleBase(20.0);
-    			紅潮.X0Y0_紅潮弱左.SetAngleBase(20.0);
-    			紅潮.X0Y0_紅潮線左.SetAngleBase(20.0);
-    			紅潮.X0Y0_紅潮右.SetAngleBase(-20.0);
-    			紅潮.X0Y0_紅潮弱右.SetAngleBase(-20.0);
-    			紅潮.X0Y0_紅潮線右.SetAngleBase(-20.0);
+    			CrimsonSquirt.CrimsonSquirt1_表示 = false;
+    			CrimsonSquirt.X0Y0_CrimsonSquirtLeft.SetAngleBase(20.0);
+    			CrimsonSquirt.X0Y0_紅潮弱左.SetAngleBase(20.0);
+    			CrimsonSquirt.X0Y0_紅潮線左.SetAngleBase(20.0);
+    			CrimsonSquirt.X0Y0_CrimsonSquirtRight.SetAngleBase(-20.0);
+    			CrimsonSquirt.X0Y0_紅潮弱右.SetAngleBase(-20.0);
+    			CrimsonSquirt.X0Y0_紅潮線右.SetAngleBase(-20.0);
     		}
     		染み_人 = new 染み_人(disUnit, 配色指定.N0, Cha.ColorSet, Med, new 染み_人D());
     		染み_人.サイズ = Elements.Sum((Element e) => e.サイズ) / (double)Elements.Length;
@@ -5286,23 +5286,23 @@ namespace SlaveMatrix
     		染み_人.X0Y0_潮1.SetPositionCont(positionCont2);
     		if (Is獣)
     		{
-    			膣内精液_獣.Intensity = 0.0;
-    			断面_獣.精液CD.不透明度 = 0.0;
-    			膣基 = 膣基_獣;
-    			VaginalCumDrip = 膣内精液_獣;
-    			断面 = 断面_獣;
+    			InternalSemen_獣.Intensity = 0.0;
+    			XRay_獣.精液CD.不透明度 = 0.0;
+    			VaginaOrigin = VaginaOrigin_獣;
+    			VaginalCumDrip = InternalSemen_獣;
+    			XRay = XRay_獣;
     			性器 = 性器_獣;
     			GenetalCum = 性器精液_獣;
     			Splash = 飛沫_獣;
     			潮吹_小 = 潮吹_小_獣;
     			潮吹_大 = 潮吹_大_獣;
     			Urination = 放尿_獣;
-    			肛門 = 肛門_獣;
+    			Anus = Anus_獣;
     			AnalCum = 肛門精液_獣;
-    			膣内精液_獣.精液配色(GlobalState.GameData.配色);
-    			膣内精液_獣.精液濃度 = 0.0;
-    			断面_獣.精液配色(GlobalState.GameData.配色);
-    			断面_獣.精液濃度 = 0.0;
+    			InternalSemen_獣.精液配色(GlobalState.GameData.配色);
+    			InternalSemen_獣.精液濃度 = 0.0;
+    			XRay_獣.精液配色(GlobalState.GameData.配色);
+    			XRay_獣.精液濃度 = 0.0;
     			性器精液_獣.精液配色(GlobalState.GameData.配色);
     			肛門精液_獣.精液配色(GlobalState.GameData.配色);
     			染み_獣 = new 染み_獣(disUnit, 配色指定.N0, Cha.ColorSet, Med, new 染み_獣D());
@@ -5310,8 +5310,8 @@ namespace SlaveMatrix
     			染み_獣.Intensity = 0.0;
     			if (Chest_獣.脇左_接続.IsEle<四足脇>())
     			{
-    				Chest_獣.X0Y0_胸郭.GetOP()[0].Outline = false;
-    				Chest_獣.X0Y0_胸郭.GetOP()[9].Outline = false;
+    				Chest_獣.X0Y0_RibCage.GetOP()[0].Outline = false;
+    				Chest_獣.X0Y0_RibCage.GetOP()[9].Outline = false;
     			}
     			Vector2D positionCont3 = new Vector2D(0.0, 0.006);
     			染み_獣.X0Y0_湯気_湯気左1_湯気2.SetPositionCont(positionCont3);
@@ -5320,32 +5320,32 @@ namespace SlaveMatrix
     			染み_獣.X0Y0_湯気_湯気右1_湯気2.SetPositionCont(positionCont3);
     			染み_獣.X0Y0_湯気_湯気右2_湯気2.SetPositionCont(positionCont3);
     			染み_獣.X0Y0_湯気_湯気右3_湯気2.SetPositionCont(positionCont3);
-    			下着陰核.X0Y0_陰核.SetSizeBase(性器_獣.X0Y0_陰核.GetSizeBase());
+    			UnderwearClitoris.X0Y0_陰核.SetSizeBase(性器_獣.X0Y0_陰核.GetSizeBase());
     			csb = 性器_獣.X0Y0_陰核.GetSizeBase();
-    			asb1 = 肛門_獣.X0Y0_肛門2.GetSizeBase();
-    			asb2 = 肛門_獣.X0Y0_肛門3.GetSizeBase();
+    			asb1 = Anus_獣.X0Y0_Anus2.GetSizeBase();
+    			asb2 = Anus_獣.X0Y0_Anus3.GetSizeBase();
     			染み_獣.X0Y0_汗.SetPositionCont(positionCont);
     			染み_獣.X0Y0_潮1.SetPositionCont(positionCont2);
     		}
     		else
     		{
-    			膣内精液_人.Intensity = 0.0;
-    			断面_人.精液CD.不透明度 = 0.0;
-    			膣基 = 膣基_人;
-    			VaginalCumDrip = 膣内精液_人;
-    			断面 = 断面_人;
+    			InternalSemen_人.Intensity = 0.0;
+    			XRay_人.精液CD.不透明度 = 0.0;
+    			VaginaOrigin = VaginaOrigin_人;
+    			VaginalCumDrip = InternalSemen_人;
+    			XRay = XRay_人;
     			性器 = 性器_人;
     			GenetalCum = 性器精液_人;
     			Splash = 飛沫_人;
     			潮吹_小 = 潮吹_小_人;
     			潮吹_大 = 潮吹_大_人;
     			Urination = 放尿_人;
-    			肛門 = 肛門_人;
+    			Anus = Anus_人;
     			AnalCum = 肛門精液_人;
-    			膣内精液_人.精液配色(GlobalState.GameData.配色);
-    			膣内精液_人.精液濃度 = 0.0;
-    			断面_人.精液配色(GlobalState.GameData.配色);
-    			断面_人.精液濃度 = 0.0;
+    			InternalSemen_人.精液配色(GlobalState.GameData.配色);
+    			InternalSemen_人.精液濃度 = 0.0;
+    			XRay_人.精液配色(GlobalState.GameData.配色);
+    			XRay_人.精液濃度 = 0.0;
     			性器精液_人.精液配色(GlobalState.GameData.配色);
     			肛門精液_人.精液配色(GlobalState.GameData.配色);
     			Vector2D positionCont4 = new Vector2D(0.0, 0.006);
@@ -5355,23 +5355,23 @@ namespace SlaveMatrix
     			染み_人.X0Y0_湯気_湯気右1_湯気2.SetPositionCont(positionCont4);
     			染み_人.X0Y0_湯気_湯気右2_湯気2.SetPositionCont(positionCont4);
     			染み_人.X0Y0_湯気_湯気右3_湯気2.SetPositionCont(positionCont4);
-    			下着陰核.X0Y0_陰核.SetSizeBase(性器_人.X0Y0_陰核.GetSizeBase());
+    			UnderwearClitoris.X0Y0_陰核.SetSizeBase(性器_人.X0Y0_陰核.GetSizeBase());
     			csb = 性器_人.X0Y0_陰核.GetSizeBase();
-    			asb1 = 肛門_人.X0Y0_肛門2.GetSizeBase();
-    			asb2 = 肛門_人.X0Y0_肛門3.GetSizeBase();
-    			ボテ腹_人.X0Y0_ハイライト.Dra = false;
-    			ボテ腹_人.X0Y0_ハイライト左1.Dra = false;
-    			ボテ腹_人.X0Y0_ハイライト左2.Dra = false;
-    			ボテ腹_人.X0Y0_ハイライト右1.Dra = false;
-    			ボテ腹_人.X0Y0_ハイライト右2.Dra = false;
-    			ボテ腹_人.X0Y1_ハイライト.Dra = false;
-    			ボテ腹_人.X0Y1_ハイライト左1.Dra = false;
-    			ボテ腹_人.X0Y1_ハイライト左2.Dra = false;
-    			ボテ腹_人.X0Y1_ハイライト右1.Dra = false;
-    			ボテ腹_人.X0Y1_ハイライト右2.Dra = false;
+    			asb1 = Anus_人.X0Y0_Anus2.GetSizeBase();
+    			asb2 = Anus_人.X0Y0_Anus3.GetSizeBase();
+    			PregnantBelly_人.X0Y0_ハイライト.Dra = false;
+    			PregnantBelly_人.X0Y0_ハイライト左1.Dra = false;
+    			PregnantBelly_人.X0Y0_ハイライト左2.Dra = false;
+    			PregnantBelly_人.X0Y0_ハイライト右1.Dra = false;
+    			PregnantBelly_人.X0Y0_ハイライト右2.Dra = false;
+    			PregnantBelly_人.X0Y1_ハイライト.Dra = false;
+    			PregnantBelly_人.X0Y1_ハイライト左1.Dra = false;
+    			PregnantBelly_人.X0Y1_ハイライト左2.Dra = false;
+    			PregnantBelly_人.X0Y1_ハイライト右1.Dra = false;
+    			PregnantBelly_人.X0Y1_ハイライト右2.Dra = false;
     		}
-    		肛門y = 肛門.尺度YB;
-    		肛門v = 肛門.尺度B;
+    		Anusy = Anus.尺度YB;
+    		Anusv = Anus.尺度B;
     		口i = 0;
     		MouthCum.精液配色(GlobalState.GameData.配色);
     		頬濃度 = 0.3;
@@ -5400,9 +5400,9 @@ namespace SlaveMatrix
     		体紅潮 = 0.0;
     		子宮下がり = 0.0;
     		肛門開き = 0.0;
-    		肛門C = 1.0;
+    		AnusC = 1.0;
     		膣腔C = 1.0;
-    		断面_表示 = false;
+    		XRay_表示 = false;
     		if (Is粘 && Waist.腿左_接続 != null)
     		{
     			foreach (ShapePart item53 in (from e in Waist.腿左_接続.GetEles<腿>()
@@ -5430,18 +5430,18 @@ namespace SlaveMatrix
     		if (Is粘)
     		{
     			腿開きi = 1;
-    			断面_表示 = true;
+    			XRay_表示 = true;
     		}
-    		下着乳首左.X0Y0_乳首.SetSizeBase(乳房左.X0Y0_乳首.GetSizeBase() * 1.1);
+    		UnderwearNippleLeft.X0Y0_乳首.SetSizeBase(乳房左.X0Y0_乳首.GetSizeBase() * 1.1);
     		下着乳首右.X0Y0_乳首.SetSizeBase(乳房右.X0Y0_乳首.GetSizeBase() * 1.1);
     		if (Chest.肩左_接続 == null)
     		{
     			胸肌_人.淫タトゥ_タトゥ左_表示 = false;
     			胸肌_人.淫タトゥ_タトゥ右_表示 = false;
     		}
-    		if (腰肌_人.竜性_鱗1_表示 || 腰肌_人.竜性_鱗2_表示 || 腰肌_人.竜性_鱗3_表示 || 腰肌_人.竜性_鱗4_表示)
+    		if (WaistSkin_人.竜性_鱗1_表示 || WaistSkin_人.竜性_鱗2_表示 || WaistSkin_人.竜性_鱗3_表示 || WaistSkin_人.竜性_鱗4_表示)
     		{
-    			腰肌_人.陰毛_ハート_表示 = false;
+    			WaistSkin_人.陰毛_ハート_表示 = false;
     		}
     		尾_魚 ele7 = Waist.腿左_接続.GetEle<尾_魚>();
     		if (ele7 != null)
@@ -5780,12 +5780,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中1.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -5820,7 +5820,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -5828,27 +5828,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -5861,20 +5861,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -5883,7 +5883,7 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
@@ -5893,21 +5893,21 @@ namespace SlaveMatrix
     				{
     					bod.EI半中2.描画(are);
     				}
-    				bod.肛門_人.描画0(are);
+    				bod.Anus_人.描画0(are);
     				bod.肛門精液_人.描画0(are);
     				if (bod.cb1)
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_人.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_人.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_人.描画0(are);
-    				bod.断面_人.描画0(are);
+    				bod.InternalSemen_人.描画0(are);
+    				bod.XRay_人.描画0(are);
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -5917,18 +5917,18 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.上着M_ドレス.描画0(are);
     				bod.上着T_ドレス.描画0(are);
     				bod.上着B_前掛け.描画0(are);
     				bod.上着B_クロス.描画0(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -5937,7 +5937,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item57 in bod.角左接続)
@@ -5951,11 +5951,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -6050,7 +6050,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -6207,12 +6207,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中1.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -6247,7 +6247,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -6255,27 +6255,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -6288,20 +6288,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -6310,23 +6310,23 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
-    				bod.肛門_人.描画0(are);
+    				bod.Anus_人.描画0(are);
     				bod.肛門精液_人.描画0(are);
     				if (bod.cb1)
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_人.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_人.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_人.描画0(are);
-    				bod.断面_人.描画0(are);
+    				bod.InternalSemen_人.描画0(are);
+    				bod.XRay_人.描画0(are);
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -6340,7 +6340,7 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
@@ -6355,11 +6355,11 @@ namespace SlaveMatrix
     				bod.上着T_ドレス.描画0(are);
     				bod.上着B_前掛け.描画0(are);
     				bod.上着B_クロス.描画0(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -6368,7 +6368,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item65 in bod.角左接続)
@@ -6382,11 +6382,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -6481,7 +6481,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -6634,12 +6634,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中1.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -6674,7 +6674,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -6682,27 +6682,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -6715,20 +6715,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -6737,27 +6737,27 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
     					bod.EI腕前.描画(are);
     				}
-    				bod.肛門_獣.描画0(are);
+    				bod.Anus_獣.描画0(are);
     				bod.肛門精液_獣.描画0(are);
     				if (bod.cb1)
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_獣.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_獣.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_獣.描画0(are);
-    				bod.断面_獣.描画0(are);
+    				bod.InternalSemen_獣.描画0(are);
+    				bod.XRay_獣.描画0(are);
     				bod.性器_獣.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -6767,7 +6767,7 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.上着M_ドレス.描画0(are);
@@ -6785,11 +6785,11 @@ namespace SlaveMatrix
     				{
     					bod.上着B_クロス.描画0(are);
     				}
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -6798,7 +6798,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item73 in bod.角左接続)
@@ -6812,11 +6812,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -6911,7 +6911,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -7073,12 +7073,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中2.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				if (bod.胸左右前後)
     				{
@@ -7104,7 +7104,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -7112,27 +7112,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -7145,20 +7145,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -7167,27 +7167,27 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
     					bod.EI腕前.描画(are);
     				}
-    				bod.肛門_人.描画0(are);
+    				bod.Anus_人.描画0(are);
     				bod.肛門精液_人.描画0(are);
     				if (bod.cb1)
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_人.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_人.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_人.描画0(are);
-    				bod.断面_人.描画0(are);
+    				bod.InternalSemen_人.描画0(are);
+    				bod.XRay_人.描画0(are);
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -7197,18 +7197,18 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.上着M_ドレス.描画0(are);
     				bod.上着T_ドレス.描画0(are);
     				bod.上着B_前掛け.描画0(are);
     				bod.上着B_クロス.描画0(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -7217,7 +7217,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item81 in bod.角左接続)
@@ -7231,11 +7231,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -7330,7 +7330,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -7484,12 +7484,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中2.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -7524,7 +7524,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -7532,27 +7532,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -7565,20 +7565,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -7587,7 +7587,7 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
@@ -7597,21 +7597,21 @@ namespace SlaveMatrix
     				{
     					bod.EI半中1.描画(are);
     				}
-    				bod.肛門_人.描画0(are);
+    				bod.Anus_人.描画0(are);
     				bod.肛門精液_人.描画0(are);
     				if (bod.cb1)
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_人.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_人.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_人.描画0(are);
-    				bod.断面_人.描画0(are);
+    				bod.InternalSemen_人.描画0(are);
+    				bod.XRay_人.描画0(are);
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -7625,18 +7625,18 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.上着M_ドレス.描画0(are);
     				bod.上着T_ドレス.描画0(are);
     				bod.上着B_前掛け.描画0(are);
     				bod.上着B_クロス.描画0(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -7645,7 +7645,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item89 in bod.角左接続)
@@ -7659,11 +7659,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -7758,7 +7758,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -7907,12 +7907,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中2.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -7947,7 +7947,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -7955,27 +7955,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -7988,20 +7988,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -8010,13 +8010,13 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
     					bod.EI腕前.描画(are);
     				}
-    				bod.肛門_人.描画0(are);
+    				bod.Anus_人.描画0(are);
     				bod.肛門精液_人.描画0(are);
     				if (!bod.Is下着B)
     				{
@@ -8030,15 +8030,15 @@ namespace SlaveMatrix
     				{
     					bod.カーソル.描画肛(are);
     				}
-    				bod.膣基_人.描画0(are);
-    				if (bod.断面_表示 && bod.cb1)
+    				bod.VaginaOrigin_人.描画0(are);
+    				if (bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
-    				bod.膣内精液_人.描画0(are);
-    				bod.断面_人.描画0(are);
+    				bod.InternalSemen_人.描画0(are);
+    				bod.XRay_人.描画0(are);
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -8048,14 +8048,14 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.下着B_ノーマル.描画0(are);
     				bod.下着B_マイクロ.描画0(are);
     				bod.下着B_ノーマル.描画1(are);
     				bod.下着B_マイクロ.描画1(are);
-    				bod.下着陰核.描画0(are);
+    				bod.UnderwearClitoris.描画0(are);
     				bod.上着M_ドレス.描画0(are);
     				bod.上着T_ドレス.描画0(are);
     				if (bod.Is下着B)
@@ -8068,11 +8068,11 @@ namespace SlaveMatrix
     				}
     				bod.上着B_前掛け.描画0(are);
     				bod.上着B_クロス.描画0(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -8081,7 +8081,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item97 in bod.角左接続)
@@ -8095,11 +8095,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -8194,7 +8194,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -8328,21 +8328,21 @@ namespace SlaveMatrix
     				}
     				bod.Waist.描画0(are);
     				bod.Waist.描画1(are);
-    				if (!GlobalState.GameData.断面)
+    				if (!GlobalState.GameData.XRay)
     				{
-    					bod.肛門_人.描画0(are);
+    					bod.Anus_人.描画0(are);
     					bod.肛門精液_人.描画0(are);
     					if (bod.cb1)
     					{
     						bod.カーソル.描画肛(are);
     					}
-    					bod.膣基_人.描画0(are);
-    					if (bod.断面_表示 && bod.cb1)
+    					bod.VaginaOrigin_人.描画0(are);
+    					if (bod.XRay_表示 && bod.cb1)
     					{
     						bod.カーソル.描画0(are);
     					}
-    					bod.膣内精液_人.描画0(are);
-    					bod.断面_人.描画0(are);
+    					bod.InternalSemen_人.描画0(are);
+    					bod.XRay_人.描画0(are);
     				}
     				bod.Torso.描画0(are);
     				bod.Chest.描画0(are);
@@ -8363,12 +8363,12 @@ namespace SlaveMatrix
     				{
     					bod.EI半中2.描画(are);
     				}
-    				bod.ボテ腹_人.描画0(are);
-    				bod.ボテ腹板_人.描画0(are);
-    				bod.腰肌_人.描画0(are);
-    				bod.胴腹板_人.描画0(are);
+    				bod.PregnantBelly_人.描画0(are);
+    				bod.PregnantBellyPlate_人.描画0(are);
+    				bod.WaistSkin_人.描画0(are);
+    				bod.TorsoPlate_人.描画0(are);
     				bod.胸腹板_人.描画0(are);
-    				bod.胴肌_人.描画0(are);
+    				bod.TorsoSkin_人.描画0(are);
     				bod.胸肌_人.描画0(are);
     				bod.下着T_チューブ.描画0(are);
     				bod.下着T_クロス.描画0(are);
@@ -8403,7 +8403,7 @@ namespace SlaveMatrix
     				bod.頭.描画0(are);
     				if (bod.IsDualEyes && !bod.Is瞼宇)
     				{
-    					bod.目左.描画0(are);
+    					bod.EyeLeft.描画0(are);
     					bod.瞼左.描画0(are);
     					bod.目右.描画0(are);
     					bod.瞼右.描画0(are);
@@ -8411,27 +8411,27 @@ namespace SlaveMatrix
     				bod.頭.描画1(are);
     				if (bod.IsSingleEye)
     				{
-    					bod.単眼目.描画0(are);
-    					bod.単眼瞼.描画0(are);
+    					bod.MonoEye.描画0(are);
+    					bod.MonoEyelid.描画0(are);
     				}
-    				bod.紅潮.描画0(are);
-    				bod.鼻肌.描画0(are);
-    				bod.目尻影左.描画0(are);
+    				bod.CrimsonSquirt.描画0(are);
+    				bod.NoseSkin.描画0(are);
+    				bod.EyeCornerShadowLeft.描画0(are);
     				bod.目尻影右.描画0(are);
-    				bod.目傷左.描画0(are);
+    				bod.EyeScarLeft.描画0(are);
     				bod.目傷右.描画0(are);
-    				bod.頬肌左.描画0(are);
+    				bod.CheekSkinLeft.描画0(are);
     				bod.頬肌右.描画0(are);
     				if (bod.IsForeheadEye)
     				{
-    					bod.額目.描画0(are);
-    					bod.額瞼.描画0(are);
+    					bod.ForeheadEye.描画0(are);
+    					bod.ForeheadEyelid.描画0(are);
     				}
     				if (bod.IsCheekEyes)
     				{
-    					bod.頬目左.描画0(are);
+    					bod.CheekEyeLeft.描画0(are);
     					bod.頬目右.描画0(are);
-    					bod.頬瞼左.描画0(are);
+    					bod.CheekEyelidLeft.描画0(are);
     					bod.頬瞼右.描画0(are);
     				}
     				if (bod.Is瞼宇)
@@ -8444,20 +8444,20 @@ namespace SlaveMatrix
     				bod.口.描画0(are);
     				if (bod.鼻描画)
     				{
-    					bod.鼻.描画0(are);
+    					bod.Nose.描画0(are);
     					bod.LeftNoseDrip.描画0(are);
     					bod.RightNoseDrip.描画0(are);
     				}
     				bod.頭.描画2(are);
-    				bod.玉口枷.描画0(are);
-    				bod.基髪.描画0(are);
-    				bod.横髪左.描画0(are);
+    				bod.BallGag.描画0(are);
+    				bod.BaseHair.描画0(are);
+    				bod.SideHairLeft.描画0(are);
     				bod.横髪右.描画0(are);
     				bod.頬左接続.描画0(are);
     				bod.頬左接続.描画1(are);
     				bod.頬右接続.描画0(are);
     				bod.頬右接続.描画1(are);
-    				bod.頬肌左.描画1(are);
+    				bod.CheekSkinLeft.描画1(are);
     				bod.頬肌右.描画1(are);
     				if (bod.涙描画)
     				{
@@ -8466,30 +8466,30 @@ namespace SlaveMatrix
     				}
     				if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     				{
     					bod.EI腕前.描画(are);
     				}
-    				if (GlobalState.GameData.断面)
+    				if (GlobalState.GameData.XRay)
     				{
-    					bod.肛門_人.描画0(are);
+    					bod.Anus_人.描画0(are);
     					bod.肛門精液_人.描画0(are);
     					if (bod.cb1)
     					{
     						bod.カーソル.描画肛(are);
     					}
-    					bod.膣基_人.描画0(are);
-    					if (bod.断面_表示 && bod.cb1)
+    					bod.VaginaOrigin_人.描画0(are);
+    					if (bod.XRay_表示 && bod.cb1)
     					{
     						bod.カーソル.描画0(are);
     					}
-    					bod.膣内精液_人.描画0(are);
-    					bod.断面_人.描画0(are);
+    					bod.InternalSemen_人.描画0(are);
+    					bod.XRay_人.描画0(are);
     				}
     				bod.性器_人.描画0(are);
-    				if (!bod.断面_表示 && bod.cb1)
+    				if (!bod.XRay_表示 && bod.cb1)
     				{
     					bod.カーソル.描画0(are);
     				}
@@ -8499,23 +8499,23 @@ namespace SlaveMatrix
     				bod.下着T_ビキニ.描画1(are);
     				bod.下着T_マイクロ.描画1(are);
     				bod.下着T_ブラ.描画1(are);
-    				bod.下着乳首左.描画0(are);
+    				bod.UnderwearNippleLeft.描画0(are);
     				bod.下着乳首右.描画0(are);
     				bod.キャップ1.描画0(are);
     				bod.下着B_ノーマル.描画0(are);
     				bod.下着B_マイクロ.描画0(are);
     				bod.下着B_ノーマル.描画1(are);
     				bod.下着B_マイクロ.描画1(are);
-    				bod.下着陰核.描画0(are);
+    				bod.UnderwearClitoris.描画0(are);
     				bod.上着M_ドレス.描画0(are);
     				bod.上着T_ドレス.描画0(are);
     				bod.上着B_前掛け.描画0(are);
     				bod.EI腿.描画(are);
-    				if (bod.胸毛_人 != null)
+    				if (bod.ChestHair_人 != null)
     				{
-    					bod.胸毛_人.描画0(are);
+    					bod.ChestHair_人.描画0(are);
     				}
-    				bod.舌.描画0(are);
+    				bod.Tounge.描画0(are);
     				bod.MouthCum.描画0(are);
     				bod.咳.描画0(are);
     				bod.呼気.描画0(are);
@@ -8524,7 +8524,7 @@ namespace SlaveMatrix
     					bod.カーソル.描画0(are);
     					bod.カーソル.描画1(are);
     				}
-    				bod.前髪.描画0(are);
+    				bod.FrontHair.描画0(are);
     				if (!bod.Is獣耳)
     				{
     					foreach (角2 item105 in bod.角左接続)
@@ -8538,11 +8538,11 @@ namespace SlaveMatrix
     				}
     				if (bod.Is単眉)
     				{
-    					bod.単眼眉.描画0(are);
+    					bod.MonoEyebrow.描画0(are);
     				}
     				if (bod.Is双眉)
     				{
-    					bod.眉左.描画0(are);
+    					bod.EyebrowLeft.描画0(are);
     					bod.眉右.描画0(are);
     				}
     				if (bod.Is頭頂_宇)
@@ -8637,7 +8637,7 @@ namespace SlaveMatrix
     				bod.顔触覚右接続.描画1(are);
     				if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     				{
-    					bod.目隠帯.描画0(are);
+    					bod.Blindfold.描画0(are);
     				}
     				if (bod.cb0 && !(bod.fi = bod.カーソル.Isフォーカス膣肛挿入))
     				{
@@ -8791,12 +8791,12 @@ namespace SlaveMatrix
     			{
     				bod.EI半中2.描画(are);
     			}
-    			bod.ボテ腹_人.描画0(are);
-    			bod.ボテ腹板_人.描画0(are);
-    			bod.腰肌_人.描画0(are);
-    			bod.胴腹板_人.描画0(are);
+    			bod.PregnantBelly_人.描画0(are);
+    			bod.PregnantBellyPlate_人.描画0(are);
+    			bod.WaistSkin_人.描画0(are);
+    			bod.TorsoPlate_人.描画0(are);
     			bod.胸腹板_人.描画0(are);
-    			bod.胴肌_人.描画0(are);
+    			bod.TorsoSkin_人.描画0(are);
     			bod.胸肌_人.描画0(are);
     			bod.下着T_チューブ.描画0(are);
     			bod.下着T_クロス.描画0(are);
@@ -8831,7 +8831,7 @@ namespace SlaveMatrix
     			bod.頭.描画0(are);
     			if (bod.IsDualEyes && !bod.Is瞼宇)
     			{
-    				bod.目左.描画0(are);
+    				bod.EyeLeft.描画0(are);
     				bod.瞼左.描画0(are);
     				bod.目右.描画0(are);
     				bod.瞼右.描画0(are);
@@ -8839,27 +8839,27 @@ namespace SlaveMatrix
     			bod.頭.描画1(are);
     			if (bod.IsSingleEye)
     			{
-    				bod.単眼目.描画0(are);
-    				bod.単眼瞼.描画0(are);
+    				bod.MonoEye.描画0(are);
+    				bod.MonoEyelid.描画0(are);
     			}
-    			bod.紅潮.描画0(are);
-    			bod.鼻肌.描画0(are);
-    			bod.目尻影左.描画0(are);
+    			bod.CrimsonSquirt.描画0(are);
+    			bod.NoseSkin.描画0(are);
+    			bod.EyeCornerShadowLeft.描画0(are);
     			bod.目尻影右.描画0(are);
-    			bod.目傷左.描画0(are);
+    			bod.EyeScarLeft.描画0(are);
     			bod.目傷右.描画0(are);
-    			bod.頬肌左.描画0(are);
+    			bod.CheekSkinLeft.描画0(are);
     			bod.頬肌右.描画0(are);
     			if (bod.IsForeheadEye)
     			{
-    				bod.額目.描画0(are);
-    				bod.額瞼.描画0(are);
+    				bod.ForeheadEye.描画0(are);
+    				bod.ForeheadEyelid.描画0(are);
     			}
     			if (bod.IsCheekEyes)
     			{
-    				bod.頬目左.描画0(are);
+    				bod.CheekEyeLeft.描画0(are);
     				bod.頬目右.描画0(are);
-    				bod.頬瞼左.描画0(are);
+    				bod.CheekEyelidLeft.描画0(are);
     				bod.頬瞼右.描画0(are);
     			}
     			if (bod.Is瞼宇)
@@ -8872,20 +8872,20 @@ namespace SlaveMatrix
     			bod.口.描画0(are);
     			if (bod.鼻描画)
     			{
-    				bod.鼻.描画0(are);
+    				bod.Nose.描画0(are);
     				bod.LeftNoseDrip.描画0(are);
     				bod.RightNoseDrip.描画0(are);
     			}
     			bod.頭.描画2(are);
-    			bod.玉口枷.描画0(are);
-    			bod.基髪.描画0(are);
-    			bod.横髪左.描画0(are);
+    			bod.BallGag.描画0(are);
+    			bod.BaseHair.描画0(are);
+    			bod.SideHairLeft.描画0(are);
     			bod.横髪右.描画0(are);
     			bod.頬左接続.描画0(are);
     			bod.頬左接続.描画1(are);
     			bod.頬右接続.描画0(are);
     			bod.頬右接続.描画1(are);
-    			bod.頬肌左.描画1(are);
+    			bod.CheekSkinLeft.描画1(are);
     			bod.頬肌右.描画1(are);
     			if (bod.涙描画)
     			{
@@ -8894,7 +8894,7 @@ namespace SlaveMatrix
     			}
     			if (!bod.Is頭頂_宇 && !bod.Is顔面 && !bod.Is額角 && !bod.Is触覚)
     			{
-    				bod.目隠帯.描画0(are);
+    				bod.Blindfold.描画0(are);
     			}
     			if (bod.Is腕前 && !bod.Is最前腕人 && (!bod.腕左前後_ || !bod.腕右前後_))
     			{
@@ -8904,21 +8904,21 @@ namespace SlaveMatrix
     			{
     				bod.EI腿.描画(are);
     			}
-    			bod.肛門_人.描画0(are);
+    			bod.Anus_人.描画0(are);
     			bod.肛門精液_人.描画0(are);
     			if (bod.cb1)
     			{
     				bod.カーソル.描画肛(are);
     			}
-    			bod.膣基_人.描画0(are);
-    			if (bod.断面_表示 && bod.cb1)
+    			bod.VaginaOrigin_人.描画0(are);
+    			if (bod.XRay_表示 && bod.cb1)
     			{
     				bod.カーソル.描画0(are);
     			}
-    			bod.膣内精液_人.描画0(are);
-    			bod.断面_人.描画0(are);
+    			bod.InternalSemen_人.描画0(are);
+    			bod.XRay_人.描画0(are);
     			bod.性器_人.描画0(are);
-    			if (!bod.断面_表示 && bod.cb1)
+    			if (!bod.XRay_表示 && bod.cb1)
     			{
     				bod.カーソル.描画0(are);
     			}
@@ -8928,14 +8928,14 @@ namespace SlaveMatrix
     			bod.下着T_ビキニ.描画1(are);
     			bod.下着T_マイクロ.描画1(are);
     			bod.下着T_ブラ.描画1(are);
-    			bod.下着乳首左.描画0(are);
+    			bod.UnderwearNippleLeft.描画0(are);
     			bod.下着乳首右.描画0(are);
     			bod.キャップ1.描画0(are);
     			bod.下着B_ノーマル.描画0(are);
     			bod.下着B_マイクロ.描画0(are);
     			bod.下着B_ノーマル.描画1(are);
     			bod.下着B_マイクロ.描画1(are);
-    			bod.下着陰核.描画0(are);
+    			bod.UnderwearClitoris.描画0(are);
     			bod.上着M_ドレス.描画0(are);
     			bod.上着T_ドレス.描画0(are);
     			if (!bod.Is腿人)
@@ -8947,11 +8947,11 @@ namespace SlaveMatrix
     			{
     				bod.上着B_前掛け.描画0(are);
     			}
-    			if (bod.胸毛_人 != null)
+    			if (bod.ChestHair_人 != null)
     			{
-    				bod.胸毛_人.描画0(are);
+    				bod.ChestHair_人.描画0(are);
     			}
-    			bod.舌.描画0(are);
+    			bod.Tounge.描画0(are);
     			bod.MouthCum.描画0(are);
     			bod.咳.描画0(are);
     			bod.呼気.描画0(are);
@@ -8960,7 +8960,7 @@ namespace SlaveMatrix
     				bod.カーソル.描画0(are);
     				bod.カーソル.描画1(are);
     			}
-    			bod.前髪.描画0(are);
+    			bod.FrontHair.描画0(are);
     			if (!bod.Is獣耳)
     			{
     				foreach (角2 item113 in bod.角左接続)
@@ -8974,11 +8974,11 @@ namespace SlaveMatrix
     			}
     			if (bod.Is単眉)
     			{
-    				bod.単眼眉.描画0(are);
+    				bod.MonoEyebrow.描画0(are);
     			}
     			if (bod.Is双眉)
     			{
-    				bod.眉左.描画0(are);
+    				bod.EyebrowLeft.描画0(are);
     				bod.眉右.描画0(are);
     			}
     			if (bod.Is頭頂_宇)
@@ -9073,7 +9073,7 @@ namespace SlaveMatrix
     			bod.顔触覚右接続.描画1(are);
     			if (bod.Is頭頂_宇 || bod.Is顔面 || bod.Is額角 || bod.Is触覚)
     			{
-    				bod.目隠帯.描画0(are);
+    				bod.Blindfold.描画0(are);
     			}
     			if (!bod.Is腿魚 && bod.Is腿 && bod.腿開きi != 4)
     			{
@@ -9135,7 +9135,7 @@ namespace SlaveMatrix
     		double バスト = (Cha.CharacterData.最乳房 - 0.3 * Cha.CharacterData.現乳房.Inverse()).Clamp(0.0, 1.0);
     		乳房左.バスト = バスト;
     		乳房右.バスト = バスト;
-    		下着乳首左.バスト = バスト;
+    		UnderwearNippleLeft.バスト = バスト;
     		下着乳首右.バスト = バスト;
     		下着T_チューブ.バスト = バスト;
     		下着T_クロス.バスト = バスト;
@@ -9178,10 +9178,10 @@ namespace SlaveMatrix
     			性器_獣.X0Y4_陰核.SetSizeBase(csb + num);
     			性器_獣.小陰唇CD.不透明度 = Cha.CharacterData.素性器濃度 + Cha.CharacterData.最性器濃度 * Cha.CharacterData.現性器;
     			性器_獣.性器基CD.不透明度 = Cha.CharacterData.素性器濃度 + Cha.CharacterData.最性器濃度 * Cha.CharacterData.現性器;
-    			肛門_獣.肛門3CD.不透明度 = Cha.CharacterData.素肛門濃度 + Cha.CharacterData.最肛門濃度 * Cha.CharacterData.現肛門;
+    			Anus_獣.Anus3CD.不透明度 = Cha.CharacterData.素肛門濃度 + Cha.CharacterData.最肛門濃度 * Cha.CharacterData.現肛門;
     			num = 0.3 * Cha.CharacterData.現肛門;
-    			肛門_獣.X0Y0_肛門2.SetSizeBase(asb1 + num);
-    			肛門_獣.X0Y0_肛門3.SetSizeBase(asb2 + num);
+    			Anus_獣.X0Y0_Anus2.SetSizeBase(asb1 + num);
+    			Anus_獣.X0Y0_Anus3.SetSizeBase(asb2 + num);
     		}
     		else
     		{
@@ -9192,14 +9192,14 @@ namespace SlaveMatrix
     			性器_人.X0Y4_陰核.SetSizeBase(csb + num);
     			性器_人.小陰唇CD.不透明度 = Cha.CharacterData.素性器濃度 + Cha.CharacterData.最性器濃度 * Cha.CharacterData.現性器;
     			性器_人.性器基CD.不透明度 = Cha.CharacterData.素性器濃度 + Cha.CharacterData.最性器濃度 * Cha.CharacterData.現性器;
-    			肛門_人.肛門3CD.不透明度 = Cha.CharacterData.素肛門濃度 + Cha.CharacterData.最肛門濃度 * Cha.CharacterData.現肛門;
+    			Anus_人.Anus3CD.不透明度 = Cha.CharacterData.素肛門濃度 + Cha.CharacterData.最肛門濃度 * Cha.CharacterData.現肛門;
     			num = 0.3 * Cha.CharacterData.現肛門;
-    			肛門_人.X0Y0_肛門2.SetSizeBase(asb1 + num);
-    			肛門_人.X0Y0_肛門3.SetSizeBase(asb2 + num);
+    			Anus_人.X0Y0_Anus2.SetSizeBase(asb1 + num);
+    			Anus_人.X0Y0_Anus3.SetSizeBase(asb2 + num);
     		}
-    		腰肌_人.陰毛CD.不透明度 = Cha.CharacterData.現陰毛 * Cha.CharacterData.最陰毛濃度;
-    		腰肌_人.獣性_獣毛CD.不透明度 = Cha.CharacterData.現陰毛;
-    		腰肌_人.陰毛_ハートCD.不透明度 = Cha.CharacterData.現陰毛.Inverse() * Cha.CharacterData.最陰毛濃度;
+    		WaistSkin_人.陰毛CD.不透明度 = Cha.CharacterData.現陰毛 * Cha.CharacterData.最陰毛濃度;
+    		WaistSkin_人.獣性_獣毛CD.不透明度 = Cha.CharacterData.現陰毛;
+    		WaistSkin_人.陰毛_ハートCD.不透明度 = Cha.CharacterData.現陰毛.Inverse() * Cha.CharacterData.最陰毛濃度;
     	}
 
     	public Element GetHitEle(Color hc)
@@ -9796,15 +9796,15 @@ namespace SlaveMatrix
     	{
     		Torso.X0Y0_筋肉_筋肉左.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * -0.004));
     		Torso.X0Y0_筋肉_筋肉右.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * -0.004));
-    		胴腹板_人.X0Y0_虫性_腹板.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * -0.002));
-    		胴肌_人.Body.SetSizeYCont(0.85 + (1.0 - Waist.Yv) * 0.15);
+    		TorsoPlate_人.X0Y0_虫性_腹板.SetPositionCont(DataConsts.Vec2DUnitY * (Waist.Yv * -0.002));
+    		TorsoSkin_人.Body.SetSizeYCont(0.85 + (1.0 - Waist.Yv) * 0.15);
     	}
 
     	private void 腰振り_獣()
     	{
     		Torso_獣.X0Y0_筋肉_筋肉左.SetPositionCont(DataConsts.Vec2DUnitY * (Waist_獣.Yv * -0.004));
     		Torso_獣.X0Y0_筋肉_筋肉右.SetPositionCont(DataConsts.Vec2DUnitY * (Waist_獣.Yv * -0.004));
-    		胴肌_獣.Body.SetSizeYCont(0.85 + (1.0 - Waist_獣.Yv) * 0.15);
+    		TorsoSkin_獣.Body.SetSizeYCont(0.85 + (1.0 - Waist_獣.Yv) * 0.15);
     		if (EI半中1 != null)
     		{
     			EI半中1.Updatef = true;
@@ -9863,8 +9863,8 @@ namespace SlaveMatrix
     	{
     		Set後髪髪留 = GlobalState.髪留2初期化;
     		Set横髪髪留 = GlobalState.髪留2初期化;
-    		Set玉口枷 = GlobalState.玉口枷初期化;
-    		Set目隠帯 = GlobalState.目隠帯初期化;
+    		SetBallGag = GlobalState.玉口枷初期化;
+    		SetBlindfold = GlobalState.目隠帯初期化;
     		Setピアス = GlobalState.ピアス初期化;
     		Setピアス左 = GlobalState.ピアス初期化;
     		Setピアス右 = GlobalState.ピアス初期化;
@@ -9909,20 +9909,20 @@ namespace SlaveMatrix
     		}
     		else if (Is獣)
     		{
-    			if (腰肌_獣 != null)
+    			if (WaistSkin_獣 != null)
     			{
-    				腰肌_獣.竜性_鱗1_表示 = false;
-    				腰肌_獣.竜性_鱗2_表示 = false;
-    				腰肌_獣.竜性_鱗3_表示 = false;
-    				腰肌_獣.竜性_鱗4_表示 = false;
+    				WaistSkin_獣.竜性_鱗1_表示 = false;
+    				WaistSkin_獣.竜性_鱗2_表示 = false;
+    				WaistSkin_獣.竜性_鱗3_表示 = false;
+    				WaistSkin_獣.竜性_鱗4_表示 = false;
     			}
     		}
     		else
     		{
-    			腰肌_人.竜性_鱗1_表示 = false;
-    			腰肌_人.竜性_鱗2_表示 = false;
-    			腰肌_人.竜性_鱗3_表示 = false;
-    			腰肌_人.竜性_鱗4_表示 = false;
+    			WaistSkin_人.竜性_鱗1_表示 = false;
+    			WaistSkin_人.竜性_鱗2_表示 = false;
+    			WaistSkin_人.竜性_鱗3_表示 = false;
+    			WaistSkin_人.竜性_鱗4_表示 = false;
     		}
     	}
 
@@ -9930,29 +9930,29 @@ namespace SlaveMatrix
     	{
     		if (Is獣)
     		{
-    			腰肌_獣.淫タトゥ_タトゥ1右_表示 = true;
-    			腰肌_獣.淫タトゥ_タトゥ1左_表示 = true;
-    			腰肌_獣.淫タトゥ_タトゥ2右_表示 = true;
-    			腰肌_獣.淫タトゥ_タトゥ2左_表示 = true;
-    			腰肌_獣.淫タトゥ_ハート_タトゥ右1_表示 = true;
-    			腰肌_獣.淫タトゥ_ハート_タトゥ右2_表示 = true;
-    			腰肌_獣.淫タトゥ_ハート_タトゥ左1_表示 = true;
-    			腰肌_獣.淫タトゥ_ハート_タトゥ左2_表示 = true;
-    			腰肌_獣.植タトゥ_タトゥ左_表示 = false;
-    			腰肌_獣.植タトゥ_タトゥ右_表示 = false;
+    			WaistSkin_獣.淫タトゥ_タトゥ1右_表示 = true;
+    			WaistSkin_獣.淫タトゥ_タトゥ1左_表示 = true;
+    			WaistSkin_獣.淫タトゥ_タトゥ2右_表示 = true;
+    			WaistSkin_獣.淫タトゥ_タトゥ2左_表示 = true;
+    			WaistSkin_獣.淫タトゥ_ハート_タトゥ右1_表示 = true;
+    			WaistSkin_獣.淫タトゥ_ハート_タトゥ右2_表示 = true;
+    			WaistSkin_獣.淫タトゥ_ハート_タトゥ左1_表示 = true;
+    			WaistSkin_獣.淫タトゥ_ハート_タトゥ左2_表示 = true;
+    			WaistSkin_獣.植タトゥ_タトゥ左_表示 = false;
+    			WaistSkin_獣.植タトゥ_タトゥ右_表示 = false;
     		}
     		else
     		{
-    			腰肌_人.淫タトゥ_タトゥ1右_表示 = true;
-    			腰肌_人.淫タトゥ_タトゥ1左_表示 = true;
-    			腰肌_人.淫タトゥ_タトゥ2右_表示 = true;
-    			腰肌_人.淫タトゥ_タトゥ2左_表示 = true;
-    			腰肌_人.淫タトゥ_ハート_タトゥ右1_表示 = true;
-    			腰肌_人.淫タトゥ_ハート_タトゥ右2_表示 = true;
-    			腰肌_人.淫タトゥ_ハート_タトゥ左1_表示 = true;
-    			腰肌_人.淫タトゥ_ハート_タトゥ左2_表示 = true;
-    			腰肌_人.植タトゥ_タトゥ左_表示 = false;
-    			腰肌_人.植タトゥ_タトゥ右_表示 = false;
+    			WaistSkin_人.淫タトゥ_タトゥ1右_表示 = true;
+    			WaistSkin_人.淫タトゥ_タトゥ1左_表示 = true;
+    			WaistSkin_人.淫タトゥ_タトゥ2右_表示 = true;
+    			WaistSkin_人.淫タトゥ_タトゥ2左_表示 = true;
+    			WaistSkin_人.淫タトゥ_ハート_タトゥ右1_表示 = true;
+    			WaistSkin_人.淫タトゥ_ハート_タトゥ右2_表示 = true;
+    			WaistSkin_人.淫タトゥ_ハート_タトゥ左1_表示 = true;
+    			WaistSkin_人.淫タトゥ_ハート_タトゥ左2_表示 = true;
+    			WaistSkin_人.植タトゥ_タトゥ左_表示 = false;
+    			WaistSkin_人.植タトゥ_タトゥ右_表示 = false;
     		}
     	}
 
@@ -9973,19 +9973,19 @@ namespace SlaveMatrix
     		}
     		if (Is獣)
     		{
-    			if (腰肌_獣 != null)
+    			if (WaistSkin_獣 != null)
     			{
-    				if (!腰肌_獣.竜性_鱗1_表示 && !腰肌_獣.竜性_鱗2_表示 && !腰肌_獣.竜性_鱗3_表示)
+    				if (!WaistSkin_獣.竜性_鱗1_表示 && !WaistSkin_獣.竜性_鱗2_表示 && !WaistSkin_獣.竜性_鱗3_表示)
     				{
-    					return 腰肌_獣.竜性_鱗4_表示;
+    					return WaistSkin_獣.竜性_鱗4_表示;
     				}
     				return true;
     			}
     			return false;
     		}
-    		if (!腰肌_人.竜性_鱗1_表示 && !腰肌_人.竜性_鱗2_表示 && !腰肌_人.竜性_鱗3_表示)
+    		if (!WaistSkin_人.竜性_鱗1_表示 && !WaistSkin_人.竜性_鱗2_表示 && !WaistSkin_人.竜性_鱗3_表示)
     		{
-    			return 腰肌_人.竜性_鱗4_表示;
+    			return WaistSkin_人.竜性_鱗4_表示;
     		}
     		return true;
     	}

@@ -512,9 +512,9 @@ namespace SlaveMatrix
 
             double 尺度C = Body.Chest.尺度C;
     		Body.Chest.尺度C = 0.99;
-    		double num = Body.Chest.X0Y0_胸郭.ToGlobal(Body.Chest.X0Y0_胸郭.GetJP()[0].Joint).Y;
+    		double num = Body.Chest.X0Y0_RibCage.ToGlobal(Body.Chest.X0Y0_RibCage.GetJP()[0].Joint).Y;
     		Body.Chest.尺度C = 1.01;
-    		double num2 = Body.Chest.X0Y0_胸郭.ToGlobal(Body.Chest.X0Y0_胸郭.GetJP()[0].Joint).Y;
+    		double num2 = Body.Chest.X0Y0_RibCage.ToGlobal(Body.Chest.X0Y0_RibCage.GetJP()[0].Joint).Y;
     		Body.Chest.尺度C = 尺度C;
     		y = num2 - num;
     		Breathing = new Motion(0.0, 1.0)
@@ -560,19 +560,19 @@ namespace SlaveMatrix
     				{
     					if (cha.Body.IsDualEyes)
     					{
-    						cha.Body.目左.黒目_ハイライト下_表示 = true;
+    						cha.Body.EyeLeft.黒目_ハイライト下_表示 = true;
     					}
     					if (cha.Body.IsCheekEyes)
     					{
-    						cha.Body.頬目左.黒目_ハイライト下_表示 = true;
+    						cha.Body.CheekEyeLeft.黒目_ハイライト下_表示 = true;
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						cha.Body.単眼目.黒目_ハイライト下_表示 = true;
+    						cha.Body.MonoEye.黒目_ハイライト下_表示 = true;
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						cha.Body.額目.黒目_ハイライト下_表示 = true;
+    						cha.Body.ForeheadEye.黒目_ハイライト下_表示 = true;
     					}
     					cha.Body.LeftTear.Tear0流れ0_表示 = cha.Body.LeftTear.Tear0流れ1_表示 || cha.Body.LeftTear.Tear0_表示;
     					cha.Body.LeftTear.Tear0流れ1_表示 = cha.Body.LeftTear.Tear0_表示;
@@ -660,19 +660,19 @@ namespace SlaveMatrix
     					cha.Body.LeftTear.Intensity *= vi;
     					if (cha.Body.IsDualEyes)
     					{
-    						cha.Body.目左.黒目_ハイライト下CD.不透明度 *= vi;
+    						cha.Body.EyeLeft.黒目_ハイライト下CD.不透明度 *= vi;
     					}
     					if (cha.Body.IsCheekEyes)
     					{
-    						cha.Body.頬目左.黒目_ハイライト下CD.不透明度 *= vi;
+    						cha.Body.CheekEyeLeft.黒目_ハイライト下CD.不透明度 *= vi;
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						cha.Body.単眼目.黒目_ハイライト下CD.不透明度 *= vi;
+    						cha.Body.MonoEye.黒目_ハイライト下CD.不透明度 *= vi;
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						cha.Body.額目.黒目_ハイライト下CD.不透明度 *= vi;
+    						cha.Body.ForeheadEye.黒目_ハイライト下CD.不透明度 *= vi;
     					}
     				}
     				if (RightTear)
@@ -698,23 +698,23 @@ namespace SlaveMatrix
     					cha.Body.LeftTear.Intensity = 1.0;
     					if (cha.Body.IsDualEyes)
     					{
-    						cha.Body.目左.黒目_ハイライト下_表示 = false;
-    						cha.Body.目左.黒目_ハイライト下CD.不透明度 = 1.0;
+    						cha.Body.EyeLeft.黒目_ハイライト下_表示 = false;
+    						cha.Body.EyeLeft.黒目_ハイライト下CD.不透明度 = 1.0;
     					}
     					if (cha.Body.IsCheekEyes)
     					{
-    						cha.Body.頬目左.黒目_ハイライト下_表示 = false;
-    						cha.Body.頬目左.黒目_ハイライト下CD.不透明度 = 1.0;
+    						cha.Body.CheekEyeLeft.黒目_ハイライト下_表示 = false;
+    						cha.Body.CheekEyeLeft.黒目_ハイライト下CD.不透明度 = 1.0;
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						cha.Body.単眼目.黒目_ハイライト下_表示 = false;
-    						cha.Body.単眼目.黒目_ハイライト下CD.不透明度 = 1.0;
+    						cha.Body.MonoEye.黒目_ハイライト下_表示 = false;
+    						cha.Body.MonoEye.黒目_ハイライト下CD.不透明度 = 1.0;
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						cha.Body.額目.黒目_ハイライト下_表示 = false;
-    						cha.Body.額目.黒目_ハイライト下CD.不透明度 = 1.0;
+    						cha.Body.ForeheadEye.黒目_ハイライト下_表示 = false;
+    						cha.Body.ForeheadEye.黒目_ハイライト下CD.不透明度 = 1.0;
     					}
     				}
     				if (RightTear)
@@ -762,7 +762,7 @@ namespace SlaveMatrix
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						cha.Body.単眼瞼.Yv = m.Value.Clamp(cha.Body.Is瞼宇 ? 0.0 : cha.瞼基準単, 1.0);
+    						cha.Body.MonoEyelid.Yv = m.Value.Clamp(cha.Body.Is瞼宇 ? 0.0 : cha.瞼基準単, 1.0);
     					}
     				},
     				OnReach = delegate
@@ -799,12 +799,12 @@ namespace SlaveMatrix
     				{
     					if (cha.Body.IsCheekEyes)
     					{
-    						cha.Body.頬瞼左.Yv = m.Value.Clamp(cha.瞼基準頬左, 1.0);
+    						cha.Body.CheekEyelidLeft.Yv = m.Value.Clamp(cha.瞼基準頬左, 1.0);
     						cha.Body.頬瞼右.Yv = m.Value.Clamp(cha.瞼基準頬右, 1.0);
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						cha.Body.額瞼.Yv = m.Value.Clamp(cha.瞼基準額, 1.0);
+    						cha.Body.ForeheadEyelid.Yv = m.Value.Clamp(cha.瞼基準額, 1.0);
     					}
     				},
     				OnReach = delegate
@@ -1251,46 +1251,46 @@ namespace SlaveMatrix
     				{
     					if (cha.Body.IsDualEyes)
     					{
-    						ev = s * (cha.CursorPosition - (cha.Body.目左.位置 + cha.Body.目右.位置) * 0.5).newNormalize() * 0.002;
-    						cha.Body.目左.視線 = ev;
+    						ev = s * (cha.CursorPosition - (cha.Body.EyeLeft.位置 + cha.Body.目右.位置) * 0.5).newNormalize() * 0.002;
+    						cha.Body.EyeLeft.視線 = ev;
     						cha.Body.目右.視線 = ev;
     					}
     					if (cha.Body.IsCheekEyes)
     					{
-    						ev = s * (cha.CursorPosition - (cha.Body.頬目左.位置 + cha.Body.頬目右.位置) * 0.5).newNormalize() * 0.00089;
-    						cha.Body.頬目左.視線 = ev;
+    						ev = s * (cha.CursorPosition - (cha.Body.CheekEyeLeft.位置 + cha.Body.頬目右.位置) * 0.5).newNormalize() * 0.00089;
+    						cha.Body.CheekEyeLeft.視線 = ev;
     						cha.Body.頬目右.視線 = ev;
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						ev = s * (cha.CursorPosition - cha.Body.額目.位置).newNormalize() * 0.00089;
-    						cha.Body.額目.視線 = ev;
+    						ev = s * (cha.CursorPosition - cha.Body.ForeheadEye.位置).newNormalize() * 0.00089;
+    						cha.Body.ForeheadEye.視線 = ev;
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						ev = s * (cha.CursorPosition - cha.Body.単眼目.位置).newNormalize() * 0.003;
-    						cha.Body.単眼目.視線 = ev;
+    						ev = s * (cha.CursorPosition - cha.Body.MonoEye.位置).newNormalize() * 0.003;
+    						cha.Body.MonoEye.視線 = ev;
     					}
     				}
     				else
     				{
     					if (cha.Body.IsDualEyes)
     					{
-    						cha.Body.目左.視線 = s * (cha.CursorPosition - cha.Body.目左.位置).newNormalize() * 0.002;
+    						cha.Body.EyeLeft.視線 = s * (cha.CursorPosition - cha.Body.EyeLeft.位置).newNormalize() * 0.002;
     						cha.Body.目右.視線 = s * (cha.CursorPosition - cha.Body.目右.位置).newNormalize() * 0.002;
     					}
     					if (cha.Body.IsCheekEyes)
     					{
-    						cha.Body.頬目左.視線 = s * (cha.CursorPosition - cha.Body.頬目左.位置).newNormalize() * 0.00089;
+    						cha.Body.CheekEyeLeft.視線 = s * (cha.CursorPosition - cha.Body.CheekEyeLeft.位置).newNormalize() * 0.00089;
     						cha.Body.頬目右.視線 = s * (cha.CursorPosition - cha.Body.頬目右.位置).newNormalize() * 0.00089;
     					}
     					if (cha.Body.IsForeheadEye)
     					{
-    						cha.Body.額目.視線 = s * (cha.CursorPosition - cha.Body.額目.位置).newNormalize() * 0.00089;
+    						cha.Body.ForeheadEye.視線 = s * (cha.CursorPosition - cha.Body.ForeheadEye.位置).newNormalize() * 0.00089;
     					}
     					if (cha.Body.IsSingleEye)
     					{
-    						cha.Body.単眼目.視線 = s * (cha.CursorPosition - cha.Body.単眼目.位置).newNormalize() * 0.003;
+    						cha.Body.MonoEye.視線 = s * (cha.CursorPosition - cha.Body.MonoEye.位置).newNormalize() * 0.003;
     					}
     				}
     			},
@@ -1403,7 +1403,7 @@ namespace SlaveMatrix
     			},
     			OnUpdate = delegate(Motion m)
     			{
-    				cha.Body.肛門C = 0.5 + m.Value.Sin() * Rng.XS.NextDouble() * 0.5;
+    				cha.Body.AnusC = 0.5 + m.Value.Sin() * Rng.XS.NextDouble() * 0.5;
     				if (肛sw.ElapsedMilliseconds > 5000)
     				{
     					m.End();
@@ -1418,7 +1418,7 @@ namespace SlaveMatrix
     			OnEnd = delegate
     			{
     				肛sw.Stop();
-    				cha.Body.肛門C = 1.0;
+    				cha.Body.AnusC = 1.0;
     			}
     		};
     		Motions.Add(肛ヒク.GetHashCode().ToString(), 肛ヒク);
@@ -1606,7 +1606,7 @@ namespace SlaveMatrix
     				}
     				if (cha.Body.IsForeheadEye)
     				{
-    					cha.額瞼_1(Rng.XS.Next(1, 4));
+    					cha.ForeheadEyelid_1(Rng.XS.Next(1, 4));
     				}
     				c_ = 0;
     				CoughCount = Rng.XS.NextM(1, 2) + Player.UI.ペニス処理.中出しCount / 2;
@@ -1742,7 +1742,7 @@ namespace SlaveMatrix
                 result.p = result.e.Body.GetHitPar_(HitColor);
                 bool flag = false;
                 bool flag2 = result.e is Shoulder || result.e is UpperArm || result.e is LowerArm || result.e is 手 || result.e is 四足脇 || result.e is 腿 || result.e is Leg || result.e is 足 || result.e is 鰭 || result.e is 葉 || result.e is 前翅 || result.e is 後翅 || result.e is 触肢 || result.e is 節足 || result.e is 節尾 || result.e is 大顎 || result.e is 虫顎 || result.e is 虫鎌 || result.e is 触手;
-                if (result.e is 前髪 || result.e is 頭頂)
+                if (result.e is FrontHair || result.e is 頭頂)
                 {
                     result.c = ContactType.Head;
                 }
@@ -1758,7 +1758,7 @@ namespace SlaveMatrix
                 {
                     result.c = ContactType.Face;
                 }
-                else if (result.e is SideHair || result.e is BackHair0 || result.e is BackHair1 || result.e is 基髪)
+                else if (result.e is SideHair || result.e is BackHair0 || result.e is BackHair1 || result.e is BaseHair)
                 {
                     result.c = ContactType.Hair;
                 }
@@ -1782,11 +1782,11 @@ namespace SlaveMatrix
                 {
                     result.c = ContactType.Side;
                 }
-                else if (((result.e is Waist || result.e is 四足腰) && result.p != null && result.p.Tag == "下腹") || result.e is ボテ腹)
+                else if (((result.e is Waist || result.e is 四足腰) && result.p != null && result.p.Tag == "下腹") || result.e is PregnantBelly)
                 {
                     result.c = ContactType.Stomache;
                 }
-                else if ((flag = !flag2 && this.Body.Isくぱぁ()) && result.e is 肛門)
+                else if ((flag = !flag2 && this.Body.Isくぱぁ()) && result.e is Anus)
                 {
                     result.c = ContactType.Anal;
                 }
