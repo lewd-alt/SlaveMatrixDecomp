@@ -53,6 +53,8 @@ namespace _2DGAMELIB
     	}
 
         public void SetCursorPoint(Vector2D pos) {
+            if (Environment.GetEnvironmentVariable("XDG_SESSION_TYPE") == "wayland")
+                return;
             Glfw.SetCursorPosition(window, pos.X, pos.Y);
         }
 
